@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Style.css'
+import { Link } from 'react-router-dom';
 import imageM from './Images/doctor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaUserMd, FaAmbulance, FaProcedures, FaMicroscope, FaPills } from "react-icons/fa";
@@ -9,6 +10,7 @@ import { TbStethoscope } from "react-icons/tb";
 
 import carousel2 from './Images/carousel-2.jpg';
 import carsouse1 from './Images/backround.png'
+import Footer from './Footer';
 // import img1 from './Images/team-1.jpg';
 // import img2 from './Images/team-2.jpg';
 // import img3 from './Images/team-3.jpg';
@@ -34,32 +36,35 @@ function Principale() {
     <div>
       
       {/* hero start  */}
-  {/* <div className="container-fluid bg-primary py-5 mb-5 hero-header">
+   <div className="container-fluid bg-primary py-5 mb-5 hero-header">
         <div className="container py-5">
           <div className="row justify-content-start">
             <div className="col-lg-8 text-center text-lg-start" style={{paddingTop:"50px"}}>
               <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>Welcome To D medicale</h5>
               <h1 className="display-1 text-white mb-md-4" style={{fontSize:"40px"}}>Best Solution In Your City To Make an appointment with your doctor quickly!</h1>
               <div className="pt-2">
-                <a href="" className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Find Doctor</a>
-                <div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Appointment</div>
+                <Link to ='/RegisterDoctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Doctor</Link>
+                <Link to ='/RegisterPatient'><div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Patient</div>
+                  </Link>  
               </div>
             </div>
           </div>
         </div>
-      </div>  */}
+      </div>  
       {/* hero end  */}
-      <Carousel activeIndex={index} onSelect={handleSelect}  >
+      {/* <Carousel activeIndex={index} onSelect={handleSelect}  >
+        
       <Carousel.Item style={{ height: "400px"}}   >
+
         <img 
           className="d-block w-100"
           src={carsouse1}
           alt="First slide"
         />
-        {/* <Carousel.Caption>
+         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption> */}
+        </Carousel.Caption> 
       </Carousel.Item>
 
       <Carousel.Item style={{ height: "400px"}} >
@@ -69,10 +74,10 @@ function Principale() {
           alt="Second slide"
         />
 
-        {/* <Carousel.Caption>
+         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption> */}
+        </Carousel.Caption> 
       </Carousel.Item>
       <Carousel.Item style={{ height: "400px"}} >
         <img
@@ -81,21 +86,23 @@ function Principale() {
           alt="Third slide"
         />
 
-        {/* <Carousel.Caption>
+         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
-        </Carousel.Caption> */}
+        </Carousel.Caption> 
       </Carousel.Item>
-    </Carousel>
+    </Carousel> */}
     
       {/* about start  */}
        <div className="container-fluid py-5">
         <div className="container">
           <div className="row gx-5">
-            <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: "500px" }}>
+                     <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: "500px" }}>
+                      
               <div className="position-relative h-100">
+                
                 <img className="position-absolute w-100 h-100 rounded" src={imageM} style={{ objectFit: "cover" }} alt="about" />
               </div>
             </div>
@@ -138,154 +145,61 @@ function Principale() {
       {/* about end */}
       <main>
 
- {/* serach Start   */}
-<div className="container-fluid bg-primary my-5 py-5">
+  {/* Appointment Start */}
+  <div className="container-fluid bg-primary my-5 py-5">
         <div className="container py-5">
-            <div className="text-center mx-auto mb-5" style={{maxWidth:"500px"}}>
-                <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Find A Doctor</h5>
-                <h1 className="display-4 mb-4">Find A specialty prefer </h1>
-                <h5 className="text-white fw-normal">Select your doctor according to your choice of specialty </h5>
+          <div className="row gx-5">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <div className="mb-4">
+                <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
+                <h1 className="display-4">Make An account </h1>
+              </div>
+              <p className="text-white mb-5"> you must create an account to make appointments with our doctor </p>
+              <a className="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
+              <a className="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a>
             </div>
-            <div className="mx-auto" style={{width: "100%" , max_width: "600px"}}>
-                <div className="input-group">
-                    <select className="form-select border-primary w-25" style={{height: "60px"}}>
-                        <option selected>Specialité</option>
-                        <option value="1">Specialité 1</option>
-                        <option value="2">Specialité 2</option>
-                        <option value="3">Specialité 3</option>
-                    </select>
-                    <input type="text" className="form-control border-primary w-50" placeholder="specialtyName"/>
-                    <button className="btn btn-dark border-0 w-25">Search</button>
-                </div>
-            </div>
+            <div className="col-lg-6">
+              <div className="bg-white text-center rounded p-5">
+                <h1 className="mb-4">Inscrit-vous</h1>
+             
+    
+                         {/*   onSubmit={handleSubmit} */}
+      <form >
+        <div className="row g-3">
+          <div className="col-12 col-sm-6">
+          {/* value={name} onChange={handleNameChange}  */}
+            <input type="text" className="form-control bg-light border-0" placeholder="Your first Name" style={{ height: '55px' }}/>
+          </div>
+          <div className="col-12 col-sm-6">
+          {/* value={name} onChange={handleNameChange}  */}
+            <input type="text" className="form-control bg-light border-0" placeholder="Your last Name" style={{ height: '55px' }}/>
+          </div>
+          <div className="col-12 col-sm-6">
+          {/* value={name} onChange={handleNameChange}  */}
+            <input type="number" className="form-control bg-light border-0" placeholder="Your Phone NUmber " style={{ height: '55px' }}/>
+          </div>
+          <div className="col-12 col-sm-6">
+          {/* value={email} onChange={handleEmailChange} */}
+            <input type="email" className="form-control bg-light border-0" placeholder="Your Email" style={{ height: '55px' }}  />
+          </div>
+          <div className="col-12 col-sm-6">
+          <input type="password" className="form-control bg-light border-0" placeholder="Your password" style={{ height: '55px' }}  />
+          </div>
+          <div className="col-12 col-sm-6">
+          <input type="password" className="form-control bg-light border-0" placeholder="confirm password" style={{ height: '55px' }}  />
+          </div>
+          <div className="col-12">
+            <button className="btn btn-primary w-100 py-3" type="submit" style={{fontSize:"25px"}}>Inscrit</button>
+          </div>
         </div>
+      </form>
     </div>
-{/* search end */}
-
-      {/* sercice start  */}
-      <div className="container-fluid py-5">
-        <div className="container">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: '500px' }}>
-            <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
-            <h1 className="display-4" style={{color:"#1D2A4D" , fontSize:"6rem" ,fontWeight:400 }}>Excellent Medical Services</h1>
+    </div>
+            </div>
           </div>
-          <div className="row g-5">
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <a href="#" style={{ color: 'white', fontSize: '50px' }}><FaUserMd /></a>
-                </div>
-                <h4 className="mb-3">Emergency Care</h4>
-                <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <a href="#" style={{ color: 'white', fontSize: '50px' }}><FaProcedures /></a>
-                </div>
-                <h4 className="mb-3">Operation & Surgery</h4>
-                <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
+        </div>  
+    {/* Appointment End */ }
 
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <a href="#" style={{ color: 'white', fontSize: '50px' }}><TbStethoscope /></a>
-
-                </div>
-                <h4 className="mb-3">Outdoor Checkup</h4>
-                <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <a href="#" style={{ color: 'white', fontSize: '50px' }}><FaAmbulance /></a>
-
-                </div>
-                <h4 className="mb-3">Ambulance Service</h4>
-                <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <FaPills className="text-white" size={50} />
-                </div>
-                <h4 className="mb-3">Medicine & Pharmacy</h4>
-                <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <BsFillArrowRightCircleFill className="text-white" size={20} />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <FaMicroscope className="text-white" size={50} />
-                </div>
-                <h4 className="mb-3">Blood Testing</h4>
-                <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-
-                  <BsFillArrowRightCircleFill className="text-white" size={20} />          </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      {/* services end  */}
-
-{/* specialité Start */}
-
-<div className="services">
-          <h1 className="title">MEDICAL SERVICES</h1>
-          <p className="sub-title">Our Center offer you and your familly the complete range of healthcare services.</p>
-          <div className="list-services">
-            <div className="box">
-              <h1>familly care</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-            <div className="box">
-              <h1>URGENT CARE</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-            <div className="box">
-              <h1>Spectialist care</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-            <div className="box">
-              <h1>PEDIATRIC</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-            <div className="box">
-              <h1>DENTIST</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-            <div className="box">
-              <h1>familly care</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-
-          </div>
-        </div>
-
-{/* specialité end */}
 
 {/* tearm start */}
 {/* 
@@ -361,66 +275,11 @@ function Principale() {
    */}
 {/* tearm end */}
 
-   {/* Appointment Start */}
-   <div className="container-fluid bg-primary my-5 py-5">
-        <div className="container py-5">
-          <div className="row gx-5">
-            <div className="col-lg-6 mb-5 mb-lg-0">
-              <div className="mb-4">
-                <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
-                <h1 className="display-4">Make An account </h1>
-              </div>
-              <p className="text-white mb-5"> you must create an account to make appointments with our doctor </p>
-              <a className="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
-              <a className="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a>
-            </div>
-            <div className="col-lg-6">
-              <div className="bg-white text-center rounded p-5">
-                <h1 className="mb-4">Inscrit-vous</h1>
-             
-    
-                         {/*   onSubmit={handleSubmit} */}
-      <form >
-        <div className="row g-3">
-          <div className="col-12 col-sm-6">
-          {/* value={name} onChange={handleNameChange}  */}
-            <input type="text" className="form-control bg-light border-0" placeholder="Your first Name" style={{ height: '55px' }}/>
-          </div>
-          <div className="col-12 col-sm-6">
-          {/* value={name} onChange={handleNameChange}  */}
-            <input type="text" className="form-control bg-light border-0" placeholder="Your last Name" style={{ height: '55px' }}/>
-          </div>
-          <div className="col-12 col-sm-6">
-          {/* value={name} onChange={handleNameChange}  */}
-            <input type="number" className="form-control bg-light border-0" placeholder="Your Phone NUmber " style={{ height: '55px' }}/>
-          </div>
-          <div className="col-12 col-sm-6">
-          {/* value={email} onChange={handleEmailChange} */}
-            <input type="email" className="form-control bg-light border-0" placeholder="Your Email" style={{ height: '55px' }}  />
-          </div>
-          <div className="col-12 col-sm-6">
-          <input type="password" className="form-control bg-light border-0" placeholder="Your password" style={{ height: '55px' }}  />
-          </div>
-          <div className="col-12 col-sm-6">
-          <input type="password" className="form-control bg-light border-0" placeholder="confirm password" style={{ height: '55px' }}  />
-          </div>
-          <div className="col-12">
-            <button className="btn btn-primary w-100 py-3" type="submit" style={{fontSize:"25px"}}>Inscrit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    </div>
-            </div>
-          </div>
-        </div>  
-    {/* Appointment End */ }
-
     </main>
 
 
 
-
+    <Footer/>
     </div >
   )
 }

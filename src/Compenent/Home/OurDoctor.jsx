@@ -8,6 +8,7 @@ import { TbStethoscope } from "react-icons/tb";
 import img1 from './Images/team-1.jpg';
 import img2 from './Images/team-2.jpg';
  import img3 from './Images/team-3.jpg';
+import Footer from './Footer';
 function OurDoctor() {
   return (
     <div>
@@ -87,6 +88,7 @@ function OurDoctor() {
    
 
 {/* tearm end */}
+<Footer/>
     </div>
   )
 }

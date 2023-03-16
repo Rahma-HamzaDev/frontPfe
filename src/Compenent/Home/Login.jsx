@@ -1,31 +1,40 @@
-import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React from 'react'
+import {  Link } from "react-router-dom";
+function Login() {
+  return (
+  
+         <div className="container-fluid bg-primary my-5 py-5" style ={{paddingTop:"100px"}} >
+    <div className="container">
+    <div className="text-center mx-auto mb-5" style={{maxWidth: '400px'  }}>
+       {/* form Start  */}
+      <form>
+        <div className="row g-3">
+          <div className="col-12 col-sm-6">
+          {/* value={email} onChange={handleEmailChange} */}
+            <input type="email" className="form-control bg-light border-0" placeholder="Your Email" style={{ height: '60px' , width:'200px' }}  />  
+          </div>
+         
+          <div className="col-12 col-sm-6">
+       
+          <input type="password" className="form-control bg-light border-0" placeholder="Your password" style={{ height: '60px', width:'200px' }}  />
+          </div>
+          <div className="col-12">
+          <button
+                    className="btn btn-primary w-100 py-3"
+                    type="submit">Connecter
+                  </button>
+            <Link className="btn btn-dark rounded-pill py-3 px-5 me-3" to="/Login"> Creat Account </Link>
 
-export default class Login extends Component {
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
 
-  render() {
-    return (
-<Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+</div>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
-    )
-  }
+  
+  );
 }
+
+export default Login

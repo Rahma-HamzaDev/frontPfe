@@ -211,6 +211,14 @@ div {
     opacity: 1;
 }
 
+/* .container-fluid .container{
+    background-image:url('./Images/welcom.jpg');
+    padding:15%;
+    padding-bottom: 15px;
+    padding-top: 20px;
+
+
+} */
 .price-carousel::after {
     position: absolute;
     content: "";

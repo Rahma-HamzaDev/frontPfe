@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 
 function Contact() {
   return (
@@ -37,23 +38,23 @@ function Contact() {
         
       <div
         className="row justify-content-center "
-        style={{ marginTop: "80px", zIndex: "1" }} >
+        style={{ marginTop: "30px", zIndex: "1" }} >
         <div className="col-lg-8">
-          <div className="bg-white rounded p-5 m-5 mb-0">
-            <form>
-              <div className="row g-3">
+          <div className="bg-white rounded p-5 m-5 mb-0" >
+            <form >
+              <div className="row g-3" >
                 <div className="col-12 col-sm-6">
                   <input
                     type="text"
-                    className="form-control bg-light border-0"
+                    className="form-control bg-light border-1" 
                     placeholder="Your Name"
-                    style={{ height: "55px" }}
+                    style={{ height: "55px" ,fontWeight:'bold'}}
                   />
                 </div>
                 <div className="col-12 col-sm-6">
                   <input
                     type="email"
-                    className="form-control bg-light border-0"
+                    className="form-control bg-light border-1"
                     placeholder="Your Email"
                     style={{ height: "55px" }}
                   />
@@ -61,14 +62,14 @@ function Contact() {
                 <div className="col-12">
                   <input
                     type="text"
-                    className="form-control bg-light border-0"
+                    className="form-control bg-light border-1"
                     placeholder="Subject"
                     style={{ height: "55px" }}
                   />
                 </div>
                 <div className="col-12">
                   <textarea
-                    className="form-control bg-light border-0"
+                    className="form-control bg-light border-1"
                     rows="5"
                     placeholder="Message"
                   ></textarea>
@@ -85,6 +86,7 @@ function Contact() {
                 </div>
             </div>
         </div>
+        <Footer/>
     </div>
 
   )

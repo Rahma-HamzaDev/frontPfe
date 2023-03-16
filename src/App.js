@@ -8,10 +8,14 @@ import Principale from './Compenent/Home/Principale';
 import About from './Compenent/Home/About'
 import TopBar from './Compenent/Home/TopBar';
 import Service from './Compenent/Home/Service';
-import LoginDoctor from './Compenent/Home/LoginDoctor';
+import Register2 from './Compenent/Home/Register2';
 import Footer from './Compenent/Home/Footer';
-import Contact from './Compenent/Home/Contact'
+import Contact from './Compenent/Home/Contact';
 import Login from './Compenent/Home/Login';
+import RegisterPatient from './Compenent/Home/RegisterPatient';
+import RegisterDoctor from './Compenent/Home/RegisterDoctor';
+import OurDoctor from './Compenent/Home/OurDoctor'
+import ButtonBar from './Compenent/Home/ButtonBar';
 // import AppAdmin from './Compenent/Admin/AppAdmin'
 function App() {
   return (
@@ -22,12 +26,15 @@ function App() {
   <Route path="/" element ={<Principale/>} />
   <Route path="/About" element ={<About/>} />
   <Route path="/Service" element ={<Service/>} />
-  <Route path="/LoginDoctor" element ={<LoginDoctor/>} />
+  <Route path="/Register2" element ={<Register2/>} />
   <Route path="/Contact" element ={<Contact/>} />
   <Route path="/Login" element ={<Login/>} />
+  <Route path="/RegisterPatient" element ={<RegisterPatient/>} />
+  <Route path="/RegisterDoctor" element ={<RegisterDoctor/>} />
+  <Route path="/OurDoctor" element ={<OurDoctor/>} />
   {/* <Route path="/AppAdmin" element ={<AppAdmin/>} /> */}
 </Routes>
-<Footer/>
+<ButtonBar/>
   </Router>
   );
 }
