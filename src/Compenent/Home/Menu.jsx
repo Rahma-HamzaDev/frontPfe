@@ -7,6 +7,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa';
 import Nav from 'react-bootstrap/Nav';
+import logo from './Images/Dr.png'
 
 function Menu() {
   return (
@@ -39,11 +40,14 @@ function Menu() {
       </div>
     </div> */}
       {/* endNavbar Start*/}
-      
+      <div>
       <nav className="navbar navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
         <Link to="/" className="navbar-brand">
+        
+         <h1 className="m-0 text-primary"><i className="fa fa-tooth me-2">
+         <img src={logo} width='40px' height='40px' /> 
+          </i>Dr Medicale</h1>
 
-          <h1 className="m-0 text-primary"><i className="fa fa-tooth me-2"></i>DentCare</h1>
         </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span className="navbar-toggler-icon"></span>
@@ -57,11 +61,11 @@ function Menu() {
             <Link to="/contact" className="nav-item nav-link">Contact</Link>
           </div>
           <button type="button" className="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fa fa-search"></i></button>
-          <a href="/Login" className="btn btn-primary py-2 px-4 ms-3">Sign In</a>
+          <Link to="/Login" className="btn btn-primary py-2 px-4 ms-3">Sign In</Link>
         </div>
       </nav>
     </div>
-
+    </div>
   )
 }
 

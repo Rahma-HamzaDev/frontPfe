@@ -4,6 +4,7 @@ import imageM from './Images/doctor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaUserMd, FaAmbulance, FaProcedures, FaMicroscope, FaPills } from "react-icons/fa";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import Carousel from 'react-bootstrap/Carousel';
 import { TbStethoscope } from "react-icons/tb";
 
 import carousel2 from './Images/carousel-2.jpg';
@@ -22,14 +23,21 @@ import carsouse1 from './Images/backround.png'
 
 
 function Principale() {
+  const [index, setIndex] = useState(0);
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);}
+
+
   return (
+
+
     <div>
       
       {/* hero start  */}
-  <div className="container-fluid bg-primary py-5 mb-5 hero-header">
+  {/* <div className="container-fluid bg-primary py-5 mb-5 hero-header">
         <div className="container py-5">
           <div className="row justify-content-start">
-            <div className="col-lg-8 text-center text-lg-start">
+            <div className="col-lg-8 text-center text-lg-start" style={{paddingTop:"50px"}}>
               <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>Welcome To D medicale</h5>
               <h1 className="display-1 text-white mb-md-4" style={{fontSize:"40px"}}>Best Solution In Your City To Make an appointment with your doctor quickly!</h1>
               <div className="pt-2">
@@ -39,13 +47,49 @@ function Principale() {
             </div>
           </div>
         </div>
-      </div> 
+      </div>  */}
       {/* hero end  */}
+      <Carousel activeIndex={index} onSelect={handleSelect}  >
+      <Carousel.Item style={{ height: "400px"}}   >
+        <img 
+          className="d-block w-100"
+          src={carsouse1}
+          alt="First slide"
+        />
+        {/* <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption> */}
+      </Carousel.Item>
 
+      <Carousel.Item style={{ height: "400px"}} >
+        <img
+          className="d-block w-100"
+          src={carousel2}
+          alt="Second slide"
+        />
 
+        {/* <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption> */}
+      </Carousel.Item>
+      <Carousel.Item style={{ height: "400px"}} >
+        <img
+          className="d-block w-100"
+          src={carsouse1}
+          alt="Third slide"
+        />
 
-
-
+        {/* <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption> */}
+      </Carousel.Item>
+    </Carousel>
+    
       {/* about start  */}
        <div className="container-fluid py-5">
         <div className="container">
@@ -82,7 +126,6 @@ function Principale() {
                 </div>
                 <div className="col-sm-3 col-6">
                   <div className="bg-light text-center rounded-circle py-4">
-                    hh
                     <h6 className="mb-0">Free<small className="d-block text-primary">Ambulance</small></h6>
                     <i className="fa fa-user"></i>
                   </div>
@@ -95,7 +138,7 @@ function Principale() {
       {/* about end */}
       <main>
 
-{/* serach Start  */}
+ {/* serach Start   */}
 <div className="container-fluid bg-primary my-5 py-5">
         <div className="container py-5">
             <div className="text-center mx-auto mb-5" style={{maxWidth:"500px"}}>

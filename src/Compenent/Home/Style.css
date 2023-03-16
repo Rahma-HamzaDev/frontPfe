@@ -171,6 +171,7 @@ div {
 .hero-header {
     background: url(./Images/backround.png) ;
     background-size: cover;
+    /* height: 500px; */
     
 }
 
