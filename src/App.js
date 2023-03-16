@@ -12,7 +12,7 @@ import LoginDoctor from './Compenent/Home/LoginDoctor';
 import Footer from './Compenent/Home/Footer';
 import Contact from './Compenent/Home/Contact'
 import Login from './Compenent/Home/Login';
-import AppAdmin from './Compenent/Admin/AppAdmin'
+// import AppAdmin from './Compenent/Admin/AppAdmin'
 function App() {
   return (
     <Router>
@@ -25,7 +25,7 @@ function App() {
   <Route path="/LoginDoctor" element ={<LoginDoctor/>} />
   <Route path="/Contact" element ={<Contact/>} />
   <Route path="/Login" element ={<Login/>} />
-  <Route path="/AppAdmin" element ={<AppAdmin/>} />
+  {/* <Route path="/AppAdmin" element ={<AppAdmin/>} /> */}
 </Routes>
 <Footer/>
   </Router>

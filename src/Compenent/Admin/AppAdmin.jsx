@@ -6,7 +6,6 @@ import GestiomMed from './GestiomMed';
 import Principale from '../Home/Principale';
 import TopBar from '../Home/TopBar';
 import Menu from './MenuAd';
-import Principale from './';
 function AppAdmin() {
   return (
     <div>
