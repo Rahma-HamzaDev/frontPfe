@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { BrowserRouter as Router , Route ,Routes } from 'react-router-dom';
+
+import Menu from './Compenent/Home/Menu';
+import { PriceChange } from '@mui/icons-material';
+import Principale from './Compenent/Home/Principale';
+import About from './Compenent/Home/About'
+import TopBar from './Compenent/Home/TopBar';
+import Service from './Compenent/Home/Service';
+import LoginDoctor from './Compenent/Home/LoginDoctor';
+import Footer from './Compenent/Home/Footer';
+import Contact from './Compenent/Home/Contact'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <TopBar/>
+    <Menu/>
+
+ <Routes>
+  <Route path="/" element ={<Principale/>} />
+  <Route path="/About" element ={<About/>} />
+  <Route path="/Service" element ={<Service/>} />
+  <Route path="/LoginDoctor" element ={<LoginDoctor/>} />
+  <Route path="/Contact" element ={<Contact/>} />
+</Routes>
+<Footer/>
+  </Router>
   );
 }
 
