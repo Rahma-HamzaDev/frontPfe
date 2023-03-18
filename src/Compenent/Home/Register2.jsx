@@ -14,7 +14,7 @@ function Register2() {
                 <div className="service-icon mb-4">
                   <Link to="/RegisterDoctor" style={{ color: 'white', fontSize: '50px' }}><FaUserNurse /></Link>
                 </div>
-                <h4 className="mb-3">Register Doctor</h4>
+                <h4 className="mb-3">space Doctor</h4>
                 <p className="m-0">doctor you can register here</p>
               
               </div>
@@ -24,7 +24,7 @@ function Register2() {
                 <div className="service-icon mb-4">
                   <Link to="/RegisterPatient" style={{ color: 'white', fontSize: '50px' }}><BsPersonCircle /></Link>
                 </div>
-                <h4 className="mb-3">Register Patient</h4>
+                <h4 className="mb-3">space Patient</h4>
                 <p className="m-0"> Patient you can register here
                  </p>
               

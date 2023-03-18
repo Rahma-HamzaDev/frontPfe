@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {AiOutlineArrowUp}from  "react-icons/ai";
 function ButtonBar() {
   return (
     <div>
@@ -14,7 +14,7 @@ function ButtonBar() {
             </div>
         </div>
     </div>
-    <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"><i className="bi bi-arrow-up"></i></a> 
+    <a href="#" className="btn btn-lg btn-primary btn-lg-square back-to-top"> <AiOutlineArrowUp size={25}/>  </a> 
     </div>
   )
 }

@@ -16,12 +16,12 @@ import RegisterPatient from './Compenent/Home/RegisterPatient';
 import RegisterDoctor from './Compenent/Home/RegisterDoctor';
 import OurDoctor from './Compenent/Home/OurDoctor'
 import ButtonBar from './Compenent/Home/ButtonBar';
-// import AppAdmin from './Compenent/Admin/AppAdmin'
+import AppAdmin from './Compenent/Admin/AppAdmin'
 function App() {
   return (
     <Router>
       <TopBar/>
-    <Menu/>
+      <Menu/>
  <Routes>
   <Route path="/" element ={<Principale/>} />
   <Route path="/About" element ={<About/>} />
@@ -32,7 +32,7 @@ function App() {
   <Route path="/RegisterPatient" element ={<RegisterPatient/>} />
   <Route path="/RegisterDoctor" element ={<RegisterDoctor/>} />
   <Route path="/OurDoctor" element ={<OurDoctor/>} />
-  {/* <Route path="/AppAdmin" element ={<AppAdmin/>} /> */}
+   <Route path="/AppAdmin" element ={<AppAdmin/>} /> 
 </Routes>
 <ButtonBar/>
   </Router>

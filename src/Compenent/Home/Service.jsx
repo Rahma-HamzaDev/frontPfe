@@ -2,11 +2,10 @@ import React from 'react'
 import './Style.css';
 import { Link } from 'react-router-dom';
 import imageM from './Images/doctor.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaUserMd, FaAmbulance, FaProcedures, FaMicroscope, FaPills } from "react-icons/fa";
-import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { TbStethoscope } from "react-icons/tb";
 import Footer from './Footer';
+// import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function Service() {
   return (
@@ -16,8 +15,10 @@ function Service() {
         <div className="container">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: '500px' }}>
             <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Services</h5>
-            <h1 className="display-4" style={{ color: "#1D2A4D", fontSize: "6rem", fontWeight: 400 }}>Excellent Medical Services</h1>
-          </div>
+            <h1 className="display-4" style={{ color: "#1D2A4D", fontSize: "4.5rem", fontWeight: 400 }}>Excellent Medical Services</h1>
+            </div>
+            <h2 style={{  paddingTop:'10px' , padddingBotton:'10px',fontSize: "3rem", fontWeight: 300 }}>doctor service</h2> <br/>
+
           <div className="row g-5">
             <div className="col-lg-4 col-md-6">
               <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
@@ -26,9 +27,9 @@ function Service() {
                 </div>
                 <h4 className="mb-3">Emergency Care</h4>
                 <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-                </a>
+                {/* <a className="btn btn-lg btn-primary rounded-pill" href="">
+                   <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a> 
+                </a> */}
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -38,10 +39,9 @@ function Service() {
                 </div>
                 <h4 className="mb-3">Operation & Surgery</h4>
                 <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
+                {/* <a className="btn btn-lg btn-primary rounded-pill" href="">
                   <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -52,11 +52,14 @@ function Service() {
                 </div>
                 <h4 className="mb-3">Outdoor Checkup</h4>
                 <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
+                {/* <a className="btn btn-lg btn-primary rounded-pill" href="">
                   <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-                </a>
+                </a> */}
               </div>
             </div>
+
+            <h2 style={{ paddingTop:'10px' , padddingBotton:'10px',fontSize: "3rem", fontWeight: 300 }}>Patient service</h2> <br/>
+
             <div className="col-lg-4 col-md-6">
               <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                 <div className="service-icon mb-4">
@@ -65,9 +68,9 @@ function Service() {
                 </div>
                 <h4 className="mb-3">Ambulance Service</h4>
                 <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a>
-                </a>
+                {/* <a className="btn btn-lg btn-primary rounded-pill" href="">
+                  <a href="#" style={{ color: 'white', fontSize: '25px' }}><BsFillArrowRightCircleFill /></a> 
+                </a> */}
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -77,9 +80,9 @@ function Service() {
                 </div>
                 <h4 className="mb-3">Medicine & Pharmacy</h4>
                 <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
-                  <BsFillArrowRightCircleFill className="text-white" size={20} />
-                </a>
+                {/* <a className="btn btn-lg btn-primary rounded-pill" href="">
+               <BsFillArrowRightCircleFill className="text-white" size={20} /> 
+                </a> */}
               </div>
             </div>
             <div className="col-lg-4 col-md-6">
@@ -89,9 +92,9 @@ function Service() {
                 </div>
                 <h4 className="mb-3">Blood Testing</h4>
                 <p className="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
-                <a className="btn btn-lg btn-primary rounded-pill" href="">
+                {/* <a className="btn btn-lg btn-primary rounded-pill" href="">
 
-                  <BsFillArrowRightCircleFill className="text-white" size={20} />          </a>
+                  <BsFillArrowRightCircleFill className="text-white" size={20} />          </a> */}
               </div>
             </div>
 
@@ -100,13 +103,15 @@ function Service() {
       </div>
       {/* services end  */}
 
+
+
+
       {/* serach Start  */}
-      <div className="container-fluid bg-primary my-5 py-5">
+      {/* <div className="container-fluid bg-primary my-5 py-5">
         <div className="container py-5">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: "500px" }}>
             <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Find A Doctor</h5>
-            <h1 className="display-4 mb-4">Find A Healthcare Professionals</h1>
-            <h5 className="text-white fw-normal">Duo ipsum erat stet dolor sea ut nonumy tempor. Tempor duo lorem eos sit sed ipsum takimata ipsum sit est. Ipsum ea voluptua ipsum sit justo</h5>
+            <h1 className="display-4 mb-4"> request an appointment </h1>
           </div>
           <div className="mx-auto" style={{ width: "100%", max_width: "600px" }}>
             <div className="input-group">
@@ -121,14 +126,12 @@ function Service() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* search end */}
-
-
       {/* specialité Start */}
-      <div className="services">
+       {/* <div className="services">
         <h1 className="title">MEDICAL SERVICES</h1>
-        <p className="sub-title">Our WEB site offer you  the complete range of many services.</p>
+        <p className="sub-title">Our WEB site offer you  the Speciality.</p>
         <div className="list-services">
            <Link to="/OurDoctor" className="nav-item nav-link"> 
             <div className="box">
@@ -158,7 +161,7 @@ function Service() {
           </div>
 
         </div>
-      </div>
+      </div>  */}
       {/* specialité end */}
 <Footer/>
     </div>

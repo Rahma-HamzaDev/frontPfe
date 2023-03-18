@@ -338,7 +338,12 @@ text-align: center;
     --light: #EEF9FF;
     --dark: #091E3E;
 }
-
+h2{
+    background-color: #305b9b;
+  color: #EFF5F9;
+    text-align: center;
+    height: 70px;
+}
 h1,
 h2,
 .font-weight-bold {
@@ -355,6 +360,10 @@ h5,
 h6,
 .font-weight-medium {
     font-weight: 500 !important;
+}
+.card{
+    position: absolute; 
+    top:10px; left:0px; right:0px; margin:auto; display:block; text-align:center;
 }
 
 .btn {
@@ -565,6 +574,33 @@ h6,
     z-index: -1;
 }
 
+.damier__item {
+    display: -ms-flexbox;
+    display: flex;
+    height: 38vw;
+    max-height: 643.5px;
+}
+.damier__image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    min-width: 100%;
+    max-height: 120%;
+    max-width: 1000%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.damier__media img {
+    max-width: 100%;
+}
+@media (max-width: 1440px){
+.damier__item {
+    max-height: 567px;
+}}
 .team-item:hover .team-text::after,
 .service-item:hover .bg-light::after {
     opacity: 1;
@@ -659,3 +695,87 @@ h6,
     width: 120px;
     height: 120px;
 }
+.Card{
+    display: flex;
+    /* padding-Top :20px; */
+    padding-bottom :50px;
+    margin:50px;
+   
+}
+
+.read_main{
+    width: 100%;
+    float: left;
+    margin-top: 40px;
+}
+.padding_top0{
+    padding-top: 40px;
+}
+.lorem_text{
+    width: 100%;
+    float: left;
+    color: #666666;
+    margin-left: 0px;
+    font-size: 16px;
+}
+
+
+.layout_padding {
+    padding-top:5px;
+    padding-bottom: 20px;
+}
+.highest_text{
+    width: 100%;
+    float: left;
+    font-size: 28px;
+    color: #303036;
+    font-weight: bold;
+}
+/* .call_box {
+    width: 100%;
+    float: left;
+    background-color: #1198c2;
+    height: auto;
+    padding: 40px 20px 20px 20px;
+}
+.call_box:hover{
+    background-color: #09d066;
+}
+.call_image{
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.emergency_text{
+    width: 100%;
+    float: left;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+}
+.call_text{
+    width: 100%;
+    float: left;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.dolor_text{
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    color: #ffffff;
+    margin-left: 0px;
+}
+.call_box.active{
+    background-color: #09d066;
+}
+.doctor_section{
+    width: 100%;
+    float: left;
+    padding-bottom: 90px;
+} */
