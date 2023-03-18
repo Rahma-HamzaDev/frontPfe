@@ -1,5 +1,6 @@
 import React from 'react'
-import './Home/Style.css'
+import'../Home/Style.css'
+import { Link } from 'react-router-dom';
 function MenuAd() {
   return (
     <div>
@@ -8,7 +9,7 @@ function MenuAd() {
         <Link to="/" className="navbar-brand">
         
          <h1 className="m-0 text-primary"><i className="fa fa-tooth me-2">
-         <img src={logo} width='40px' height='40px' /> 
+         <img src='' width='40px' height='40px' /> 
           </i>Dr Medicale</h1>
 
         </Link>

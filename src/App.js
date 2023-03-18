@@ -5,7 +5,7 @@ import { BrowserRouter as Router , Route ,Routes } from 'react-router-dom';
 import Menu from './Compenent/Home/Menu';
 import { PriceChange } from '@mui/icons-material';
 import Principale from './Compenent/Home/Principale';
-import About from './Compenent/Home/About'
+// import About from './Compenent/Home/About'
 import TopBar from './Compenent/Home/TopBar';
 import Service from './Compenent/Home/Service';
 import Register2 from './Compenent/Home/Register2';
@@ -24,7 +24,7 @@ function App() {
       <Menu/>
  <Routes>
   <Route path="/" element ={<Principale/>} />
-  <Route path="/About" element ={<About/>} />
+  {/* <Route path="/About" element ={<About/>} /> */}
   <Route path="/Service" element ={<Service/>} />
   <Route path="/Register2" element ={<Register2/>} />
   <Route path="/Contact" element ={<Contact/>} />

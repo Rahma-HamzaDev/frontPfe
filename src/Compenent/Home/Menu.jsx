@@ -27,7 +27,7 @@ function Menu() {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto py-0">
           <Link to="/" className="nav-item nav-link">Home</Link>
-            <Link to="/About" className="nav-item nav-link">About</Link>
+            {/* <Link to="/About" className="nav-item nav-link">About</Link> */}
             <Link to="/service" className="nav-item nav-link">Service</Link>
               <Link to="/Register2" className="nav-item nav-link">Register</Link>
             <Link to="/contact" className="nav-item nav-link">Contact</Link>
