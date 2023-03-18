@@ -6,7 +6,7 @@ import { BrowserRouter as Router , Route ,Routes } from 'react-router-dom';
 import Principale from '../Home/Principale';
 import MenuDoctor from './MenuDoctor';
 
-function Appdoctor() {
+function PrincipaleDO() {
   return (
   
 
@@ -14,4 +14,4 @@ function Appdoctor() {
   )
 }
 
-export default Appdoctor
+export default PrincipaleDO

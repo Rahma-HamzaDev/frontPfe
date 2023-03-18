@@ -18,10 +18,10 @@ function MenuAd() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto py-0">
-          <Link to="/" className="nav-item nav-link">Home</Link>
+          <Link to="/" className="nav-item nav-link"></Link>
             <Link to="/Notification" className="nav-item nav-link">Notification</Link>
-            <Link to="/GestiomMed" className="nav-item nav-link">Gestion des Médecin</Link>
-           
+            <Link to="/GestionMed" className="nav-item nav-link">validation des Médecin </Link>
+            <Link to="/ListMedecin" className="nav-item nav-link">List des Médecin</Link>
           </div>
        
         </div>
