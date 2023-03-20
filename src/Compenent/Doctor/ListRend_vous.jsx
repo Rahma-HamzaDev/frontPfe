@@ -1,8 +1,13 @@
 import React from 'react'
-
+import MenuDoctor from './MenuDoctor';
 function ListRend_vous() {
   return (
-    <div>ListRend_vous</div>
+    <div>
+        <MenuDoctor/>
+      
+      
+      
+      ListRend_vous</div>
   )
 }
 

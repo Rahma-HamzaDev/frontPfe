@@ -26,20 +26,22 @@ function Menu() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto py-0">
-          <Link to="/" className="nav-item nav-link">Home</Link>
-            {/* <Link to="/About" className="nav-item nav-link">About</Link> */}
+          <Link to="/" className="nav-item nav-link">acceuil</Link>
+         <Link to="/About" className="nav-item nav-link">A Propos </Link> 
             <Link to="/service" className="nav-item nav-link">Service</Link>
-              <Link to="/Register2" className="nav-item nav-link">Register</Link>
+              <Link to="/Register2" className="nav-item nav-link">Inscrit</Link>
             <Link to="/contact" className="nav-item nav-link">Contact</Link>
-            <Link to="/AppAdmin" className="nav-item nav-link">Admin</Link>
-
+            {/* <Link to="/AppAdmin" className="nav-item nav-link">Admin</Link> */}
+            <Link to="/ListPatient" className="nav-item nav-link">Doctor</Link>
+            {/* <Link to="/PrincipalePa" className="nav-item nav-link">Paient</Link> */}
           </div>
-          <button type="button" className="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"><i className="fa fa-search"></i></button>
-          <Link to="/Login" className="btn btn-primary py-2 px-4 ms-3">Sign In</Link>
+          <button type="button" className="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"></button>
+          <Link to="/Login" className="btn btn-primary py-2 px-4 ms-3" size={20}>Connecter</Link>
         </div>
       </nav>
     </div>
   
+
   )
 }
 

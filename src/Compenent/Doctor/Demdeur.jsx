@@ -1,8 +1,12 @@
 import React from 'react'
-
+import MenuDoctor from './MenuDoctor';
 function Demdeur() {
   return (
-    <div>Demdeur</div>
+    <div>
+      
+      <MenuDoctor/>
+      
+      Demandeur</div>
   )
 }
 

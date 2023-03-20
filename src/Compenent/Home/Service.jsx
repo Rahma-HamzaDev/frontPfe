@@ -106,63 +106,7 @@ function Service() {
 
 
 
-      {/* serach Start  */}
-      {/* <div className="container-fluid bg-primary my-5 py-5">
-        <div className="container py-5">
-          <div className="text-center mx-auto mb-5" style={{ maxWidth: "500px" }}>
-            <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Find A Doctor</h5>
-            <h1 className="display-4 mb-4"> request an appointment </h1>
-          </div>
-          <div className="mx-auto" style={{ width: "100%", max_width: "600px" }}>
-            <div className="input-group">
-              <select className="form-select border-primary w-25" style={{ height: "60px" }}>
-                <option selected>Department</option>
-                <option value="1">Department 1</option>
-                <option value="2">Department 2</option>
-                <option value="3">Department 3</option>
-              </select>
-              <input type="text" className="form-control border-primary w-50" placeholder="Keyword" />
-              <button className="btn btn-dark border-0 w-25">Search</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* search end */}
-      {/* specialité Start */}
-       {/* <div className="services">
-        <h1 className="title">MEDICAL SERVICES</h1>
-        <p className="sub-title">Our WEB site offer you  the Speciality.</p>
-        <div className="list-services">
-           <Link to="/OurDoctor" className="nav-item nav-link"> 
-            <div className="box">
-              <h1>familly care</h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-           </Link> 
-          <div className="box">
-            <h1>URGENT CARE</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>Spectialist care</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>PEDIATRIC</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>DENTIST</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>familly care</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-
-        </div>
-      </div>  */}
-      {/* specialité end */}
+   
 <Footer/>
     </div>
   )

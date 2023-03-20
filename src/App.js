@@ -5,7 +5,7 @@ import { BrowserRouter as Router , Route ,Routes } from 'react-router-dom';
 import Menu from './Compenent/Home/Menu';
 import { PriceChange } from '@mui/icons-material';
 import Principale from './Compenent/Home/Principale';
-// import About from './Compenent/Home/About'
+ import About from './Compenent/Home/About'
 import TopBar from './Compenent/Home/TopBar';
 import Service from './Compenent/Home/Service';
 import Register2 from './Compenent/Home/Register2';
@@ -27,6 +27,22 @@ import ListMedcin from './Compenent/Admin/ListMedcin';
 
 
 import Consultation from './Compenent/Doctor/Consultation' ;
+import ListPatient from './Compenent/Doctor/ListPatient';
+import Insertpatient from './Compenent/Doctor/Insertpatient';
+import MenuDoctor from './Compenent/Doctor/MenuDoctor';
+
+
+
+import MenuPa from './Compenent/patient/MenuPa';
+import ConsPa from './Compenent/patient/ConsPa';
+import DossiersPa from './Compenent/patient/DossiersPa';
+import FichePa from './Compenent/patient/FichePa';
+import MesRend from './Compenent/patient/MesRend';
+import OrdPa from './Compenent/patient/OrdPa';
+import PrincipalePa from './Compenent/patient/PrincipalePa';
+
+
+
 
 function App() {
   return (
@@ -35,7 +51,7 @@ function App() {
       <Menu/>
  <Routes>
   <Route path="/" element ={<Principale/>} />
-  {/* <Route path="/About" element ={<About/>} /> */}
+ <Route path="/About" element ={<About/>} /> 
   <Route path="/Service" element ={<Service/>} />
   <Route path="/Register2" element ={<Register2/>} />
   <Route path="/Contact" element ={<Contact/>} />
@@ -52,6 +68,22 @@ function App() {
 
    
   <Route path="/OurDoctor" element ={<OurDoctor/>} />
+  <Route path="/Insertpatient" element ={<Insertpatient/>} />
+  <Route path="/ListPatient" element ={<ListPatient/>} />
+  <Route path="/MenuDoctor" element ={<MenuDoctor/>} />
+  <Route path="/MenuDoctor" element ={<Consultation/>} />
+
+
+
+  <Route path="/PrincipalePa" element ={<PrincipalePa/>} />
+  <Route path="/MenuPa" element ={<MenuPa/>} />
+  <Route path="/MesRend" element ={<MesRend/>} />
+  <Route path="/DossiersPa" element ={<DossiersPa/>} />
+  <Route path="/ConsPa" element ={<ConsPa/>} />
+  <Route path="/OrdPa" element ={<OrdPa/>} />
+  <Route path="/FichePa" element ={<FichePa/>} />
+
+
 
 
 

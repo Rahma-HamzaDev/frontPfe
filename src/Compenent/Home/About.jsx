@@ -20,6 +20,23 @@ import Footer from './Footer';
 function About() {
     return (
         <div>
+
+      {/* hero start  */}
+      <div className="container-fluid bg-primary py-5 mb-5 hero-header2">
+        <div className="container py-5">
+          <div className="row justify-content-start">
+            <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "100px" ,}}>
+              <h1 className="display-1 mb-md-4" style={{ fontSize: "50px"  , textAlign :"center" , color:'black' , paddingRight:'200px'}}>Qui Nous  sommes Nous!!</h1>
+              <div className="pt-2">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* hero end  */}
+
+
             {/* About start */}
             <div className="container-fluid py-5" style={{ padingTop: "20px" }}>
                 <div className="container">
@@ -31,8 +48,8 @@ function About() {
                         </div>
                         <div className="col-lg-7">
                             <div className="mb-4">
-                                <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
-                                <h1 className="display-4">Best Medical Care For Yourself and Your Family</h1>
+                                <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">A propos</h5>
+                                <h1 className="display-4">Nous sommes</h1>
                             </div>
                             <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
 
@@ -47,7 +64,7 @@ function About() {
 
 {/* def Patient start  */}
 
-<div className='Card'>
+{/* <div className='Card'>
      <Card className='card1' style={{ width: '28rem' }}>
       <Card.Img variant="top" src={dr} />
       <Card.Body>
@@ -87,7 +104,7 @@ function About() {
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>   
-    </div>  
+    </div>   */}
 
 
    {/* def Patient end  */}

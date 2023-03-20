@@ -171,10 +171,31 @@ div {
 .hero-header {
     background: url(./Images/backround.png) ;
     background-size: cover;
-    /* height: 500px; */
+    height: 500px;
     
 }
+.hero-header1 {
+    background: url(./Images/blog-2.jpg) ;
+    background-size: cover;
+    opacity:80%;
+     /* height: 400px;  */
+    
+}
+.hero-header2 {
+    background: url(./Images/img1.jpg) ;
+    background-size: cover;
+  
+   height: 500px;
 
+    
+}
+.hero-header3 {
+    background: url(./Images/docteur.png) ;
+    background-size: cover;
+    height: 400px;
+
+    
+}
 .service-item {
     position: relative;
     height: 350px;
@@ -210,6 +231,7 @@ div {
     bottom: -24px;
     opacity: 1;
 }
+
 
 /* .container-fluid .container{
     background-image:url('./Images/welcom.jpg');

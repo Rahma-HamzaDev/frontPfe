@@ -5,15 +5,10 @@ import imageM from './Images/doctor.jpg';
 import Defdr from './Images/doctorsmart.jpg' ;
 import Defpa from './Images/espace patient.jpg'
 import Footer from './Footer';
- import {  FaUserNurse,FaAmbulance, FaProcedures, FaMicroscope, FaUserInjured } from "react-icons/fa";
- import { MdOutlineFreeCancellation , MdOutlineContactMail} from "react-icons/md";
-
-
-
+import {  FaUserNurse,FaAmbulance, FaProcedures, FaMicroscope, FaUserInjured } from "react-icons/fa";
+import { MdOutlineFreeCancellation , MdOutlineContactMail} from "react-icons/md";
 // import { BsFillArrowRightCircleFill } from "react-icons/bs";
 // import { TbStethoscope } from "react-icons/tb";
-
-
 // import Carousel from 'react-bootstrap/Carousel';
 // import carousel2 from './Images/carousel-2.jpg';
 // import carsouse1 from './Images/backround.png'
@@ -46,8 +41,8 @@ function Principale() {
       <div className="container-fluid bg-primary py-5 mb-5 hero-header">
         <div className="container py-5">
           <div className="row justify-content-start">
-            <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px" }}>
-              <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>Welcome To D medicale</h5>
+            <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "80px" }}>
+              <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>Welcome To Dr_Medicale</h5>
               <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "40px" }}>Best Solution In Your City To Make an appointment with your doctor quickly!</h1>
               <div className="pt-2">
                 <Link to='/RegisterDoctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Doctor</Link>
@@ -75,7 +70,7 @@ function Principale() {
             </div>
             <div className="col-lg-7">
               <div className="mb-4">
-                <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
+                <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Presentation</h5>
                 <h1 className="display-4">Best Medical Care For Yourself </h1>
               </div>
               <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
@@ -124,7 +119,7 @@ function Principale() {
             <div className="col-md-6 padding_top0">
             <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" >about Doctor</h5>
          
-                <h1 className="highest_text">space Doctor</h1>
+                <h1 className="highest_text">Espace Médecin</h1>
                 <p className="lorem_text">
                   Lorem ipsum dolor sit amet,
                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -156,7 +151,7 @@ function Principale() {
             <div className="col-md-6 padding_top0">
             <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">About Patient</h5>
          
-                <h1 className="highest_text">space patient</h1>
+                <h1 className="highest_text">Espace patient</h1>
                 <p className="lorem_text">Lorem ipsum dolor sit amet,
                  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
