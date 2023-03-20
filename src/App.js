@@ -25,14 +25,18 @@ import MenuAd from './Compenent/Admin/MenuAd';
 import ListMedcin from './Compenent/Admin/ListMedcin';
 
 
-
+// Doctor interface
 import Consultation from './Compenent/Doctor/Consultation' ;
+import Ordonnance from './Compenent/Doctor/Ordonnance' ;
 import ListPatient from './Compenent/Doctor/ListPatient';
 import Insertpatient from './Compenent/Doctor/Insertpatient';
 import MenuDoctor from './Compenent/Doctor/MenuDoctor';
-
-
-
+import ListRend_vous from './Compenent/Doctor/ListRend_vous';
+import Demdeur from './Compenent/Doctor/Demdeur';
+import NotifactionDR from './Compenent/Doctor/NotifactionDR';
+import Fiche from './Compenent/Doctor/Fiche';
+//
+// patient interface
 import MenuPa from './Compenent/patient/MenuPa';
 import ConsPa from './Compenent/patient/ConsPa';
 import DossiersPa from './Compenent/patient/DossiersPa';
@@ -40,6 +44,7 @@ import FichePa from './Compenent/patient/FichePa';
 import MesRend from './Compenent/patient/MesRend';
 import OrdPa from './Compenent/patient/OrdPa';
 import PrincipalePa from './Compenent/patient/PrincipalePa';
+//
 
 
 
@@ -67,12 +72,17 @@ function App() {
    <Route path="/MenuAd" element ={<MenuAd/>} /> 
 
    
-  <Route path="/OurDoctor" element ={<OurDoctor/>} />
+ 
   <Route path="/Insertpatient" element ={<Insertpatient/>} />
   <Route path="/ListPatient" element ={<ListPatient/>} />
   <Route path="/MenuDoctor" element ={<MenuDoctor/>} />
   <Route path="/MenuDoctor" element ={<Consultation/>} />
+  <Route path="/ListRend_vous" element ={<ListRend_vous/>} />
+  <Route path="/Demdeur" element ={<Demdeur/>} />
+  <Route path="/Fiche" element ={<Fiche/>} />
+  <Route path="/Ordonnance" element ={<Ordonnance/>} />
 
+  <Route path="/NotifactionDR" element ={<NotifactionDR/>} />
 
 
   <Route path="/PrincipalePa" element ={<PrincipalePa/>} />
@@ -82,6 +92,7 @@ function App() {
   <Route path="/ConsPa" element ={<ConsPa/>} />
   <Route path="/OrdPa" element ={<OrdPa/>} />
   <Route path="/FichePa" element ={<FichePa/>} />
+  <Route path="/OurDoctor" element ={<OurDoctor/>} />
 
 
 

@@ -19,149 +19,136 @@ function ListPatient() {
 
   const [patients, setPatient] = useState([]);
   useEffect(() => {
-      GetListPatient();
+    GetListPatient();
   }, []);
   const GetListPatient = async () => {
 
-      //affiche les patients 
+    //affiche les patients 
 
-      await fetchPatient()
-          .then((res) => {
-              setPatient(res.data);
-          });
+    await fetchPatient()
+      .then((res) => {
+        setPatient(res.data);
+      });
   }
   //delete patient 
-  const delPatient= async (_id) => {
-      await deletePatient(_id)
-      var newpatients = patients.filter((item) => {
-          return item._id !== _id
-      })
-      setPatient(newpatients);
+  const delPatient = async (_id) => {
+    await deletePatient(_id)
+    var newpatients = patients.filter((item) => {
+      return item._id !== _id
+    })
+    setPatient(newpatients);
   }
-//preparer les columns
-const columns = [
-  {
-    label: "numFich",
-    name: "numFich",
-    options: {
+  //preparer les columns
+  const columns = [
+    {
+      label:"numFich",
+      name:"cinPa"
+    },
+    {
+      label: "CIN",
+      name: "cinPa", 
+      //trie solent designattion 
       filter: true,
       sort: true,
-     }
-  
-},
-
-  // {
-  //     name: "Date de creation",
-      
-  //     label: "Date de creation"
-  //     //trie solent designattion 
-  //     // filter: true,
-  //     // sort: true,
-  // },
-  {
-    label: "CIN",
-    name: "CIN"
-  },
-  {
-    label: "Nom",
-    name: "Nom"
-},
-
-{
-  label: "Prénom",
-  name: "Prénom"
-},
-  {
-    label: "Email",
-    name: "Email"
-  },
-
-{
-  label: "Date de Naissance",
-  name: "Date de Naissance"
-},
-
-{
-  label: "N°Teléphone",
-  name: "N°Teléphone"
-},
-{
-  label: "Adresse",
-  name: "Adresse"
-},
-{
-  label: "sexe",
-  name: "sexe"
-},
-
-
-  {
+    },
+    {
+      label: "Nom",
+      name: "nompatient"
+    },
+    {
+      label: "Prénom",
+      name: "prenompatient"
+    },
+    {
+      label: "Email",
+      name: "emailpatient"
+    },
+    {
+      label: "Date de Naissance",
+      name: "dateNais"
+    },
+    {
+      label: "Adresse",
+      name: "adressepatient"
+    },
+    {
+      label: "sexe",
+      name: "sexepatient"
+    },
+    {
+      label: "N°Teléphone",
+      name: "numtelPa"
+    },
+    {
       name: "_id",
       label: "Actions",
       options: {
-          customBodyRender: (value) => (
-              <div>
-                  <IconButton >
-                      {<Link to={"/patient/edit/" + value} >
-                          <EditIcon color='secondary' />
-                      </Link>
-                      }
-                  </IconButton>
-                  <IconButton onClick={() => { delPatient(value) }}>
-                      <DeleteIcon sx={{ color: pink[500] }} />
-                  </IconButton>
-              </div>
-          )
+        customBodyRender: (value) => (
+          <div>
+            <IconButton >
+              {<Link to={"/patient/edit/" + value} >
+                <EditIcon color='secondary' />
+              </Link>
+              }
+            </IconButton>
+            <Button type="submit">Consultation</Button>
+            <IconButton onClick={() => { delPatient(value) }}>
+              <DeleteIcon sx={{ color: pink[500] }} />
+            </IconButton>
+          </div>
+        )
       }
-  },
-];
+    },
+  ];
 
 
   return (
     <div>
-    <MenuDoctor/>
+      <MenuDoctor />
 
-    {/* hero start  */}
-    <div className="container-fluid bg-primary py-5 mb-5 hero-header3">
-            <div className="container py-5">
-              <div className="row justify-content-start">
-                <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px" , textAlign :"center"}}>
-                
-                  <div className="pt-2">
-    
-                  </div>
-                </div>
+      {/* hero start  */}
+      <div className="container-fluid bg-primary py-5 mb-5 hero-header3">
+        <div className="container py-5">
+          <div className="row justify-content-start">
+            <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px", textAlign: "center" }}>
+
+              <div className="pt-2">
+
               </div>
             </div>
           </div>
-          {/* hero end  */}
+        </div>
+      </div>
+      {/* hero end  */}
 
- {/* //Button */}
+      {/* //Button */}
 
- <div style={{ padding: 5, margin: 5 }}>
-     <Button
-         color="success"
-         startIcon={<AddCircleIcon />}
-         variant="contained"
-     >
-         {/* ajouter patient  */}
-         {<Link to={"/InsertPatient"} style={{
-             textDecoration:
-                 "none", color: "white"
-         }}>
-             Ajouter Patient
-         </Link>
-         }
-     </Button>
- </div>
+      <div style={{ padding: 5, margin: 5 }}>
+        <Button
+          color="success"
+          startIcon={<AddCircleIcon />}
+          variant="contained"
+        >
+          
+          {/* ajouter patient  */}
+          {<Link to={"/InsertPatient"} style={{
+            textDecoration:
+              "none", color: "white"
+          }}>
+            Ajouter Patient
+          </Link>
+          }
+        </Button>
 
- <MUIDataTable
-     title="Liste des Patients"
-     data={patients}
-     columns={columns}
- />
+      </div>
 
-</div>
+      <MUIDataTable
+        title="Liste des Patients"
+        data={patients}
+        columns={columns}
+      />
+
+    </div>
   )
 }
 
