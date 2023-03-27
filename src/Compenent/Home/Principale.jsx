@@ -43,7 +43,8 @@ function Principale() {
           <div className="row justify-content-start">
             <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "80px" }}>
               <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>Welcome To Dr_Medicale</h5>
-              <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "40px" }}>Best Solution In Your City To Make an appointment with your doctor quickly!</h1>
+              <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "40px" }}>
+              Meilleure solution pour une relation médecins-patients!</h1>
               <div className="pt-2">
                 <Link to='/RegisterDoctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Doctor</Link>
                 <Link to='/RegisterPatient'><div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Patient</div>
@@ -71,7 +72,7 @@ function Principale() {
             <div className="col-lg-7">
               <div className="mb-4">
                 <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Presentation</h5>
-                <h1 className="display-4">Best Medical Care For Yourself </h1>
+                <h1 className="display-4">Meilleure solution pour une relation médecins-patients </h1>
               </div>
               <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
               <div className="row g-3 pt-3">

@@ -17,6 +17,6 @@ export const deletePatient = async (patientId) => {
 }
 
 export const editPatient = (patient) => {
-    return Api.put(PATIENT_API + '/' + patient.id, patient);
+    return Api.put(PATIENT_API + '/' + patient._id, patient);
 }
 

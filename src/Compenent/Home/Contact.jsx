@@ -1,6 +1,8 @@
 import React from 'react'
-import Footer from './Footer'
-
+import Footer from './Footer';
+import {  HiLocationMarker} from "react-icons/hi";
+import {  AiFillPhone} from "react-icons/ai";
+import {  BsFillEnvelopeCheckFill} from "react-icons/bs";
 function Contact() {
   return (
     <div className="container-fluid pt-5">
@@ -13,25 +15,25 @@ function Contact() {
           <div className="col-lg-4">
             <div className="bg-light rounded d-flex flex-column align-items-center justify-content-center text-center" style={{height: '200px'}}>
               <div className="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style={{width: '100px', height: '70px', transform: 'rotate(-15deg)'}}>
-                <i className="fa fa-2x fa-location-arrow text-white" style={{transform: 'rotate(15deg)'}}></i>
+                <HiLocationMarker style={{transform: 'rotate(15deg)',fontSize:40 ,color:'white'}}/>
               </div>
-              <h6 className="mb-0">123 Street, New York, USA</h6>
+              <h6 className="mb-0">Tunisie , Sfax </h6>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="bg-light rounded d-flex flex-column align-items-center justify-content-center text-center" style={{height: '200px'}}>
               <div className="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style={{width: '100px', height: '70px', transform: 'rotate(-15deg)'}}>
-                <i className="fa fa-2x fa-phone text-white" style={{transform: 'rotate(15deg)'}}></i>
+                <AiFillPhone style={{transform: 'rotate(15deg)',fontSize:40 ,color:'white'}}/>
               </div>
-              <h6 className="mb-0">+012 345 6789</h6>
+              <h6 className="mb-0">+216 22 258 369</h6>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="bg-light rounded d-flex flex-column align-items-center justify-content-center text-center" style={{height: '200px'}}>
               <div className="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style={{width: '100px', height: '70px', transform: 'rotate(-15deg)'}}>
-                <i className="fa fa-2x fa-envelope-open text-white" style={{transform: 'rotate(15deg)'}}></i>
+                <BsFillEnvelopeCheckFill style={{transform: 'rotate(15deg)' ,fontSize:40 ,color:'white'}}/>
               </div>
-              <h6 className="mb-0">info@example.com</h6>
+              <h6 className="mb-0">Admin@example.com</h6>
             </div>
           </div>
         </div>

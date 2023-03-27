@@ -68,13 +68,14 @@ function ListPatient() {
       name: "dateNais"
     },
     {
-      label: "Adresse",
-      name: "adressepatient"
-    },
-    {
       label: "sexe",
       name: "sexepatient"
     },
+    {
+      label: "Adresse",
+      name: "adressepatient"
+    },
+   
     {
       label: "N°Teléphone",
       name: "numtelPa"

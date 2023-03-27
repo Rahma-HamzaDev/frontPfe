@@ -35,18 +35,30 @@ function RegisterDoctor() {
           {/* value={name} onChange={handleNameChange}  */}
             <input type="number" className="form-control bg-light border-0" placeholder="Your Phone NUmber " style={{ height: '55px' }}/>
           </div>
+      
           <div className="col-12 col-sm-6">
           {/* value={email} onChange={handleEmailChange} */}
             <input type="email" className="form-control bg-light border-0" placeholder="Your Email" style={{ height: '55px' }}  />
           </div>
+
           <div className="col-12 col-sm-6">
           <input type="password" className="form-control bg-light border-0" placeholder="Your password" style={{ height: '55px' }}  />
           </div>
+
           <div className="col-12 col-sm-6">
           <input type="password" className="form-control bg-light border-0" placeholder="confirm password" style={{ height: '55px' }}  />
           </div>
+          <div className="col-12 col-sm-6">
+ 
+ <select className="form-control bg-light border-0"  style={{ height: '55px' , width:'500px' }}>
+ <option value="option1">Choisir vostre Specialité </option>
+<option value="option1">Specialité 1</option>
+<option value="option2">Specialité 2</option>
+<option value="option3">Specialité 3</option>
+</select>
+ </div>
           <div className="col-12">
-            <button className="btn btn-primary w-100 py-3" type="submit" style={{fontSize:"25px"}}>Inscrit</button>
+            <button className="btn btn-primary w-100 py-3" type="submit" style={{width:"30px",fontSize:"30px"}}>Inscrit</button>
           </div>
         </div>
       </form>

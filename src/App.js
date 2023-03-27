@@ -14,11 +14,9 @@ import Contact from './Compenent/Home/Contact';
 import Login from './Compenent/Home/Login';
 import RegisterPatient from './Compenent/Home/RegisterPatient';
 import RegisterDoctor from './Compenent/Home/RegisterDoctor';
-import OurDoctor from './Compenent/Home/OurDoctor'
+import OurDoctor from './Compenent/patient/OurDoctor'
 import ButtonBar from './Compenent/Home/ButtonBar';
 
-
-import AppAdmin from './Compenent/Admin/AppAdmin';
 import GestionMed from './Compenent/Admin/GestionMed';
 import Notification from './Compenent/Admin/Notification';
 import MenuAd from './Compenent/Admin/MenuAd';
@@ -35,15 +33,27 @@ import ListRend_vous from './Compenent/Doctor/ListRend_vous';
 import Demdeur from './Compenent/Doctor/Demdeur';
 import NotifactionDR from './Compenent/Doctor/NotifactionDR';
 import Fiche from './Compenent/Doctor/Fiche';
+import EditePatient from './Compenent/Doctor/EditePatient';
 //
 // patient interface
 import MenuPa from './Compenent/patient/MenuPa';
 import ConsPa from './Compenent/patient/ConsPa';
 import DossiersPa from './Compenent/patient/DossiersPa';
-import FichePa from './Compenent/patient/FichePa';
+
 import MesRend from './Compenent/patient/MesRend';
 import OrdPa from './Compenent/patient/OrdPa';
 import PrincipalePa from './Compenent/patient/PrincipalePa';
+import MediaCardSp from './Compenent/patient/MediaCardSp';
+import Sidebar from './Compenent/patient/Sidebar';
+import SidebarD from './Compenent/Doctor/SidebarD';
+import SidebarA from './Compenent/Admin/SidebarA';
+import Prendrerend_vous from './Compenent/patient/Prendrerend_vous';
+import SonDossier from './Compenent/patient/SonDossier';
+import ListMedPa from './Compenent/patient/ListMedPa';
+import MediaCardPa from './Compenent/patient/MediaCardPa';
+import MoncomptePa from './Compenent/patient/MoncomptePa';
+
+
 //
 
 
@@ -65,7 +75,7 @@ function App() {
   <Route path="/RegisterDoctor" element ={<RegisterDoctor/>} />
 
 
-   <Route path="/AppAdmin" element ={<AppAdmin/>} /> 
+  
    <Route path="/GestionMed" element ={<GestionMed/>} /> 
    <Route path="/Notification" element ={<Notification/>} /> 
    <Route path="/ListMedecin" element ={<ListMedcin/>} /> 
@@ -82,20 +92,24 @@ function App() {
   <Route path="/Fiche" element ={<Fiche/>} />
   <Route path="/Ordonnance" element ={<Ordonnance/>} />
 
+  <Route path="/Patient/edit/:id" element={<EditePatient/>}/>
+
   <Route path="/NotifactionDR" element ={<NotifactionDR/>} />
 
-
+{/* // */}
   <Route path="/PrincipalePa" element ={<PrincipalePa/>} />
   <Route path="/MenuPa" element ={<MenuPa/>} />
   <Route path="/MesRend" element ={<MesRend/>} />
   <Route path="/DossiersPa" element ={<DossiersPa/>} />
   <Route path="/ConsPa" element ={<ConsPa/>} />
   <Route path="/OrdPa" element ={<OrdPa/>} />
-  <Route path="/FichePa" element ={<FichePa/>} />
-  <Route path="/OurDoctor" element ={<OurDoctor/>} />
-
-
-
+  <Route path="/SonDossier" element ={<SonDossier/>} />
+  <Route path="/OurDoctor" element ={<OurDoctor/>} /> 
+  <Route path="/MediaCardSp" element ={<MediaCardSp/>} />
+  <Route path="/Prendrerend_vous" element ={<Prendrerend_vous/>} />
+  <Route path='/ListMedPa'element={<ListMedPa/>}/>
+  <Route path='/MediaCardPa'element={<MediaCardPa/>}/>
+  <Route path='/MoncomptePa'element={<MoncomptePa/>}/>
 
 
 
@@ -105,5 +119,6 @@ function App() {
   </Router>
   );
 }
+
 
 export default App;

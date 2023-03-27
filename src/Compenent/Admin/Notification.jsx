@@ -1,8 +1,14 @@
 import React from 'react'
+import SidebarA from './SidebarA'
 
 function Notification() {
   return (
-    <div>Notification</div>
+    <div>
+         <SidebarA/>
+         
+      Notification
+      
+      </div>
   )
 }
 

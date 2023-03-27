@@ -1,19 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import '../Home/Style.css';
+// import Sidebar from "./Sidebar";
+
+// import ListSpecialites from './ListSpecialites';
+
 import MenuPa from './MenuPa';
 
 function PrincipalePa() {
   return (
     <div>  
 <MenuPa/>
+{/* <Sidebar/> */}
    {/* hero start  */}
      <div className="container-fluid bg-primary py-5 mb-5 hero-header1">
      <div className="container py-5">
        <div className="row justify-content-start">
          <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px" }}>
            <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'black' }}>Bienvenue dans votre compte </h5>
-           <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "40px",color:'black' }}>La meilleure solution pour prendre rendez-vous avec votre médecin rapidement !</h1>
+           <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "30px",color:'black' }}>La meilleure solution pour prendre rendez-vous avec votre médecin rapidement !</h1>
           
          </div>
        </div>
@@ -43,24 +48,21 @@ function PrincipalePa() {
       </div>
       {/* search end */}
 
+{/* specialité Start */}
 
-
-
-
- 
-      {/* specialité Start */}
-      <div className="services">
-        <h1 className="title">MEDICAL SERVICES</h1>
-        <p className="sub-title">Our WEB site offer you  the Speciality.</p>
+<div className="services" > 
+        <h1 className="title"></h1>
+        <p className="sub-title">Notre Specialités</p>
         <div className="list-services">
            <Link to="/OurDoctor" className="nav-item nav-link"> 
+        
             <div className="box">
-              <h1>familly care</h1>
+              <h1> Generaliste </h1>
               <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
             </div>
            </Link> 
           <div className="box">
-            <h1>URGENT CARE</h1>
+            <h1>Dentaire </h1>
             <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
           </div>
           <div className="box">
@@ -72,7 +74,7 @@ function PrincipalePa() {
             <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
           </div>
           <div className="box">
-            <h1>DENTIST</h1>
+            <h1></h1>
             <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
           </div>
           <div className="box">
@@ -82,10 +84,15 @@ function PrincipalePa() {
 
         </div>
       </div> 
+
       {/* specialité end */}
+
+
+ 
    </div>
    
   )
 }
 
 export default PrincipalePa
+

@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 function RegisterPatient() {
+  // const [selectedOption, setSelectedOption] = useState('');
+
+  // const handleOptionChange = (event) => {
+  //   setSelectedOption(event.target.value);}
   return (
     <div>
 
@@ -26,31 +30,49 @@ function RegisterPatient() {
                          {/*   onSubmit={handleSubmit} */}
       <form >
         <div className="row g-3">
+
+        <div className="col-12 col-sm-6">
+          {/* value={name} onChange={handleNameChange}  */}
+            <input type="Number" className="form-control bg-light border-0" placeholder="Your Cin" style={{ height: '55px' }}/>
+          </div>
+
           <div className="col-12 col-sm-6">
           {/* value={name} onChange={handleNameChange}  */}
             <input type="text" className="form-control bg-light border-0" placeholder="Your first Name" style={{ height: '55px' }}/>
           </div>
-          <div className="col-12 col-sm-6">
-          {/* value={name} onChange={handleNameChange}  */}
-            <input type="text" className="form-control bg-light border-0" placeholder="Your last Name" style={{ height: '55px' }}/>
-          </div>
+
+          {/* <div className="col-12 col-sm-6"  style={{paddingRight:"160px"}} >
+      <label   className="form-control bg-light border-0">
+        <input type="radio" value="femme" style={{size:"100px"}}  checked={selectedOption === 'femme'} onChange={handleOptionChange} /> Femme 
+        <br/>
+        <input type="radio" value="homme" style={{size:"100px"}} checked={selectedOption === 'homme'} onChange={handleOptionChange} /> Homme
+      </label>
+      <p>Selected option: {selectedOption}</p>
+</div> */}
           <div className="col-12 col-sm-6">
           {/* value={name} onChange={handleNameChange}  */}
             <input type="number" className="form-control bg-light border-0" placeholder="Your Phone NUmber " style={{ height: '55px' }}/>
           </div>
+
           <div className="col-12 col-sm-6">
           {/* value={email} onChange={handleEmailChange} */}
             <input type="email" className="form-control bg-light border-0" placeholder="Your Email" style={{ height: '55px' }}  />
           </div>
+
           <div className="col-12 col-sm-6">
           <input type="password" className="form-control bg-light border-0" placeholder="Your password" style={{ height: '55px' }}  />
           </div>
+
           <div className="col-12 col-sm-6">
           <input type="password" className="form-control bg-light border-0" placeholder="confirm password" style={{ height: '55px' }}  />
           </div>
+
+   
+
           <div className="col-12">
             <button className="btn btn-primary w-100 py-3" type="submit" style={{fontSize:"25px"}}>Inscrit</button>
           </div>
+
         </div>
       </form>
     </div>

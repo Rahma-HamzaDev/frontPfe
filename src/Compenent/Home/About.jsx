@@ -11,12 +11,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaUserMd, FaAmbulance, FaProcedures, FaMicroscope, FaPills } from "react-icons/fa";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { TbStethoscope } from "react-icons/tb";
-import price1 from './Images/price-1.jpg';
-import price2 from './Images/price-2.jpg';
-import price3 from './Images/price-3.jpg';
-import price4 from './Images/price-4.jpg';
-import Footer from './Footer';
 
+import Footer from './Footer';
 function About() {
     return (
         <div>

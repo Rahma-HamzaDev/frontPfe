@@ -1,67 +1,71 @@
 import React from 'react'
-import './Style.css'
-
+import './Style.css';
+import { HiLocationMarker } from "react-icons/hi";
+import { AiFillPhone } from "react-icons/ai";
+import { BsFillEnvelopeCheckFill, BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
+import { FaAngleRight } from "react-icons/fa";
 function Footer() {
-  return (
-    <>
-    <footer className="container-fluid bg-dark text-light mt-5 py-5">  
+    return (
+        <>
+            <footer className="container-fluid bg-dark text-light mt-5 py-5">
 
-    <div className="container py-5" >
-        <div className="row g-5">
-            <div className="col-lg-3 col-md-6">
-                <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
-                <p className="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
-                <p className="mb-2"><i className="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
-                <p className="mb-2"><i className="fa fa-envelope text-primary me-3"></i>info@example.com</p>
-                <p className="mb-0"><i className="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
-            </div>
-            <div className="col-lg-3 col-md-6" style={{fontSize:"15px"}}>
-                <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
-                <div  className="d-flex flex-column justify-content-start" >
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Home</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>About Us</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Our Services</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Meet The Team</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Latest Blog</a>
-                    <a className="text-light" href="#"><i className="fa fa-angle-right me-2"></i>Contact Us</a>
-                </div>
-            </div>
-            <div className="col-lg-3 col-md-6" style={{fontSize:"13px"}}>
-                <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Popular Links</h4>
-                <div className="d-flex flex-column justify-content-start">
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Home</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>About Us</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Our Services</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Meet The Team</a>
-                    <a className="text-light mb-2" href="#"><i className="fa fa-angle-right me-2"></i>Latest Blog</a>
-                    <a className="text-light" href="#"><i className="fa fa-angle-right me-2"></i>Contact Us</a>
-                </div>
-            </div>
-            <br/>
-            <div className="col-lg-3 col-md-6">
-                    <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Newsletter</h4>
-                    <form action="">
-                        <div className="input-group">
-                            {/* <input type="text" className="form-control p-3 border-0" placeholder="Your Email Address"/>
-                            <button className="btn btn-primary">Sign Up</button> */}
+                <div className="container py-5" >
+                    <div className="row g-5">
+                        <div className="col-lg-3 col-md-6">
+                            <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Get In Touch</h4>
+                            <p className="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
+                            <p className="mb-2"><HiLocationMarker />Tunisie ,Sfax</p>
+                            <p className="mb-2"><AiFillPhone />Admin@example.com</p>
+                            <p className="mb-0"><BsFillEnvelopeCheckFill />+216 222 258 369</p>
                         </div>
-                    </form>
-                    <h6 className="text-primary text-uppercase mt-4 mb-3" >Follow Us</h6>
-                    <div className="d-flex" style={{paddingLeft : "50px"}}>
-                        <a className="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i className="fab fa-twitter"></i></a>
-                        <a className="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a className="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i className="fab fa-linkedin-in"></i></a>
-                        <a className="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i className="fab fa-instagram"></i></a>
+                        <div className="col-lg-3 col-md-6" style={{ fontSize: "15px" }}>
+                            <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Quick Links</h4>
+                            <div className="d-flex flex-column justify-content-start" >
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Acceuil</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />A propos</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Services</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight /> Voir Les Médecins</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Inscription</a>
+                                <a className="text-light" href="#"><FaAngleRight />Contact Nous</a>
+                            </div>
+                        </div>
+                        <div className="col-lg-3 col-md-6" style={{ fontSize: "13px" }}>
+                            <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Popular Links</h4>
+                            <div className="d-flex flex-column justify-content-start">
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Acceuil</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />A propos</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Services</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Voir Les Médecins</a>
+                                <a className="text-light mb-2" href="#"><FaAngleRight />Inscription</a>
+                                <a className="text-light" href="#"><FaAngleRight />Contact Nous</a>
+                            </div>
+                        </div>
+                        <br />
+                        <div className="col-lg-3 col-md-6">
+                            <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5 border-secondary mb-4">Newsletter</h4>
+                            <form action="">
+                                <div className="input-group">
+                                    {/* <input type="text" className="form-control p-3 border-0" placeholder="Your Email Address"/>
+                            <button className="btn btn-primary">Sign Up</button> */}
+                                </div>
+                            </form>
+                            <h6 className="text-primary text-uppercase mt-4 mb-3" >Follow Us</h6>
+                            <div className="d-flex"  style={{paddingLeft:"40px"}}>
+                            <a style={{paddingRight:"20px"}}> <BsTwitter size={30} /></a>
+                            <a style={{paddingRight:"20px"}}>    <BsFacebook size={30} /> </a>
+                            <a style={{paddingRight:"20px"}}>  <BsLinkedin size={25} /></a>
+                            <a style={{paddingRight:"20px"}}>  <BsInstagram size={25} /></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </footer>
+            </footer>
 
-    </>
-  )}
-  export default Footer
-  {/* <div className="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style={{marginTop: "-75px"}}>
+        </>
+    )
+}
+export default Footer
+{/* <div className="container-fluid bg-dark text-light py-5 wow fadeInUp" data-wow-delay="0.3s" style={{marginTop: "-75px"}}>
   <div className="container pt-5">
       <div className="row g-5 pt-4">
           <div className="col-lg-3 col-md-6">

@@ -175,10 +175,10 @@ div {
     
 }
 .hero-header1 {
-    background: url(./Images/blog-2.jpg) ;
+    background: url(./Images/blog-2.png) ;
     background-size: cover;
     opacity:80%;
-     /* height: 400px;  */
+   height: 400px; 
     
 }
 .hero-header2 {
@@ -362,7 +362,7 @@ text-align: center;
 }
 h2{
     background-color: #305b9b;
-  color: #EFF5F9;
+  color:white;
     text-align: center;
     height: 70px;
 }
@@ -383,10 +383,17 @@ h6,
 .font-weight-medium {
     font-weight: 500 !important;
 }
-.card{
-    position: absolute; 
-    top:10px; left:0px; right:0px; margin:auto; display:block; text-align:center;
+.Cards{
+    display: flex;
+    flex-direction: row;
+       padding-Top :20px;
+        padding-bottom :50px;
+        padding-right: 40px;
+        margin:30px;
+        justify-content:space-around;
+    
 }
+
 
 .btn {
     font-family: 'Jost', sans-serif;
@@ -717,13 +724,7 @@ h6,
     width: 120px;
     height: 120px;
 }
-.Card{
-    display: flex;
-    /* padding-Top :20px; */
-    padding-bottom :50px;
-    margin:50px;
-   
-}
+
 
 .read_main{
     width: 100%;

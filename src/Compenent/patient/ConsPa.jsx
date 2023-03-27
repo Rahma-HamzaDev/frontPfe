@@ -1,8 +1,10 @@
 import React from 'react'
-
+import Sidebar from "./Sidebar";
 function ConsPa() {
   return (
-    <div>ConsPa</div>
+    <div>
+      <Sidebar/>
+      ConsPa</div>
   )
 }
 
