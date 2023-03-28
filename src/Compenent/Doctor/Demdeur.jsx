@@ -5,7 +5,7 @@ import { useState,useEffect } from 'react'
 import { fetchRend }  from '../../Services/RendServices';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import SidebarD from './SidebarD';
+
 function Demdeur() {
        
   const[rend,setRend]=useState([])
@@ -23,7 +23,7 @@ function Demdeur() {
   
       
       <div>
-       <SidebarD/>
+       <MenuDoctor/>
     <h1>  Liste  des Demandeur Rendez vous  </h1>   
       <Table striped bordered hover>
     

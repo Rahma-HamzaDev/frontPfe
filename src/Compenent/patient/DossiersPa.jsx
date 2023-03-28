@@ -21,7 +21,7 @@ function DossiersPa() {
 
   return (
     <div>
- <Sidebar/>     
+ <MenuPa/>     
       {/* <Sidebar/> */}
 <h1> Mes Dossiers </h1>
        {/* serach Stmed  */}

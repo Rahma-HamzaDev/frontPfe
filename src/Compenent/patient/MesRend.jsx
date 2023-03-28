@@ -29,7 +29,7 @@ function MesRend() {
   // },[])
   return (
     <div>
-       <Sidebar/>
+       <MenuPa/>
     <h1>  Liste Mes Rendez vous  </h1>   
       <Table striped bordered hover>
     

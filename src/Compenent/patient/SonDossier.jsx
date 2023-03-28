@@ -2,11 +2,12 @@ import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "../Home/Style.css"
+import MenuPa from './MenuPa';
 import Sidebar from './Sidebar';
 const SonDossier = () => {
   return (
     <>
-    <Sidebar/>
+    <MenuPa/>
     <div className="Cards">
         <Card style={{ width: '18rem' }}>
       <Card.Header>Dossier 1 </Card.Header>

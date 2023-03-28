@@ -174,7 +174,7 @@ adresse Incorrecte
 <Form.Label>Date Naissance *</Form.Label>
 <InputGroup hasValidation>
 <Form.Control
-type="text"
+type="date"
 required
 placeholder="date naissance"
 value={dateNais}

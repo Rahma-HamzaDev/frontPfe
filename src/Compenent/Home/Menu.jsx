@@ -32,7 +32,7 @@ function Menu() {
               <Link to="/Register2" className="nav-item nav-link">Inscrit</Link>
             <Link to="/contact" className="nav-item nav-link">Contact</Link>
             <Link to="/GestionMed" className="nav-item nav-link">Admin</Link>
-            <Link to="/ListPatient" className="nav-item nav-link">Doctor</Link>
+            <Link to="/PrincipaleDo" className="nav-item nav-link">Doctor</Link>
             <Link to="/principalePa" className="nav-item nav-link">Patient</Link>
           </div>
           <button type="button" className="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"></button>

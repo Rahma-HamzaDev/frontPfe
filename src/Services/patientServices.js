@@ -9,8 +9,8 @@ export const fetchPatientById = async (patientId) => {
 }
 
 export const addPatient = async (patient) => {
-    return await Api.post("" + PATIENT_API, patient);
-}
+    return await Api.post(""+PATIENT_API, patient);
+ }
 
 export const deletePatient = async (patientId) => {
     return await Api.delete(PATIENT_API + '/' + patientId);

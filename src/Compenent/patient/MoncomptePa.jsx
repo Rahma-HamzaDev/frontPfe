@@ -1,11 +1,12 @@
 import React from 'react' ;
+import MenuPa from './MenuPa';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './stylepatient.css';
 import Sidebar from "./Sidebar";
 function MoncomptePa() {
   return (
     <>
-     <Sidebar/>
+     <MenuPa/>
     <div className='tous'> 
     <div className='compte'>
         <h1> Moncompte </h1>        

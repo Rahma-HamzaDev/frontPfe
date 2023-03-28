@@ -1,9 +1,10 @@
 import React from 'react'
-import Sidebar from "./Sidebar";
+import MenuPa from './MenuPa';
+// import Sidebar from "./Sidebar";
 function ConsPa() {
   return (
     <div>
-      <Sidebar/>
+      <MenuPa/>
       ConsPa</div>
   )
 }

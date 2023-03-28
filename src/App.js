@@ -52,6 +52,7 @@ import SonDossier from './Compenent/patient/SonDossier';
 import ListMedPa from './Compenent/patient/ListMedPa';
 import MediaCardPa from './Compenent/patient/MediaCardPa';
 import MoncomptePa from './Compenent/patient/MoncomptePa';
+import PrincipaleDo from './Compenent/Doctor/PrincipaleDo';
 
 
 //
@@ -91,9 +92,8 @@ function App() {
   <Route path="/Demdeur" element ={<Demdeur/>} />
   <Route path="/Fiche" element ={<Fiche/>} />
   <Route path="/Ordonnance" element ={<Ordonnance/>} />
-
   <Route path="/Patient/edit/:id" element={<EditePatient/>}/>
-
+  <Route path="/PrincipaleDo" element ={<PrincipaleDo/>} />
   <Route path="/NotifactionDR" element ={<NotifactionDR/>} />
 
 {/* // */}

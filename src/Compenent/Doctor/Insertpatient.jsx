@@ -6,11 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
-
-import { addPatient, fetchPatient } from '../../Services/patientServices';
-
-
-
+import MenuDoctor from "./MenuDoctor";
+import { addPatient } from '../../Services/patientServices';
 
 export default function Insertpatient() {
     const [validated, setValidated] = useState(false);
@@ -22,7 +19,6 @@ export default function Insertpatient() {
     const [adressepatient, setAdressepatient] = useState("");
     const [sexepatient, setSexepatient] = useState("");
     const [numtelPa, setNumtelPa] = useState("");
-    const [passwordPa, setpasswordPa] = useState(""); 
     const navigate=useNavigate();
 
 
@@ -51,7 +47,6 @@ export default function Insertpatient() {
                     emailpatient: emailpatient,
                     adressepatient: adressepatient,
                     sexepatient: sexepatient,
-                    passwordPa: passwordPa,
                     numtelPa:numtelPa
                   }
                   addPatient (patient)
@@ -74,6 +69,7 @@ export default function Insertpatient() {
 
   return (
     <>
+    <MenuDoctor/>
     <div className="container w-100 d-flex justify-content-center">
     <div className=' mt-5 w-50'>
     <h1 align="center">Ajout patient</h1>
@@ -176,7 +172,7 @@ export default function Insertpatient() {
      <Form.Group as={Col} md="col-md-6 ">
     <Form.Label>date de Naissance</Form.Label>
     <Form.Control
-    type="text"
+    type="date"
     placeholder="date naissance"
     value={dateNais}
     onChange={(e)=>setdateNais(e.target.value)}

@@ -41,15 +41,15 @@ function ListPatient() {
   //preparer les columns
   const columns = [
     {
-      label:"numFich",
+      label:"Num Fiche",
       name:"cinPa"
     },
     {
       label: "CIN",
       name: "cinPa", 
       //trie solent designattion 
-      filter: true,
-      sort: true,
+      // filter: true,
+      // sort: true,
     },
     {
       label: "Nom",
@@ -105,21 +105,7 @@ function ListPatient() {
 
   return (
     <div>
-      <MenuDoctor />
-
-      {/* hero start  */}
-      <div className="container-fluid bg-primary py-5 mb-5 hero-header3">
-        <div className="container py-5">
-          <div className="row justify-content-start">
-            <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px", textAlign: "center" }}>
-
-              <div className="pt-2">
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <MenuDoctor/>
       {/* hero end  */}
 
       {/* //Button */}
