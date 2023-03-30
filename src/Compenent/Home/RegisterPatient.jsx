@@ -15,10 +15,10 @@ function RegisterPatient() {
           <div className="row gx-5">
             <div className="col-lg-6 mb-5 mb-lg-0">
               <div className="mb-4">
-                <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Register PATIENT</h5>
-                <h1 className="display-4">Make An account </h1>
+                <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Inscription PATIENT</h5>
+                <h1 className="display-4"> Créer un compte </h1>
               </div>
-              <p className="text-white mb-5"> you must create an account to make appointments with our doctor </p>
+              <p className="text-white mb-5"> vous devez créer un compte pour faire service de Patient </p>
               <Link className="btn btn-dark rounded-pill py-3 px-5 me-3" to="/Login"> Connecter </Link>
      
             </div>
@@ -39,6 +39,11 @@ function RegisterPatient() {
           <div className="col-12 col-sm-6">
           {/* value={name} onChange={handleNameChange}  */}
             <input type="text" className="form-control bg-light border-0" placeholder="Your first Name" style={{ height: '55px' }}/>
+          </div>
+
+          <div className="col-12 col-sm-6">
+          {/* value={name} onChange={handleNameChange}  */}
+            <input type="date" className="form-control bg-light border-0" placeholder="Your date of birth" style={{ height: '55px' }}/>
           </div>
 
           {/* <div className="col-12 col-sm-6"  style={{paddingRight:"160px"}} >

@@ -22,14 +22,14 @@ function Login() {
       <Form.Label>Password</Form.Label>
       <Form.Control type="password" placeholder="Password" />
     </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <br/>
+    {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="Check me out" />
-    </Form.Group>
+    </Form.Group> */}
 
-    <Button   variant="primary" type="submit">
-          SE CONNECTER
-    </Button><br/>
- <Link to='/Register2' >Register Now !!</Link>
+    <Button variant="primary" type="submit"> Se Connecter</Button>
+    <br/>     <br/>
+ <Link to='/Register2' >Inscription !!!</Link>
   </Form>
  
   </div>

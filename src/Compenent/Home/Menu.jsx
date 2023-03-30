@@ -17,7 +17,7 @@ function Menu() {
         <Link to="/" className="navbar-brand">
         
          <h1 className="m-0 text-primary"><i className="fa fa-tooth me-2">
-         <img src={logo} width='40px' height='40px' /> 
+         <img src={logo} width='60px' height='60px' /> 
           </i>Dr Medicale</h1>
 
         </Link>
@@ -26,10 +26,10 @@ function Menu() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto py-0">
-          <Link to="/" className="nav-item nav-link">acceuil</Link>
+          <Link to="/" className="nav-item nav-link">Acceuil</Link>
          <Link to="/About" className="nav-item nav-link">A Propos </Link> 
             <Link to="/service" className="nav-item nav-link">Service</Link>
-              <Link to="/Register2" className="nav-item nav-link">Inscrit</Link>
+              <Link to="/Register2" className="nav-item nav-link">Inscription</Link>
             <Link to="/contact" className="nav-item nav-link">Contact</Link>
             <Link to="/GestionMed" className="nav-item nav-link">Admin</Link>
             <Link to="/PrincipaleDo" className="nav-item nav-link">Doctor</Link>
