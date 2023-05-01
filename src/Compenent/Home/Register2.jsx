@@ -1,35 +1,51 @@
 import React from 'react'
-import { FaUserNurse} from "react-icons/fa";
-import {  BsPersonCircle} from "react-icons/bs";
-
-
-import { Link } from 'react-router-dom';
+import { FaUserNurse } from "react-icons/fa";
+import { BsPersonCircle } from "react-icons/bs";
+import { Link, createSearchParams, useNavigate } from 'react-router-dom'
+import Menu from './Menu';
 
 function Register2() {
-  return (
+  const navigate = useNavigate();
 
- <div className="row g-5" style={{paddingLeft:'390px' , paddingButton :'400px' , paddingTop:'40px'}}>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <Link to="/RegisterDoctor" style={{ color: 'white', fontSize: '50px' }}><FaUserNurse /></Link>
-                </div>
-                <h4 className="mb-3">Espace Médecin</h4>
-                <p className="m-0">Insrition Médecin </p>
-              
+  const handleGoToRegister = (role) => {
+    navigate({
+      pathname: "/register",
+      search: createSearchParams({
+        role: role
+      }).toString()
+    });
+  }
+
+  return (
+    <>
+      <Menu />
+
+      <div style={{ paddingBottom: '390px', paddingTop: '80px' }}>
+        <div className="row g-5" style={{ paddingLeft: '390px' }}>
+          <div className="col-lg-4 col-md-6">
+            <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+              <div className="service-icon mb-4">
+                <button onClick={() => handleGoToRegister('doctor')} style={{ color: 'white', fontSize: '50px', background: 'none', border: 'none' }}><FaUserNurse /></button>
               </div>
+              <h4 className="mb-3">Espace Médecin</h4>
+              <p className="m-0">Inscription Médecin </p>
+
             </div>
-            <div className="col-lg-4 col-md-6">
-              <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
-                <div className="service-icon mb-4">
-                  <Link to="/RegisterPatient" style={{ color: 'white', fontSize: '50px' }}><BsPersonCircle /></Link>
-                </div>
-                <h4 className="mb-3">Espace Patient</h4>
-                <p className="m-0"> Insription Patient</p>
-              
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+              <div className="service-icon mb-4">
+                <button onClick={() => handleGoToRegister('user')} style={{ color: 'white', fontSize: '50px', background: 'none', border: 'none' }}><BsPersonCircle /></button>
               </div>
-            </div>      <br/><br/>
-       </div>
+              <h4 className="mb-3">Espace Patient</h4>
+              <p className="m-0"> Inscription Patient</p>
+
+            </div>
+          </div>
+          <br />
+        </div>
+      </div>
+    </>
   )
 }
 

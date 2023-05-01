@@ -1,5 +1,6 @@
 import Api from "../Axios/Api";
 const PATIENT_API = "/patients"
+
 export const fetchPatient = async () => {
     return await Api.get(PATIENT_API);
 }
@@ -9,7 +10,7 @@ export const fetchPatientById = async (patientId) => {
 }
 
 export const addPatient = async (patient) => {
-    return await Api.post(""+PATIENT_API, patient);
+    return await Api.post(PATIENT_API, patient);
  }
 
 export const deletePatient = async (patientId) => {

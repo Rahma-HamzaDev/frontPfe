@@ -19,7 +19,7 @@ function TopBar() {
               <p className="m-0"><i className="fa fa-envelope-open me-2"></i>Admin@example.com</p>
             </div>
             <div className="py-2">
-              <p className="m-0"><i className="fa fa-phone-alt me-2"></i>+216 25 369 147</p>
+              <p className="m-0"><i className="fa fa-phone-alt me-2"></i>+216 225 369 147</p>
             </div>
           </div>
         </div>

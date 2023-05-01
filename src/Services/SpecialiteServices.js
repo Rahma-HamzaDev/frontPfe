@@ -1,5 +1,5 @@
 import Api from "../Axios/Api";
-const SPECIALITE_API="/specialite"
+const SPECIALITE_API="/specialites"
 export const fetchSpecialite=async()=> {
 return await Api.get(SPECIALITE_API);
 }

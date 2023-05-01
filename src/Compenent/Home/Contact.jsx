@@ -3,8 +3,12 @@ import Footer from './Footer';
 import {  HiLocationMarker} from "react-icons/hi";
 import {  AiFillPhone} from "react-icons/ai";
 import {  BsFillEnvelopeCheckFill} from "react-icons/bs";
+import Menu from "./Menu";
+
 function Contact() {
   return (
+    <> 
+    <Menu/>
     <div className="container-fluid pt-5">
     <div className="container">
       <div className="text-center mx-auto mb-5" style={{maxWidth: '500px'}}>
@@ -25,7 +29,7 @@ function Contact() {
               <div className="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style={{width: '100px', height: '70px', transform: 'rotate(-15deg)'}}>
                 <AiFillPhone style={{transform: 'rotate(15deg)',fontSize:40 ,color:'white'}}/>
               </div>
-              <h6 className="mb-0">+216 22 258 369</h6>
+              <h6 className="mb-0">+216 225 369 147</h6>
             </div>
           </div>
           <div className="col-lg-4">
@@ -90,6 +94,7 @@ function Contact() {
         </div>
         <Footer/>
     </div>
+    </>
 
   )
 }

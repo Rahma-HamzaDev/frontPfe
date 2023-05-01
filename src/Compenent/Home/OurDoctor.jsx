@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import './Style.css'
 import imageM from './Images/doctor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,7 @@ import img1 from './Images/team-1.jpg';
 import img2 from './Images/team-2.jpg';
  import img3 from './Images/team-3.jpg';
 import Footer from './Footer';
+import { fetchMedecinBySpeciality } from '../../Services/UserServices';
 function OurDoctor() {
   return (
     <div>

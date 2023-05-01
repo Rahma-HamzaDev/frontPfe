@@ -1,0 +1,54 @@
+import React from 'react'
+import MenuDoctor from '../HomeDoctor/MenuDoctor';
+import Table from 'react-bootstrap/Table';
+import { useState,useEffect } from 'react'
+import { fetchRend }  from '../../../../Services/RendServices';
+import TopDoctor from '../../topbarD/TopDoctor';
+function ListRend_vous() {
+     
+  const[rend,setRend]=useState([])
+  useEffect(()=>{
+    fetchRend().then(res=>{
+      setRend(res.data)
+      console.log(res.data)
+    })
+   .catch(error=>{
+    console.log(error)
+   })
+  },[])
+ 
+  return (
+    <div>
+      <TopDoctor/>
+    <h1>  Liste  Rendez vous  </h1>   
+      <Table striped bordered hover>
+    
+    <thead>
+      <tr>
+        <th>nom Patient</th>
+        <th>Date</th>
+        <th>Temps </th>
+        <th>description </th>
+      
+      </tr>
+    </thead> 
+    <tbody>
+    {rend.map((red,index)=>
+      <tr key={index}>
+        <td>{red.patientId}</td>
+        <td>{red.Daterd}</td>
+        <td>{red.timerd}</td>
+        <td>{red.Descrd}</td>
+      </tr>
+      )}
+    </tbody>
+  
+  </Table>
+      
+        
+        </div>
+  )
+}
+
+
+export default ListRend_vous

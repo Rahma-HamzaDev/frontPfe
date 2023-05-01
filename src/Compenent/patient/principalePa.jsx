@@ -1,32 +1,49 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import '../Home/Style.css';
+import { useState, useEffect } from 'react';
+
 // import Sidebar from "./Sidebar";
+// import ListeSpecard from "./ListeSpecard";
+import { fetchSpecialite } from "../../Services/SpecialiteServices";
 
 // import ListSpecialites from './ListSpecialites';
 
-import MenuPa from './MenuPa';
+import MenuPa from './principale/MenuPa';
 
 function PrincipalePa() {
+  const[specialite, setSpecialite]=useState([])
+  useEffect(()=>{
+    fetchSpecialite().then(res=>{
+      setSpecialite(res.data)
+      console.log(res.data)
+    })
+   .catch(error=>{
+    console.log(error)
+   })
+  },[])
   return (
-    <div>  
-<MenuPa/>
-{/* <Sidebar/> */}
-   {/* hero start  */}
-     <div className="container-fluid bg-primary py-5 mb-5 hero-header1">
-     <div className="container py-5">
-       <div className="row justify-content-start">
-         <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px" }}>
-           <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'black' }}>Bienvenue dans votre compte </h5>
-           <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "30px",color:'black' }}>La meilleure solution pour prendre rendez-vous avec votre médecin rapidement !</h1>
-          
-         </div>
-       </div>
-     </div>
-   </div>
+    <div>
+      <MenuPa />
+      {/* <Sidebar/> */}
+      {/* hero start  */}
+      <div className="container-fluid bg-primary py-5 mb-5 hero-header1">
+        <div className="container py-5">
+          <div className="row justify-content-start">
+            <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "50px" }}>
+              <h4 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'black' }}> Bienvenue sur votre espace patient</h4>
+              <h3 className="display-1 text-white mb-md-4" style={{ fontSize: "20px" }}>Effectuez vos démarches en ligne:<br />
+                Chercher des médecins,<br /> prenez des Rendez-vous,<br />
+                consulter ses dossiers médicaux
+              </h3>
 
-  {/* serach Start  */}
-      <div className="container-fluid bg-primary my-5 py-5">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* serach Start  */}
+      {/* <div className="container-fluid bg-primary my-5 py-5">
         <div className="container py-5">
           <div className="text-center mx-auto mb-5" style={{ maxWidth: "500px" }}>
             <h5 className="d-inline-block text-white text-uppercase border-bottom border-5">Checher des médecins </h5>
@@ -45,52 +62,31 @@ function PrincipalePa() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* search end */}
 
-{/* specialité Start */}
+      {/* specialité Start */}
 
-<div className="services" > 
-        <h1 className="title"></h1>
-        <p className="sub-title">Notre Specialités</p>
-        <div className="list-services">
-           <Link to="/OurDoctor" className="nav-item nav-link"> 
-        
-            <div className="box">
-              <h1> Generaliste </h1>
-              <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-            </div>
-           </Link> 
-          <div className="box">
-            <h1>Dentaire </h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>Spectialist care</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>PEDIATRIC</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1></h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
-          <div className="box">
-            <h1>familly care</h1>
-            <p>From walk-in care, same-day appointments to online visits with OnCare, we'll take good care of you. If you are experiencing an emergency</p>
-          </div>
 
-        </div>
-      </div> 
 
       {/* specialité end */}
 
+      <div className="services" >
+        <h1 className="title">Notre Specialités</h1>
+        <p className="sub-title"> Les Specialités qui sont disponibles dans le site </p>
+        <div className="list-services">
+            {specialite.map((sep, index) => (
+              <div className="box" key={index}>
+                <h1>{sep.nomsep}</h1>
+                <p>{sep.desc}</p>
+              </div>
+            ))}
+         </div>
+      </div>
 
- 
-   </div>
-   
+
+    </div>
+
   )
 }
 

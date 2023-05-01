@@ -6,20 +6,23 @@
     --dark: #1D2A4D;
 }
 /* services */
-
+.serach1{
+    padding: 50px 50px 50Px 50px;
+}
 .services {
     padding: 0 10%;
 }
 .title {
     text-align: center;
     margin-top: 50px;
-    font-size: 35px;
+    font-size: 30px;
     letter-spacing: 1px;
+    color: #93d6d0;
     text-transform: uppercase
 }
 .sub-title {
     text-align: center;
-    color: #93d6d0;
+  
     margin: 20px 0;
 }
 .list-services {
@@ -383,18 +386,19 @@ h6,
 .font-weight-medium {
     font-weight: 500 !important;
 }
-.Cards{
+
+
+
+.Card1{
     display: flex;
-    flex-direction: row;
-       padding-Top :20px;
-        padding-bottom :50px;
-        padding-right: 40px;
-        margin:30px;
-        justify-content:space-around;
-    
+flex-direction: row;
+padding-Top :20px;
+padding-bottom :50px;
+padding-right: 40px;
+margin:30px;
+justify-content:space-around;
+   
 }
-
-
 .btn {
     font-family: 'Jost', sans-serif;
     font-weight: 600;

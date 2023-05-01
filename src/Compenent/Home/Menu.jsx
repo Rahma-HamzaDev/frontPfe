@@ -31,12 +31,12 @@ function Menu() {
             <Link to="/service" className="nav-item nav-link">Service</Link>
               <Link to="/Register2" className="nav-item nav-link">Inscription</Link>
             <Link to="/contact" className="nav-item nav-link">Contact</Link>
-            <Link to="/GestionMed" className="nav-item nav-link">Admin</Link>
-            <Link to="/PrincipaleDo" className="nav-item nav-link">Doctor</Link>
-            <Link to="/principalePa" className="nav-item nav-link">Patient</Link>
+            {/* <Link to="/AppA" className="nav-item nav-link">Admin</Link> */}
+            {/* <Link to="/PrincipaleDo" className="nav-item nav-link">Doctor</Link>
+            <Link to="/HomePatient" className="nav-item nav-link">Patient</Link> */}
           </div>
-          <button type="button" className="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"></button>
-          <Link to="/Login" className="btn btn-primary py-2 px-4 ms-3" size={20}>Connecter</Link>
+          <button type="button" className="btn text-dark" data-bs-toggle="modal" data-bs-target="#searchModal"size={40}></button>
+          <Link to="/login" className="btn btn-primary py-2 px-4 ms-3" >Se Connecter</Link>
         </div>
       </nav>
     </div>

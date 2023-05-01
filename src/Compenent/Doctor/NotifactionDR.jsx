@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuDoctor from './MenuDoctor'
+import MenuDoctor from './Pages/HomeDoctor/MenuDoctor'
 
 function NotifactionDR() {
   return (

@@ -1,76 +1,99 @@
 import React from 'react'
+import  { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch,useSelector } from "react-redux";
+import { login } from "../../feautures/AuthSlice";
 import {  Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import login from './Images/img-4.png'
+import img from './Images/img-4.png';
+import {ADMIN, USER, DOCTOR} from '../../utils/roles'
 import './Login.css';
-function Login() {
-  return (
+import Menu from "./Menu";
+const Login = () => {
+ 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {isLoggedIn, user} = useSelector((state) => state.auth);
+  const[email,setEmail]=useState('');
+  const[password,setPassword]=useState('');
+  const handleSubmit=(event)=>{
+  event.preventDefault();
+  const objetuser = {
+  email: email,
+  password :password
+  };
+  dispatch(login(objetuser)) ;
+  }
+  if(isLoggedIn){
+  console.log(user)
+  if (user.role === DOCTOR) navigate("/PrincipaleDo");
+  else if (user.role === USER) navigate("/HomePatient");
+  //else navigate("/HomeA");
+  }
+ 
   
 
-    <div class="auth-container" style={{paddingTop:"40px",paddingBottom:"100px"}}>
-      <div class="description-auth">
-    <Form  >
+  return (
+    <>
+    <Menu/>
+    <div className="auth-container" style={{paddingTop:"40px",paddingBottom:"100px"}}>
+      <div className="description-auth">
+    <Form onSubmit={handleSubmit} >
     <h1>CONNEXION</h1>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Group className="mb-3"  >
       <Form.Label>Email </Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
+      <Form.Control 
+      type="email" 
+      onChange={(event)=>setEmail(event.target.value)}
+           placeholder="Enter email" 
+           required
+           fullWidth
+           id="email"
+           label="Email Address"
+           name="email"
+           autoComplete="email"
+           autoFocus
+           />
 
     </Form.Group>
 
-    <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Group className="mb-3" >
       <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
+      <Form.Control type="password"
+    
+       placeholder="Password"
+       onChange={(event)=>setPassword(event.target.value)}
+       name="password"
+       label="Password"
+       id="password"
+       autoComplete="current-password"
+       
+       />
     </Form.Group>
     <br/>
-    {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="Check me out" />
-    </Form.Group> */}
+    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+      <Form.Check type="checkbox" label="Remember me" />
+    </Form.Group>
 
-    <Button variant="primary" type="submit"> Se Connecter</Button>
+    <Button variant="primary" type="submit" 
+    onClick={(event)=>handleSubmit(event)}> 
+    Se Connecter
+    </Button>
     <br/>     <br/>
- <Link to='/Register2' >Inscription !!!</Link>
+ <Link to='/register2' >Inscription !!!</Link>
   </Form>
  
   </div>
-    <div class="ima">
-    <img src= {login} width="250" height="250"/>
+    <div className="ima">
+    <img src= {img} width="250" height="250"/>
   </div>
   </div>
+
+  </>
   );
 }
 
+
+
 export default Login
-
-
-
-
-{/* <div className="container-fluid bg-primary my-5 py-5" style ={{paddingTop:"100px"}} >
-<div className="container">
-<div className="text-center mx-auto mb-5" style={{maxWidth: '400px'  }}>
-   {/* form Start  */}
-//   <form>
-//     <div className="row g-3">
-//       <div className="col-12 col-sm-6">
-//       {/* value={email} onChange={handleEmailChange} */}
-//         <input type="email" className="form-control bg-light border-0" placeholder="Your Email" style={{ height: '60px' , width:'200px' }}  />  
-//       </div>
-     
-//       <div className="col-12 col-sm-6">
-   
-//       <input type="password" className="form-control bg-light border-0" placeholder="Your password" style={{ height: '60px', width:'200px' }}  />
-//       </div>
-//       <div className="col-12">
-//       <button
-//                 className="btn btn-primary w-100 py-3"
-//                 type="submit">Connecter
-//               </button>
-//         <Link className="btn btn-dark rounded-pill py-3 px-5 me-3" to="/Login"> Creat Account </Link>
-
-//       </div>
-//     </div>
-//   </form>
-// </div>
-// </div>
-
-// </div> */}

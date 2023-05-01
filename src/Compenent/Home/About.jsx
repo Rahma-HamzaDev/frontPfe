@@ -11,12 +11,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaUserMd, FaAmbulance, FaProcedures, FaMicroscope, FaPills } from "react-icons/fa";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { TbStethoscope } from "react-icons/tb";
+import Menu from "./Menu";
+
 
 import Footer from './Footer';
 function About() {
     return (
         <div>
-
+<Menu/>
       {/* hero start  */}
       <div className="container-fluid bg-primary py-5 mb-5 hero-header2">
         <div className="container py-5">

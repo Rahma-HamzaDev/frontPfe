@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "../patient/sidebar.css";
+import "./sidebarD.css";
 import { Link } from 'react-router-dom';
 function SidebarD() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +29,10 @@ function SidebarD() {
             
             <div className="link-container">
               <Link to="/Notification" > Notification </Link>
+            </div>
+
+            <div className="link-container">
+              <Link to="/LogoutDoctor" style={{color:"red"}} > deconnecter </Link>
             </div>
 
 {/* 

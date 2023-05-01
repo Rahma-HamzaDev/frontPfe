@@ -5,6 +5,7 @@ import imageM from './Images/doctor.jpg';
 import Defdr from './Images/doctorsmart.jpg' ;
 import Defpa from './Images/espace patient.jpg'
 import Footer from './Footer';
+import Menu from "./Menu";
 import {  FaUserNurse,FaAmbulance, FaProcedures, FaMicroscope, FaUserInjured } from "react-icons/fa";
 import { MdOutlineFreeCancellation , MdOutlineContactMail} from "react-icons/md";
 // import { BsFillArrowRightCircleFill } from "react-icons/bs";
@@ -33,21 +34,19 @@ function Principale() {
 
 
   return (
-
-
     <div>
-
+      <Menu/>
       {/* hero start  */}
       <div className="container-fluid bg-primary py-5 mb-5 hero-header">
         <div className="container py-5">
           <div className="row justify-content-start">
             <div className="col-lg-8 text-center text-lg-start" style={{ paddingTop: "80px" }}>
-              <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>Welcome To Dr_Medicale</h5>
+              <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" style={{ Color: 'while' }}>BIENVENUE DANS DR_MEDICALE</h5>
               <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "40px" }}>
               Meilleure solution pour une relation médecins-patients!</h1>
               <div className="pt-2">
-                <Link to='/RegisterDoctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Doctor</Link>
-                <Link to='/RegisterPatient'><div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Patient</div>
+                <Link to='/LoginDoctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Médecin </Link>
+                <Link to='/login'><div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2"> Patient </div>
                 </Link>
               </div>
             </div>
@@ -55,8 +54,6 @@ function Principale() {
         </div>
       </div>
       {/* hero end  */}
-
-   
       <main>
       {/* about start  */}
       <div className="container-fluid py-5">
@@ -101,7 +98,7 @@ function Principale() {
                   <div className="bg-light text-center rounded-circle py-4">
                   <div className=" text-primary mb-3"> 
                   <MdOutlineFreeCancellation size={50}/> </div>
-                    <h6 className="mb-0">Free<small className="d-block text-primary">use</small></h6>
+                    <h6 className="mb-0">Libre<small className="d-block text-primary">utilisation </small></h6>
                    
                   </div>
                 </div>
@@ -115,10 +112,11 @@ function Principale() {
 
 {/* about doctor */}
 <div className="doctor_section layout_padding">
-        <div class="container">
+        <div className="container">
           <div className="row">
             <div className="col-md-6 padding_top0">
-            <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" >about Doctor</h5>
+            <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5" >À PROPOS DU Médecin</h5>
+
          
                 <h1 className="highest_text">Espace Médecin</h1>
                 <p className="lorem_text">
@@ -143,21 +141,20 @@ function Principale() {
  {/* about patient start */}
 
  <div className="doctor_section layout_padding">
-        <div class="container">
+        <div className="container">
           <div className="row">
            
             <div className="col-md-6">
               <div ><img src={Defpa} style={{ objectFit: "cover", width:"550px" }} alt="about us"/></div>
             </div>
             <div className="col-md-6 padding_top0">
-            <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">About Patient</h5>
+            <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5"> À PROPOS DU PATIENT</h5>
          
                 <h1 className="highest_text">Espace patient</h1>
-                <p className="lorem_text">Lorem ipsum dolor sit amet,
-                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                  nulla pariatur. Excepteur </p>
+                <p className="lorem_text">
+Consulter les médecins à partir de les spécialités et prendre des Rendez-vous.<br/>
+Consulter les fiches destinées au grand public et conçues par la Dr Médicale pour fournir un support, et/ou un complément à l'information orale délivrée par le médecin au cours des consultations
+</p>
               
             </div>
           </div>
@@ -166,6 +163,7 @@ function Principale() {
 
  {/* about patient end */}
  </main>
+
             <Footer />
           </div >
           )

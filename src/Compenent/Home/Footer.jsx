@@ -4,9 +4,12 @@ import { HiLocationMarker } from "react-icons/hi";
 import { AiFillPhone } from "react-icons/ai";
 import { BsFillEnvelopeCheckFill, BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import { FaAngleRight } from "react-icons/fa";
+import Menu from "./Menu";
+
 function Footer() {
     return (
         <>
+
             <footer className="container-fluid bg-dark text-light mt-5 py-5">
 
                 <div className="container py-5" >

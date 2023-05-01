@@ -17,7 +17,7 @@ function ListMedcin() {
   },[])
   return (
     <div>
-   <MenuAd/> 
+   {/* <MenuAd/>  */}
     <div>
       <h1> Liste Médcins Accepter </h1>
          <Table striped bordered hover>
@@ -38,7 +38,7 @@ function ListMedcin() {
 
         <td>{med.nommedecin}</td>
         <td>{med.prenommedecin}</td>
-        <td>{med.emailmedecin}</td>
+        <td>{med.email}</td>
         <td>{med.adressemedecin}</td>
         <td>{med.numtelMd}</td>
      

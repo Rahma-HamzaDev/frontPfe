@@ -9,11 +9,13 @@ import { RiDossierLine } from "react-icons/ri";
 import { BsFileEarmarkMedical } from "react-icons/bs";
 import { CgCalendarDates } from "react-icons/cg";
 import Footer from './Footer';
+import Menu from './Menu';
 // import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function Service() {
   return (
     <div>
+      <Menu/>
       {/* sercice start  */}
       <div className="container-fluid py-5">
         <div className="container">
