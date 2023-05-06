@@ -28,11 +28,11 @@ const TopPA=()=>{
       <Nav.Link as={Link} to="/HomePatient">acceuil</Nav.Link>
       <Nav.Link as={Link} to="/MesRend">Mes Rendez-vous</Nav.Link>
       <Nav.Link as={Link} to="/DossiersPa">Mes Dossiers médecaux</Nav.Link>
-      <Nav.Link as={Link} to="/OurDoctor">Doctor</Nav.Link>
       
     </Nav>
     <Stack direction="row" spacing={2}>
       <Avatar alt="Remy Sharp" src={urlimage + user.avatar} />
+
     </Stack>
     </Container>
     <Nav className="me-auto">

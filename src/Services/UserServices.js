@@ -4,6 +4,7 @@ const USER_API = "/users"
 export const fetchUser = async () => {
     return await Api.get(USER_API);
 }
+
 export const fetchMedecinBySpeciality = async (specialite) => {
     return await Api.get(USER_API + `/doctors?role=doctor&specialite=${specialite}`);
 }

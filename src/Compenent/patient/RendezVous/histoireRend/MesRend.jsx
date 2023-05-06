@@ -39,10 +39,10 @@ function MesRend() {
     
     <thead>
       <tr>
-        <th>nom Médecin</th>
-        {/* <th>prenom redecin</th>
+        <th>Nom Médecin</th>
+     
         <th>Num telephone</th>
-        <th>Adresse</th> */}
+        <th>Adresse</th> 
         <th>Date</th>
         <th>Temps </th>
         <th> Etat </th>
@@ -53,10 +53,9 @@ function MesRend() {
     <tbody>
     {rend.map((red,index)=>
       <tr key={index}>
-        <td>{red.patientID}</td>
-        {/* <td>{red.medecin.prenomredecin}</td>
-        <td>{red.medecin.numtelMd}</td>
-        <td>{red.medecin.adresseredecin}</td> */}
+   <td>{red?.medecinID?.firstName}  {red?.medecinID?.lastName}</td>
+         <td>{red?.medecinID?.phone}</td>
+         <td>{red?.medecinID?.adresse}</td>
         <td>{red.Daterd}</td>
         <td>{red.timerd}</td>
         <td>{red.etatrend}</td>

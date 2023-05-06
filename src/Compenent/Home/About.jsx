@@ -15,6 +15,7 @@ import Menu from "./Menu";
 
 
 import Footer from './Footer';
+import ButtonBar from './ButtonBar';
 function About() {
     return (
         <div>
@@ -53,59 +54,14 @@ function About() {
 
                         </div>
                     </div>
-                </div> </div>
+                </div> 
+                </div>
                       {/* About end  */}
      <main>
 
   
 
 
-{/* def Patient start  */}
-
-{/* <div className='Card'>
-     <Card className='card1' style={{ width: '28rem' }}>
-      <Card.Img variant="top" src={dr} />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card>   
-
-    <Card className='card2' style={{ width: '28rem' }}>
-      <Card.Img variant="top" src={dr} />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card>   
-    </div>   */}
-
-
-   {/* def Patient end  */}
 
 
   
@@ -117,7 +73,7 @@ function About() {
 
 
                  <Footer /> 
-   
+                 <ButtonBar/>
                 </div>
                     )
                 }
@@ -174,6 +130,52 @@ function About() {
 
 
 
+{/* def Patient start  */}
+
+{/* <div className='Card'>
+     <Card className='card1' style={{ width: '28rem' }}>
+      <Card.Img variant="top" src={dr} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>Cras justo odio</ListGroup.Item>
+        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+      </ListGroup>
+      <Card.Body>
+        <Card.Link href="#">Card Link</Card.Link>
+        <Card.Link href="#">Another Link</Card.Link>
+      </Card.Body>
+    </Card>   
+
+    <Card className='card2' style={{ width: '28rem' }}>
+      <Card.Img variant="top" src={dr} />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+      <ListGroup className="list-group-flush">
+        <ListGroup.Item>Cras justo odio</ListGroup.Item>
+        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+      </ListGroup>
+      <Card.Body>
+        <Card.Link href="#">Card Link</Card.Link>
+        <Card.Link href="#">Another Link</Card.Link>
+      </Card.Body>
+    </Card>   
+    </div>   */}
+
+
+   {/* def Patient end  */}
  
 
 

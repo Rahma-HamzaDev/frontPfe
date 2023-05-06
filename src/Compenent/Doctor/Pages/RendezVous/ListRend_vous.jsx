@@ -25,17 +25,20 @@ function ListRend_vous() {
     
     <thead>
       <tr>
-        <th>nom Patient</th>
+        <th>Nom Patient</th>
+        <th>Phone Patient</th>
         <th>Date</th>
         <th>Temps </th>
-        <th>description </th>
+        <th>Description </th>
       
       </tr>
     </thead> 
     <tbody>
     {rend.map((red,index)=>
       <tr key={index}>
-        <td>{red.patientId}</td>
+         <td>{red?.patientID?.nompatient}  {red?.patientID?.prenompatient}</td>
+         <td>{red?.patientID?.numtelPa}</td>
+
         <td>{red.Daterd}</td>
         <td>{red.timerd}</td>
         <td>{red.Descrd}</td>

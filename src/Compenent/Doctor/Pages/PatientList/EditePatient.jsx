@@ -9,9 +9,14 @@ import {fetchPatientById,editPatient} from '../../../../Services/patientServices
 
 import { useNavigate, useParams } from 'react-router-dom';
 import TopDoctor from '../../topbarD/TopDoctor';
+import { useSelector } from 'react-redux';
 
 export default function EditePatient() {
   const {id} = useParams();
+  const { user } = useSelector((state) => state.auth);
+  console.log(user);
+  const medecinId = user._id
+  console.log(medecinId);
   const navigate=useNavigate();
   const [validated, setValidated] = useState(false);
   const [nompatient, setnompatient] = useState("");
@@ -67,8 +72,8 @@ export default function EditePatient() {
     editPatient (patient)
     .then(res=>{
     // console.log("Update OK",res);
-    navigate("/ListPatient");
-    })
+    navigate(`/Patient/medecin/${medecinId}`);
+      })
     .catch(error=>{
     console.log(error)
     })
@@ -82,7 +87,7 @@ export default function EditePatient() {
 
 <div className="container w-100 d-flex justify-content-center">
 <div className=' mt-5 w-50'>
-<h1 align="center">Modification Patient </h1>
+<h1 align="center"> Modification Patient </h1>
 <div className='form mt-3'>
 <Form className="border p-3" noValidate validated={validated} onSubmit={handleSubmit}>
 <Row className="mb-2">

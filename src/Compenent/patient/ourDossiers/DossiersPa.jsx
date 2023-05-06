@@ -62,16 +62,15 @@ function DossiersPa() {
       </tr>
     </thead>
     <tbody>
-      {medecin.map((med,index)=>
-      <tr key={index}>
-
-        <td>{med.nom}</td>
-        <td>{med.adresse}</td>
-        <td>{med.numtel}</td>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
        <Link to="/SonDossier"> <td><Button variant="primary">Voir Dossier</Button></td></Link> 
         <td><Button variant="danger">Delete</Button></td>
       </tr>
-      )}
+
     </tbody>
 
   

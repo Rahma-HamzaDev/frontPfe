@@ -18,7 +18,7 @@ function MenuDoctor() {
    </button>
    <div className="collapse navbar-collapse" id="navbarCollapse">
      <div className="navbar-nav ms-auto py-0">
-     <Link to="/ListPatient" className="nav-item nav-link">Liste des patients</Link>
+     <Link to="/Patient/medecin/:medecinId" className="nav-item nav-link">Liste des patients</Link>
 
        <Link to="/ListRend_vous" className="nav-item nav-link">Liste Rendez-vous</Link>
        <Link to="/CalendrieMed" className="nav-item nav-link"> compte</Link>

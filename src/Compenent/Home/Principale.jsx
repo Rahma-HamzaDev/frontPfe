@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Menu from "./Menu";
 import {  FaUserNurse,FaAmbulance, FaProcedures, FaMicroscope, FaUserInjured } from "react-icons/fa";
 import { MdOutlineFreeCancellation , MdOutlineContactMail} from "react-icons/md";
+import ButtonBar from './ButtonBar';
 // import { BsFillArrowRightCircleFill } from "react-icons/bs";
 // import { TbStethoscope } from "react-icons/tb";
 // import Carousel from 'react-bootstrap/Carousel';
@@ -45,8 +46,8 @@ function Principale() {
               <h1 className="display-1 text-white mb-md-4" style={{ fontSize: "40px" }}>
               Meilleure solution pour une relation médecins-patients!</h1>
               <div className="pt-2">
-                <Link to='/LoginDoctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Médecin </Link>
-                <Link to='/login'><div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2"> Patient </div>
+                <Link to='/register?role=doctor' className="btn btn-light rounded-pill py-md-3 px-md-5 mx-2"> Médecin </Link>
+                <Link to='/register?role=user'><div className="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2"> Patient </div>
                 </Link>
               </div>
             </div>
@@ -165,6 +166,8 @@ Consulter les fiches destinées au grand public et conçues par la Dr Médicale 
  </main>
 
             <Footer />
+            <ButtonBar/>
+
           </div >
           )
 }

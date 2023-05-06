@@ -3,22 +3,33 @@ import React from 'react';
 // import '../../App.css';
 import MenuDoctor from '../HomeDoctor/MenuDoctor';
 import { useState, useEffect } from 'react';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 //npm install mui-datatables
-
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+ import {HiFolderAdd }from 'react-icons/hi';
 import MUIDataTable from "mui-datatables";
-import { fetchPatient, deletePatient } from '../../../../Services/patientServices';
+import { fetchPatient, deletePatient, fetchPatient1 } from '../../../../Services/patientServices';
 import { IconButton, Button } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { pink } from '@mui/material/colors';
-import { Link } from "react-router-dom";
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
+import { Link, useParams } from "react-router-dom";
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import TopDoctor from '../../topbarD/TopDoctor';
+import { useSelector } from 'react-redux';
 
 
 function ListPatient() {
+ const {user} = useSelector((state) =>state.auth);
+ 
+ const id = user._id
+
+  // const {id} = useParams();
+  // console.log(id);
 
   const [patients, setPatient] = useState([]);
   useEffect(() => {
@@ -28,11 +39,17 @@ function ListPatient() {
 
     //affiche les patients 
 
-    await fetchPatient()
-      .then((res) => {
-        setPatient(res.data);
-      });
+    // await fetchPatient()
+    //   .then((res) => {
+    //     setPatient(res.data);
+    //   });
+    await fetchPatient1(id)
+    .then((res) => {
+      setPatient(res.data);
+      console.log(res.data);
+    });
   }
+
   //delete patient 
   const delPatient = async (_id) => {
     await deletePatient(_id)
@@ -119,7 +136,28 @@ function ListPatient() {
     },
     {
       name: "_id",
-      label: "Actions",
+      label: "Consultation",
+      options: {
+          filter: true,
+          sort: false,
+        customBodyRender: (value) => (
+          <div>
+ <IconButton >
+              {<Link to={"/patient/cons/" + value} >
+                <LocalHospitalIcon fontSize='large' />
+                {/* <HiFolderAdd sx={{ fontSize: 100 }} /> */}
+              </Link>
+              }
+              </IconButton>
+
+          </div>
+
+        )
+      }
+    },
+    {
+      name: "_id",
+      label: "Modification",
       options: {
           filter: true,
           sort: false,
@@ -131,22 +169,38 @@ function ListPatient() {
               </Link>
               }
               </IconButton>
-              <IconButton >
-              {<Link to={"/patient/cons/" + value} >
-                <LocalHospitalIcon fontSize='large' />
+             
+
+              <IconButton onClick={() => { delPatient(value) }}><DeleteIcon   fontSize='large' sx={{ color: pink[500] }} /></IconButton>
+
+          
+          </div>
+
+        )
+      }
+    },
+  
+    {
+      name: "_id",
+      label: "Fiche medecale",
+      options: {
+          filter: true,
+          sort: false,
+        customBodyRender: (value) => (
+          <div>
+            <IconButton >
+              {<Link to={"/Patient/Dossmed/"+ value} >
+                <AssignmentIndIcon color='primary' fontSize='large'  />
               </Link>
               }
               </IconButton>
-
-
-            <IconButton onClick={() => { delPatient(value) }}><DeleteIcon   fontSize='large' sx={{ color: pink[500] }} />
-            </IconButton>
           </div>
 
         )
       }
     },
   ];
+
   const options = {
     filterType: 'checkbox',
   };
@@ -155,17 +209,17 @@ function ListPatient() {
   return (
     <div>
       <TopDoctor/>
-
-   
       <div style={{ padding: 5, margin: 5 }}>
         <Button
           color="success"
-          startIcon={<AddCircleIcon />}
-          variant="contained"
-        > {<Link to={"/InsertPatient"} 
+          // startIcon={<AddCircleIcon />}
+          size="large"
+          startIcon={<PersonAddIcon fontSize='large'  />}
+          variant="outlined"
+        > {<Link to={`/Patient/medecin/${id}/insert`}
           style={{
             textDecoration:
-              "none", color: "white"
+              "none", color: "black" 
           }}>
             Ajouter Patient
           </Link>
@@ -177,7 +231,7 @@ function ListPatient() {
   
         data={patients}
         columns={columns}
-        // options={options}
+     options={options}
       />
     </div>
   )

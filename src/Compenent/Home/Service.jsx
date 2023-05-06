@@ -10,6 +10,7 @@ import { BsFileEarmarkMedical } from "react-icons/bs";
 import { CgCalendarDates } from "react-icons/cg";
 import Footer from './Footer';
 import Menu from './Menu';
+import ButtonBar from './ButtonBar';
 // import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 function Service() {
@@ -117,6 +118,7 @@ function Service() {
 
    
 <Footer/>
+<ButtonBar/>
     </div>
   )
 }

@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 // import 'typeface-roboto';
 import store from './redux/store';
 import { Provider } from 'react-redux' ;
-import {persistStore,} from 'redux-persist';
+import {persistStore} from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

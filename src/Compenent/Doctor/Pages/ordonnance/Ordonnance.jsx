@@ -6,17 +6,18 @@ import { urlimage } from "../../../../Axios/Api";
 import { fetchOrd , addOrd } from '../../../../Services/ordServices';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
+import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
 function Ordonnance() {
   const { user } = useSelector((state) => state.auth);
-  const { ordid } = useParams();
+  const { id,patientid } = useParams();
+
   const [ord, setOrd] = useState([]);
   const [validated, setValidated] = useState(false);
   const [NomMedicaments, setNomMedicaments] = useState("");
   const [DosageMedicaments, setDosageMedicaments] = useState("");
   const [FréquanceMedicaments, setFréquanceMedicaments] = useState("");
   const [FormeMedicaments, setFormeMedicaments] = useState("");
-
+  const [DateOrd, setDateOrd] = useState("");
 
 
 
@@ -25,16 +26,18 @@ function Ordonnance() {
     const form = event.currentTarget;
     if (form.checkValidity() === true) {
       const ord1 = {
-        // patientID:id,
+       consID:id,
+        DateOrd:DateOrd,
         NomMedicaments: NomMedicaments,
         DosageMedicaments: DosageMedicaments,
         FréquanceMedicaments: FréquanceMedicaments,
-        FormeMedicaments: FormeMedicaments
+        FormeMedicaments: FormeMedicaments,
+        patientID:patientid
       }
       addOrd (ord1)
       .then(res=>{
         console.log("Insert OK",res);
-        // navigate("/Consultation");
+        console.log(ord1)
         })
         .catch(error=>{
         console.log(error)
@@ -53,15 +56,15 @@ function Ordonnance() {
   useEffect(() => {
     GetListOrd();
   }, []);
-  const GetListOrd = async () => {
-
+  const GetListOrd = async () => { 
     //affiche les consultation 
-
-    await fetchOrd(ordid)
+    await fetchOrd(id)
       .then((res) => {
         setOrd(res.data);
+        console.log(res.data)
       });
   }
+
 
   return (
     <div className='Ord1'>
@@ -83,8 +86,9 @@ function Ordonnance() {
                   <input type='date'
                    className='form-control' 
                    id='social'
-                    placeholder='Date Consultations'
-                   
+                    placeholder='Date Consultations' 
+                    value={DateOrd}
+                    onChange={(e)=>setDateOrd(e.target.value)}
                     
                     />
                 </div>
@@ -149,10 +153,17 @@ function Ordonnance() {
           </fieldset>
         </div>
       </div>
-      <br />
+    <>
       <div className="ordonnance">
+      <br />
+      <br />
+      <br />
+      <br />
+     
         <div className='haut'>
         <div className="entete">
+     
+      
           <p> {user.firstName} {user.lastName} </p>
           <p>{user.adresse}</p>
           <p>{user.phone}</p>
@@ -165,27 +176,51 @@ function Ordonnance() {
         </div>
         <hr />
         <br />
-        <div className="info-patient">
-          <h3 className='H2'>nom patient</h3>
-          <div className='inf2'>
-          <p>adresse</p>
-          <p>numtel</p>
-          </div>
-        </div>
-        <hr />
-        <br />
-        <div className="ordonnance-details">
-          <h3 className='H3'>DOLIPRANE 500 mg</h3>
-          <p>1 comprimé en cas de douleur, 3 comprimés par jour maximum, espacés de 4 heures</p>
-        </div>
+      
+        {/* <div className='haut'  >
 
+          <p>nom patient :</p>
+          <p>{ord?.patientID?.nompatient} {ord?.patientID?.prenompatient}   </p>
+    
+        </div> */}
+        {/* <hr /> */}
+        {/* <br />
+        <br /> */}
+   <h3 className='H3'>Ordonnance Medicale</h3>  
+   <br/>  <br/> 
+        <div className="ordonnance-details" >
+   
+        <div className='haut'  >
+
+<p></p>
+<p>Sfax le {ord?.DateOrd}</p>
+
+</div>
+<div className='haut'  >
+
+<p></p>
+<p>Patient : {ord?.patientID?.nompatient} {ord?.patientID?.prenompatient}   </p>
+
+</div> 
+    
+          <p>
+          {ord?.NomMedicaments} <br/>
+          {ord?.FormeMedicaments}
+          {ord?.DosageMedicaments}<br/>
+          {ord?.FréquanceMedicaments} 
+          {ord?.observation}            </p>
+        </div>
+        <br/>
+{/* //  )} */}
 
         <div className="signature-tampon">
           <p>Signature et tampon :</p>
         </div>
       </div>
-
-
+      </>
+      <div className='impr'>
+  <LocalPrintshopIcon fontSize='large' />
+        </div>
     </div>
   )
 }

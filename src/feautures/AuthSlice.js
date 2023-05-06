@@ -91,7 +91,7 @@ export const authSlice = createSlice({
                 //refreshToken
                 localStorage.setItem('refresh_token', action.payload.refreshToken);
                 MySwal.fire({
-                    icon: 'success',
+                    icon1: 'success',
                     title: 'Connection was successful',
                 })
                 // localStorage.setItem("CC_User",action.payload.user)

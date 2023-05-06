@@ -6,6 +6,7 @@ import MUIDataTable from "mui-datatables";
 import { fetchCons,addCons , deleteCons} from '../../../../Services/ConsService';
 import { IconButton, Button } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { pink } from '@mui/material/colors';
@@ -16,57 +17,58 @@ import TopDoctor from '../../topbarD/TopDoctor';
 function Consultation() {
 
   const {id} = useParams();
-  // const navigate = useNavigate();
-  const [validated, setValidated] = useState(false);
   const [cons, setCons] = useState([]);
-  const [MotifCons, setMotifCons] = useState("");
-  const [AntécedentsMédecaux, setAntécedentsMédecaux] = useState("");
-  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
-  const [ExemansComplementaires, setExemansComplementaires] = useState("");
-  const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
-  const [DescriptionExamen, setDescriptionExamen] = useState("");
-  const [DateCons, setDateCons] = useState("");
-  const [TaillePatient, setTaillePatient] = useState("");
-  const [PoisPatient, setPoisPatient] = useState("");
-  const [tension, setTension] = useState("");
-  const [Température, setTempérature] = useState("");
-//insert
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === true) {
-      const cons1 = {
-        patientID:id,
-        MotifCons: MotifCons,
-        AntécedentsMédecaux: AntécedentsMédecaux,
-        HistoriqueSocial: HistoriqueSocial,
-        ExemansComplementaires: ExemansComplementaires,
-        HistoriqueFamilial: HistoriqueFamilial,
-        DescriptionExamen:DescriptionExamen,
-        DateCons :DateCons,
-        TaillePatient:TaillePatient,
-        PoisPatient:PoisPatient,
-        tension:tension,
-        Température:Température,
 
-      }
-      addCons (cons1)
-      .then(res=>{
-        console.log("Insert OK",res);
-        // navigate("/Consultation");
-        })
-        .catch(error=>{
-        console.log(error)
-        alert("Erreur ! Insertion non effectuée")
-        })
-        }
+   const navigate = useNavigate();
+//   const [validated, setValidated] = useState(false);
+//   const [MotifCons, setMotifCons] = useState("");
+//   const [AntécedentsMédecaux, setAntécedentsMédecaux] = useState("");
+//   const [HistoriqueSocial, setHistoriqueSocial] = useState("");
+//   const [ExemansComplementaires, setExemansComplementaires] = useState("");
+//   const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
+//   const [DescriptionExamen, setDescriptionExamen] = useState("");
+//   const [DateCons, setDateCons] = useState("");
+//   const [TaillePatient, setTaillePatient] = useState("");
+//   const [PoisPatient, setPoisPatient] = useState("");
+//   const [tension, setTension] = useState("");
+//   const [Température, setTempérature] = useState("");
+// //insert
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     const form = event.currentTarget;
+//     if (form.checkValidity() === true) {
+//       const cons1 = {
+//         patientID:id,
+//         MotifCons: MotifCons,
+//         AntécedentsMédecaux: AntécedentsMédecaux,
+//         HistoriqueSocial: HistoriqueSocial,
+//         ExemansComplementaires: ExemansComplementaires,
+//         HistoriqueFamilial: HistoriqueFamilial,
+//         DescriptionExamen:DescriptionExamen,
+//         DateCons :DateCons,
+//         TaillePatient:TaillePatient,
+//         PoisPatient:PoisPatient,
+//         tension:tension,
+//         Température:Température,
+
+//       }
+//       addCons (cons1)
+//       .then(res=>{
+//         console.log("Insert OK",res);
+//          navigate("/Consultation");
+//         })
+//         .catch(error=>{
+//         console.log(error)
+//         alert("Erreur ! Insertion non effectuée")
+//         })
+//         }
         
-   if (form.checkValidity() === true) {
-  console.log("valeurs valides")
+//    if (form.checkValidity() === true) {
+//   console.log("valeurs valides")
 
-};
-      setValidated(true);
-    }                
+// };
+//       setValidated(true);
+//     }                
 //delete consultation 
     const delcons = async (_id) => {
       await deleteCons(_id)
@@ -106,7 +108,7 @@ function Consultation() {
       label: "Num Fiche",
       options: {
         filter: true,
-        sort: true,
+        sort: false,
         customBodyRender: (pat) => (
           pat && pat.numfiche ? pat.numfiche : null
         ),
@@ -188,8 +190,9 @@ function Consultation() {
           sort: false,
         customBodyRender: (value) => (
           <div>
-            <IconButton >
-              {<Link to={"/cons/edit/ "+ value}  > 
+            <IconButton>
+            {/* /Patient/:patientid/cons/edit/:consid */}
+              {<Link to = {`/patient/${id}/cons/edit/${value}`}  > 
            
                 <EditIcon color='secondary'  fontSize='large'/>
               </Link>
@@ -214,7 +217,7 @@ function Consultation() {
         customBodyRender: (value) => (
           <div>
             <IconButton >
-            {<Link to={"Ord/" + value} >
+            {<Link to={`/patient/${id}/cons/ord/${value}`} >
            
                 <MedicationIcon fontSize='large' />
               </Link>
@@ -233,13 +236,31 @@ function Consultation() {
 
   return (
     <div>
-            <TopDoctor/>
 
+            <TopDoctor/>
+            <div style={{ padding: 5, margin: 5 }}>
+        <Button
+          color="error"
+          // startIcon={<AddCircleIcon />}
+          size="large"
+          startIcon={<PersonAddIcon fontSize='large'  />}
+          variant="outlined"
+        > {<Link to={`/Patient/cons/${id}/insert`} 
+          style={{
+            textDecoration:
+              "none", color: "black" 
+          }}>
+            Ajouter Consultation
+          </Link>
+          }
+        </Button>
+      </div>
     <div className="tiltle">   
     <h1>Gestion de consultation </h1>
     </div>
      <br/>
-      <div className='cons' style={{border:"2px solid black"} }>
+     <br/>
+      {/* <div className='cons' style={{border:"2px solid black"} }>
         <div className="row" style={{display: "flex"}}>
 
           <fieldset className="col-md-6">
@@ -309,17 +330,6 @@ function Consultation() {
             <legend>Examen :</legend>
             <div>
               <div className="row g-3">
-              {/* <div className="col-10">
-                  Numéro de Cons :
-                   <input type="number" 
-                   className="form-control"
-                   
-                   
-                   />
-                </div>
-                <div className="col-10">
-                  Numéro de Fiche : <input type="number" className="form-control" />
-                </div> */}
                 <div className="col-10">
                   Taille de patient : 
                 <input type="text" className="form-control" 
@@ -351,9 +361,6 @@ function Consultation() {
                    value={Température}
                    />
                 </div>
-                {/* <div className="col-10">
-                  Périmètre de patient: <input type="number" className="form-control" />
-                </div> */}
               </div>
             </div>
           </fieldset>
@@ -374,7 +381,9 @@ function Consultation() {
                 </div>
           </form>
         </fieldset>
-      </div>
+      </div> */}
+
+      
       <div>
   
 

@@ -71,6 +71,9 @@ import EditeCons from './Compenent/Doctor/Pages/consultation/EditeCons';
 import Paientedite from './Compenent/patient/ProfilePa/Patientedite';
 import TopDoctor from './Compenent/Doctor/topbarD/TopDoctor';
 import ProtectedRoutesMedecin from './Compenent/Home/ProtectedRoutesMedecin';
+import Dossmed from './Compenent/Doctor/Pages/dossiers medicales/Dossmed';
+
+import AjouterCons from './Compenent/Doctor/Pages/consultation/AjouterCons';
 function App() {
   // const { isLoggedIn } = useSelector((state) => state.auth);
 
@@ -95,28 +98,38 @@ function App() {
 
 
           {/* Doctor  */}
-          <Route path="/Insertpatient" element={<Insertpatient />} />
+          <Route path="/Patient/edit/:id" element={<EditePatient />} />
+          <Route path="/Patient/medecin/:id/insert" element={<Insertpatient />} />
+
+          <Route path="/Patient/cons/:id" element={<Consultation />} />
+          <Route path="/Patient/cons/:id/insert" element={<AjouterCons />} />
+
+
           <Route path="/Modifiercompte" element={<Modifiercompte />} />
           <Route path="/MenuDoctor" element={<MenuDoctor />} />
           <Route path="/Consultation" element={<Consultation />} />
           <Route path="/ListRend_vous" element={<ListRend_vous />} />
           <Route path="/Demdeur" element={<Demdeur />} />
           <Route path="/Fiche" element={<Fiche />} />
-          <Route path="/Patient/edit/:id" element={<EditePatient />} />
-          <Route path="/Patient/cons/:id" element={<Consultation />} />
+         
+          <Route path="/Patient/Dossmed/:id" element={<Dossmed/>} />
+
+   
           <Route path="/Patient/cons/:id/:consid" element={<DetailsCons />} />
-          <Route path="/cons/edit/:consid" element={<EditeCons />} />
+          {/* <Route path="/cons/:consid" element={<DetailsCons />} /> */}
+          <Route path="/Patient/:patientid/cons/edit/:consid" element={<EditeCons />} />
           {/* <Route path="ord/cons/:id/:ordid" element ={<Ordonnance/>} /> */}
-          <Route path="/Patient/cons/:id/ord/:ordid" element={<Ordonnance />} />
+          <Route path="/Patient/:patientid/cons/ord/:id" element={<Ordonnance />} />
           {/* <Route path="/PrincipaleDo" element ={<PrincipaleDo />} /> */}
           <Route path="/PrincipaleDo" element={<PrincipaleDo />} />
           <Route path="/NotifactionDR" element={<NotifactionDR />} />
           <Route path="/ListeSpecard" element={<ListeSpecard />} />
-          <Route path="/ListPatient" element={<ListPatient />} />
+          {/* <Route path="/ListPatient" element={<ListPatient />} /> */}
+          <Route path="/Patient/medecin/:id" element={<ListPatient />} />
+
           <Route path="/SidebarD" element={<SidebarD />} />
           <Route path="/CalendrieMed" element={<CalendrieMed />} />
           <Route path="/TopDoctor" element={<TopDoctor />} />
-
           {/* /patient/ */}
           <Route path="/PrincipalePa" element={<PrincipalePa />} />
           <Route path="/HomePatient" element={<HomePatient />} />
@@ -136,11 +149,10 @@ function App() {
           <Route path="/ListsepPa" element={<ListsepPa />} />
           <Route path="/Logout" element={<Logout />} />
           <Route path="/TopPA" element={<TopPA />} />
-
+          {/* <Route path="/Cons" element={<Cons/>} /> */}
           <Route path="/Paientedite" element={<Paientedite />} />
 
         </Routes>
-        <ButtonBar />
       </Router>
     </>);
 }

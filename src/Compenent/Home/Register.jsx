@@ -68,7 +68,7 @@ function RegisterDoctor() {
       const formData = new FormData();
       buildFormData(formData, userData);
       dispatch(register(formData))
-      // navigate('/LoginDoctor')
+      //  navigate('/login')
     }
   };
   return (
@@ -121,7 +121,7 @@ function RegisterDoctor() {
 
                     <div className="col-12 col-sm-6">
                       <input
-                        type="number"
+                        type="text"
                         className="form-control bg-light border-0"
                         placeholder="Numéro mobile"
                         style={{ height: '55px' }}

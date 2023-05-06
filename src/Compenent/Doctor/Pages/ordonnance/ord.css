@@ -6,6 +6,15 @@
     padding-top:50px;
     padding-right: 150px;
 }
+.ordonnance{
+  border: 2px solide black;
+}
+.impr{
+  display: flex;
+  /* padding-top: 90px; */
+  padding-left: 100px;
+  
+}
 .tiltle1 {
     text-align: center; 
     padding-top: 20px;
@@ -47,7 +56,9 @@ justify-content: space-between;
   .inf2{
 
     display: flex;
+    justify-content: space-between;
     flex-direction: column; 
+
  }
 
 
@@ -56,8 +67,8 @@ justify-content: space-between;
     top: 100px;
     left: 50px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
   }
   
   .ordonnance-details {
@@ -71,7 +82,11 @@ justify-content: space-between;
     position: absolute;
     bottom: 50px;
     right: 50px;
+    /* padding-bottom:30px;
+    padding-top:30px; */
+
   }
+
   
 .H1 {
     font-size: 24px;
@@ -87,9 +102,10 @@ justify-content: space-between;
   }
   
 .H3 {
-    font-size: 16px;
+    font-size: 30px;
     font-weight: bold;
     margin-bottom: 5px;
+    text-align: center;
   }
 
   

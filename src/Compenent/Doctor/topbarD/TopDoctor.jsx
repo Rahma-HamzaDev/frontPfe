@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import {useSelector} from "react-redux";
 import {urlimage} from "../../../Axios/Api"
 import {Nav, Navbar,Container,Form,FormControl,Button} from 'react-bootstrap';
-import {Link } from 'react-router-dom'
+import {Link, useParams } from 'react-router-dom'
 const TopDoctor=()=>{
   const mystyle = {
     color: "white",
@@ -15,16 +15,20 @@ const TopDoctor=()=>{
     const {user} = useSelector((state) =>state.auth);
   console.log(user);
 
+// const medecinId =user._id
+// console.log(medecinId); 
+// const {id} = useParams();
+
   return(
+
 <Navbar bg="primary" variant="dark">
     <Container>
     <Navbar.Brand >DrMedicale </Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link as={Link} to="/ListPatient">Liste des patients</Nav.Link>
+      <Nav.Link as={Link} to={`/Patient/medecin/${user._id}`}>Liste des patients</Nav.Link>
       <Nav.Link as={Link} to="/ListRend_vous">Liste Rendez-vous</Nav.Link>
       <Nav.Link as={Link} to="/Demdeur">Demande Rendez-Vous</Nav.Link>
       <Nav.Link as={Link} to="/CalendrieMed">calendrier</Nav.Link>
-
 
     </Nav>
     <Stack direction="row" spacing={2}>

@@ -1,13 +1,36 @@
-.details{
-    padding-left: 150px;
-}
-.tiltle1{
-     text-align: center; 
-     padding-top: 20px;
-     /* background-color: aqua; */
-}
-.allD{
-    background-color:lightblue;
- padding-top: 50px; 
- padding-bottom: 50px; 
-}
+.allD {
+    /* border: 1px solid black; */
+    padding: 10px;
+    margin: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
+ 
+  
+  }
+  .details2{
+    padding-left: 200px;
+    padding-right:200px;
+       /* align-items: center; */
+  }
+  .details {
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 5px;
+    /* padding-left: 50px; */
+    padding-top : 50px;
+
+
+  }
+  
+  span {
+    /* border: 1px solid lightgray;
+    padding: 2px;
+    margin: 2px; */
+    text-align: center;
+  }
+  .examen{
+    border: 2px solid black;
+    padding: 80px;
+    margin: 5px;
+    /* padding-left:90px; */
+  }

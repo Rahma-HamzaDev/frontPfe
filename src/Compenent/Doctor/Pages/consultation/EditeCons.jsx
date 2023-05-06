@@ -5,7 +5,9 @@ import { useState, useEffect } from 'react'
 import { fetchConsById, editCons } from '../../../../Services/ConsService';
 
 function EditeCons() {
-  const {consid} = useParams();
+  const { consid,patientid } = useParams();
+  console.log(patientid)
+  console.log(consid)
   //     const [cons, setCons] = useState(null);
      console.log(consid)
   const navigate = useNavigate();
@@ -54,7 +56,9 @@ function EditeCons() {
       editCons(cons)
         .then(res => {
           console.log("Update OK", res);
-          navigate("/Consultation");
+          // alert("modification avec succès")
+          // "/patient/cons/6452c36c27b142a8046da762"
+          navigate(`/patient/cons/${patientid}`);
         })
         .catch(error => {
           console.log(error)
