@@ -3,7 +3,6 @@ import '../../Home/Style.css';
 import { Link } from 'react-router-dom';
 import { GrNotification } from "react-icons/gr";
 import logo from '../imgPa/Dr.png';
-import Sidebar from "./side/Sidebar";
 
 
 function MenuPa() {

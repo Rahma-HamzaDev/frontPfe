@@ -9,7 +9,7 @@ import { USER, DOCTOR } from '../../utils/roles'
 import { buildFormData } from "../../utils/ConvertFormData";
 import Menu from "./Menu";
 
-function RegisterDoctor() {
+function Register() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
   const role = searchParams.get('role') || USER
@@ -74,7 +74,7 @@ function RegisterDoctor() {
   return (
     <div>
       <Menu />
-      {/* Appointment Start */}
+ 
       <div className="container-fluid bg-primary my-5 py-5" >
         <div className="container py-5">
           <div className="row gx-5">
@@ -269,4 +269,4 @@ function RegisterDoctor() {
   )
 }
 
-export default RegisterDoctor
+export default Register

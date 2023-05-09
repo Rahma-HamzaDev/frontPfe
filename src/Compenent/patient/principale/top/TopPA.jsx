@@ -18,6 +18,8 @@ const TopPA=()=>{
   };
   const {user} = useSelector((state) =>state.auth);
    console.log(user)
+   const userId = user._id
+console.log(userId);
   return(
     <div className="topbar">
    
@@ -26,9 +28,10 @@ const TopPA=()=>{
     <Navbar.Brand >DrMedicale </Navbar.Brand>
     <Nav className="me-auto">
       <Nav.Link as={Link} to="/HomePatient">acceuil</Nav.Link>
-      <Nav.Link as={Link} to="/MesRend">Mes Rendez-vous</Nav.Link>
-      <Nav.Link as={Link} to="/DossiersPa">Mes Dossiers médecaux</Nav.Link>
+      <Nav.Link as={Link} to={`/MesRend/user/${userId}`}>Mes Rendez-vous</Nav.Link>
       
+      <Nav.Link as={Link} to="/DossiersPa">Mes Dossiers médecaux</Nav.Link>
+
     </Nav>
     <Stack direction="row" spacing={2}>
       <Avatar alt="Remy Sharp" src={urlimage + user.avatar} />

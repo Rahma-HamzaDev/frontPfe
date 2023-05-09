@@ -1,10 +1,7 @@
 import React from 'react'
 import "./homePatient.css"
-import MenuPa from "./MenuPa";
-// import Sidebar from "./Sidebar";
 import ListsepPa from './ListsepPa';
 import TopPA from './top/TopPA';
-import Sidebar from "./side/Sidebar";
 
 function HomePatient() {
   return (

@@ -1,29 +1,33 @@
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+// import {urlimage} from "../../../Axios/Api"
+// import {  fetchSpecialite}  from '../../../Services/SpecialiteServices';
+// import Footer from '../../Home/Footer';
+// import Sidebar from './Sidebar';
+// import img1 from '../Home/Images/team-1.jpg';
+// import img3 from '../Home/Images/team-3.jpg';
+import { useParams, useSearchParams } from 'react-router-dom'
 import '../../Home/Style.css'
 import imageM from '../../Home/Images/doctor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FaUserMd, FaAmbulance, FaProcedures, FaMicroscope, FaPills } from "react-icons/fa";
-// import {urlimage} from "../../../Axios/Api"
 import { BsSearch } from "react-icons/bs";
 import { TbStethoscope } from "react-icons/tb";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
-// import img1 from '../Home/Images/team-1.jpg';
 import img2 from '../../Home/Images/team-2.jpg';
-// import img3 from '../Home/Images/team-3.jpg';
 import { fetchMedecin } from '../../../Services/DoctorServices';
-// import {  fetchSpecialite}  from '../../../Services/SpecialiteServices';
-// import Footer from '../../Home/Footer';
-// import Sidebar from './Sidebar';
 import { urlimage } from "../../../Axios/Api"
 import TopPA from '../principale/top/TopPA';
 import { fetchMedecinBySpeciality } from '../../../Services/UserServices';
 
 function OurDoctor() {
     const [users, setUsers] = useState([])
+
+    console.log(users.length > 0 ? users[0]._id : null);
+  const id = users.length > 0 ? users[0]._id : null;
+    console.log(id)
     const [searchParams, setSearchParams] = useSearchParams()
     const specialite = searchParams.get('specialite')
     useEffect(() => {
@@ -36,16 +40,6 @@ function OurDoctor() {
             })
     }, [])
 
-    // const[specialites, setSpecialite]=useState([])
-    //     useEffect(()=>{
-    //       fetchSpecialite().then(res=>{
-    //         setSpecialite(res.data)
-    //         console.log(res.data)
-    //       })
-    //      .catch(error=>{
-    //       console.log(error)
-    //      })
-    //     },[])
     return (
         <div>
 
@@ -71,7 +65,7 @@ function OurDoctor() {
                         </Form>
                     </div>
                     <div className="owl-carousel team-carousel position-relative">
-                    {users.map((user, index) =>
+                        {users.map((user, index) =>
                             <div className="team-item" key={index}>
                                 <div className="row g-0 bg-light rounded overflow-hidden">
                                     <div className="col-12 col-sm-5 h-100">
@@ -87,10 +81,15 @@ function OurDoctor() {
                                             <p className="m-0">{user.adresse}</p>
                                             <p className="m-0">{user.phone}</p>
                                             <p>{user.specialiteID?.nomsep}</p>
+                                            {/* <p>{user._id}</p> */}
+
+
                                         </div>
                                         <div className="d-flex mt-auto border-top p-4">
-                                            <Link to='/Prendrerend_vous'> <button className="btn btn-primary w-100 py-3" type="submit" style={{ fontSize: "20px" }}>Rendez-Vous</button> </Link>
-
+                                            <Link to={`/Prendrerend_vous/medecin/${id}`}> 
+                                            <button className="btn btn-primary w-100 py-3" type="submit" style={{ fontSize: "20px" }}>
+                                                Rendez-Vous</button> 
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

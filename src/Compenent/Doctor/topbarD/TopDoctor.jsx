@@ -22,12 +22,13 @@ const TopDoctor=()=>{
   return(
 
 <Navbar bg="primary" variant="dark">
-    <Container>
+    <Container> 
     <Navbar.Brand >DrMedicale </Navbar.Brand>
     <Nav className="me-auto">
       <Nav.Link as={Link} to={`/Patient/medecin/${user._id}`}>Liste des patients</Nav.Link>
       <Nav.Link as={Link} to="/ListRend_vous">Liste Rendez-vous</Nav.Link>
-      <Nav.Link as={Link} to="/Demdeur">Demande Rendez-Vous</Nav.Link>
+      <Nav.Link as={Link} to={`/request/medecin/${user._id}`}>Demande Rendez-Vous</Nav.Link>
+
       <Nav.Link as={Link} to="/CalendrieMed">calendrier</Nav.Link>
 
     </Nav>

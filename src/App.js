@@ -23,7 +23,7 @@ import ButtonBar from './Compenent/Home/ButtonBar';
 // Doctor interface
 import Consultation from './Compenent/Doctor/Pages/consultation/Consultation';
 import Ordonnance from './Compenent/Doctor/Pages/ordonnance/Ordonnance';
-// import ListPatient from './Compenent/Doctor/ListPatient';
+
 import Insertpatient from './Compenent/Doctor/Pages/PatientList/Insertpatient';
 import MenuDoctor from './Compenent/Doctor/Pages/HomeDoctor/MenuDoctor';
 import ListRend_vous from './Compenent/Doctor/Pages/RendezVous/ListRend_vous';
@@ -32,7 +32,7 @@ import NotifactionDR from './Compenent/Doctor/NotifactionDR';
 import Fiche from './Compenent/Doctor/Pages/PatientList/Fiche';
 import EditePatient from './Compenent/Doctor/Pages/PatientList/EditePatient';
 import ListPatient from "./Compenent/Doctor/Pages/PatientList/ListPatient";
-// import AffichePatient from "./Compenent/Doctor/AffichePatient";
+
 
 
 
@@ -43,9 +43,6 @@ import DossiersPa from './Compenent/patient/ourDossiers/DossiersPa';
 import ListeSpecard from './Compenent/patient/ListeSpecard';
 import MesRend from './Compenent/patient/RendezVous/histoireRend/MesRend';
 
-import PrincipalePa from './Compenent/patient/PrincipalePa';
-
-import Sidebar from './Compenent/patient/principale/side/Sidebar';
 import SidebarD from './Compenent/Doctor/SidebarD';
 
 import Prendrerend_vous from './Compenent/patient/RendezVous/Prendrerend_vous';
@@ -109,7 +106,9 @@ function App() {
           <Route path="/MenuDoctor" element={<MenuDoctor />} />
           <Route path="/Consultation" element={<Consultation />} />
           <Route path="/ListRend_vous" element={<ListRend_vous />} />
-          <Route path="/Demdeur" element={<Demdeur />} />
+          <Route path="/Patient/medecin/:id" element={<ListPatient />} />
+
+          <Route path="/request/medecin/:id" element={<Demdeur />} />
           <Route path="/Fiche" element={<Fiche />} />
          
           <Route path="/Patient/Dossmed/:id" element={<Dossmed/>} />
@@ -124,28 +123,27 @@ function App() {
           <Route path="/PrincipaleDo" element={<PrincipaleDo />} />
           <Route path="/NotifactionDR" element={<NotifactionDR />} />
           <Route path="/ListeSpecard" element={<ListeSpecard />} />
-          {/* <Route path="/ListPatient" element={<ListPatient />} /> */}
+     
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />
 
           <Route path="/SidebarD" element={<SidebarD />} />
           <Route path="/CalendrieMed" element={<CalendrieMed />} />
           <Route path="/TopDoctor" element={<TopDoctor />} />
           {/* /patient/ */}
-          <Route path="/PrincipalePa" element={<PrincipalePa />} />
           <Route path="/HomePatient" element={<HomePatient />} />
           <Route path="/Patientedite" element={<Patientedite />} />
           <Route path="/MenuPa" element={<MenuPa />} />
-          <Route path="/MesRend" element={<MesRend />} />
+          <Route path="/MesRend/user/:userId" element={<MesRend />} />
           <Route path="/DossiersPa" element={<DossiersPa />} />
           <Route path="/ConsPa" element={<ConsPa />} />
           <Route path="/OrdPa" element={<OrdPa />} />
           <Route path="/SonDossier" element={<SonDossier />} />
           <Route path="/OurDoctor" element={<OurDoctor />} />
-          <Route path="/Prendrerend_vous" element={<Prendrerend_vous />} />
+          <Route path="/Patient/medecin/:id" element={<ListPatient />} />
+          <Route path="/Prendrerend_vous/medecin/:id" element={<Prendrerend_vous />} />
           <Route path='/ListMedPa' element={<ListMedPa />} />
           <Route path='/MediaCardPa' element={<MediaCardPa />} />
           {/* <Route path='/MoncomptePa'element={<MoncomptePa/>}/> */}
-          <Route path="/Sidebar" element={<Sidebar />} />
           <Route path="/ListsepPa" element={<ListsepPa />} />
           <Route path="/Logout" element={<Logout />} />
           <Route path="/TopPA" element={<TopPA />} />

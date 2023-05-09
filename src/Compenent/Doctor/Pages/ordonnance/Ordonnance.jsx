@@ -11,13 +11,14 @@ function Ordonnance() {
   const { user } = useSelector((state) => state.auth);
   const { id,patientid } = useParams();
 
-  const [ord, setOrd] = useState([]);
+  const [ord, setOrd] = useState(null);
   const [validated, setValidated] = useState(false);
   const [NomMedicaments, setNomMedicaments] = useState("");
   const [DosageMedicaments, setDosageMedicaments] = useState("");
   const [FréquanceMedicaments, setFréquanceMedicaments] = useState("");
   const [FormeMedicaments, setFormeMedicaments] = useState("");
   const [DateOrd, setDateOrd] = useState("");
+  const [observation, setObservation] = useState("");
 
 
 
@@ -32,12 +33,14 @@ function Ordonnance() {
         DosageMedicaments: DosageMedicaments,
         FréquanceMedicaments: FréquanceMedicaments,
         FormeMedicaments: FormeMedicaments,
-        patientID:patientid
+        patientID:patientid,
+        observation:observation
       }
       addOrd (ord1)
       .then(res=>{
         console.log("Insert OK",res);
-        console.log(ord1)
+       setOrd(res.data) 
+        // console.log(ord1)
         })
         .catch(error=>{
         console.log(error)
@@ -94,19 +97,19 @@ function Ordonnance() {
                 </div>
                 <div className="col-10">
                   <label htmlFor='social'> Nom Médicaments:</label>
-                  <input type="text" 
-                  placeholder="Raison de visite" 
-                  id='social'  
+                  <textarea 
+                  placeholder=" Nom Médicaments" 
+               
                   className="form-control" 
                   value={NomMedicaments}
                     onChange={(e)=>setNomMedicaments(e.target.value)}
-                  />
+                  ></textarea>
                 </div>
                 <div className="col-10">
                   <label htmlFor='social'> Dosage Médicaments : </label>
-                  <input type="text"
-                   placeholder="Antécedents Médecaux" 
-                   id='social' 
+                  <textarea 
+                   placeholder="Dosage Médicaments " 
+       
                    className="form-control"  
                    value={DosageMedicaments}
                    onChange={(e)=>setDosageMedicaments(e.target.value)}
@@ -116,9 +119,8 @@ function Ordonnance() {
                 </div>
                 <div className="col-10">
                   <label htmlFor='social'> Fréquance Médicaments :</label>
-                  <input type="text" 
-                  placeholder="Antécedents Médecaux" 
-                  id='social'   
+                  <textarea 
+                  placeholder="Fréquance Médicaments" 
                    className="form-control"
                    value={FréquanceMedicaments}
                    onChange={(e)=>setFréquanceMedicaments(e.target.value)}
@@ -127,9 +129,8 @@ function Ordonnance() {
                 </div>
                 <div className="col-10">
                   <label htmlFor='social'>Forme Médicaments :</label>
-                  <input type="text" 
+                  <textarea
                   placeholder="Antécedents Médecaux" 
-                  id='social' 
                   className="form-control" 
                   value={FormeMedicaments}
                   onChange={(e)=>setFormeMedicaments(e.target.value)}
@@ -144,7 +145,12 @@ function Ordonnance() {
           <form validated={validated} onSubmit={handleSubmit}>
               <legend> observation  :</legend>
               <div>
-                <textarea rows="9" cols="80" className="form-control"></textarea>
+                <textarea rows="9" cols="80" className="form-control"
+                
+                 value={observation}
+                  onChange={(e)=>setObservation(e.target.value)}
+                
+                ></textarea>
               </div><br />
               <div className="col-10">
                 <button className="btn btn-primary" type="submit">Enregistrer</button>
@@ -203,12 +209,21 @@ function Ordonnance() {
 
 </div> 
     
-          <p>
-          {ord?.NomMedicaments} <br/>
-          {ord?.FormeMedicaments}
-          {ord?.DosageMedicaments}<br/>
-          {ord?.FréquanceMedicaments} 
-          {ord?.observation}            </p>
+          <div className='contenue'>
+          {ord?.NomMedicaments}&nbsp;
+          &nbsp;
+
+          {ord?.DosageMedicaments}&nbsp;
+          &nbsp;
+
+          {ord?.FréquanceMedicaments}&nbsp;
+          &nbsp;
+          &nbsp;
+          
+          {ord?.observation}   &nbsp;
+          &nbsp;
+        
+           </div>
         </div>
         <br/>
 {/* //  )} */}

@@ -25,7 +25,6 @@ import { useSelector } from 'react-redux';
 
 function ListPatient() {
  const {user} = useSelector((state) =>state.auth);
- 
  const id = user._id
 
   // const {id} = useParams();
@@ -182,7 +181,7 @@ function ListPatient() {
   
     {
       name: "_id",
-      label: "Fiche medecale",
+      label: "Fiche medicale",
       options: {
           filter: true,
           sort: false,

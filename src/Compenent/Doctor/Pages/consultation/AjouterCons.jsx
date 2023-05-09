@@ -15,7 +15,7 @@ import MedicationIcon from '@mui/icons-material/Medication'
 import TopDoctor from '../../topbarD/TopDoctor';
 function AjouterCons() {
     const {id} = useParams();
-  // const navigate = useNavigate();
+   const navigate = useNavigate();
   const [validated, setValidated] = useState(false);
   const [cons, setCons] = useState([]);
   const [MotifCons, setMotifCons] = useState("");
@@ -51,7 +51,7 @@ function AjouterCons() {
       addCons (cons1)
       .then(res=>{
         console.log("Insert OK",res);
-        // navigate("/Consultation");
+         navigate(`/patient/cons/${id}`);
         })
         .catch(error=>{
         console.log(error)

@@ -9,6 +9,10 @@
 .ordonnance{
   border: 2px solide black;
 }
+.contenue{
+  justify-content: space-between;
+  /* text-align: center; */
+}
 .impr{
   display: flex;
   /* padding-top: 90px; */

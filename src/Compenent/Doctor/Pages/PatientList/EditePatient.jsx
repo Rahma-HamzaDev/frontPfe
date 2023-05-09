@@ -71,7 +71,7 @@ export default function EditePatient() {
     }
     editPatient (patient)
     .then(res=>{
-    // console.log("Update OK",res);
+     console.log("Update OK",res);
     navigate(`/Patient/medecin/${medecinId}`);
       })
     .catch(error=>{

@@ -19,8 +19,8 @@ function ListRend_vous() {
  
   return (
     <div>
-      <TopDoctor/>
-    <h1>  Liste  Rendez vous  </h1>   
+      <TopDoctor/><br/>
+      <h1 style={{textAlign:"center"}}>  Liste  Rendez vous  </h1>   <br/>
       <Table striped bordered hover>
     
     <thead>
@@ -29,6 +29,7 @@ function ListRend_vous() {
         <th>Phone Patient</th>
         <th>Date</th>
         <th>Temps </th>
+        <th>Etat</th>
         <th>Description </th>
       
       </tr>
