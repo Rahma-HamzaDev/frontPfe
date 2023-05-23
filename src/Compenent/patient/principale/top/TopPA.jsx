@@ -29,8 +29,9 @@ console.log(userId);
     <Nav className="me-auto">
       <Nav.Link as={Link} to="/HomePatient">acceuil</Nav.Link>
       <Nav.Link as={Link} to={`/MesRend/user/${userId}`}>Mes Rendez-vous</Nav.Link>
-      
-      <Nav.Link as={Link} to="/DossiersPa">Mes Dossiers médecaux</Nav.Link>
+      {/* <Nav.Link as={Link} to="/RendezVous">Mes Dossiers médecaux</Nav.Link> */}
+
+      <Nav.Link as={Link} to="/entrecode">Mes Dossiers médecaux</Nav.Link>
 
     </Nav>
     <Stack direction="row" spacing={2}>

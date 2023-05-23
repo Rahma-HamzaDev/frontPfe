@@ -232,13 +232,17 @@ function Consultation() {
   ];
   const options = {
     filterType: 'checkbox',
+    // maxHeight: '500px',
+    // minwidth: '500px',
+    rowHeight: '50px',
+    setCellProps: () => ({ style: { fontSize: '16px', padding: '8px' } }),
   };
 
   return (
     <div>
 
             <TopDoctor/>
-            <div style={{ padding: 5, margin: 5 }}>
+            <div style={{ padding: 2, margin: 2 }}>
         <Button
           color="error"
           // startIcon={<AddCircleIcon />}

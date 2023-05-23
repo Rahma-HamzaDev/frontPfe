@@ -26,10 +26,8 @@ import Ordonnance from './Compenent/Doctor/Pages/ordonnance/Ordonnance';
 
 import Insertpatient from './Compenent/Doctor/Pages/PatientList/Insertpatient';
 import MenuDoctor from './Compenent/Doctor/Pages/HomeDoctor/MenuDoctor';
-import ListRend_vous from './Compenent/Doctor/Pages/RendezVous/ListRend_vous';
+import ListRendVous from './Compenent/Doctor/Pages/RendezVous/ListRendVous';
 import Demdeur from './Compenent/Doctor/Pages/RendezVous/Demdeur';
-import NotifactionDR from './Compenent/Doctor/NotifactionDR';
-import Fiche from './Compenent/Doctor/Pages/PatientList/Fiche';
 import EditePatient from './Compenent/Doctor/Pages/PatientList/EditePatient';
 import ListPatient from "./Compenent/Doctor/Pages/PatientList/ListPatient";
 
@@ -43,7 +41,7 @@ import DossiersPa from './Compenent/patient/ourDossiers/DossiersPa';
 import ListeSpecard from './Compenent/patient/ListeSpecard';
 import MesRend from './Compenent/patient/RendezVous/histoireRend/MesRend';
 
-import SidebarD from './Compenent/Doctor/SidebarD';
+import SidebarD from './Compenent/Doctor/sidebar/SidebarD';
 
 import Prendrerend_vous from './Compenent/patient/RendezVous/Prendrerend_vous';
 import SonDossier from './Compenent/patient/ourDossiers/SonDossier';
@@ -68,9 +66,17 @@ import EditeCons from './Compenent/Doctor/Pages/consultation/EditeCons';
 import Paientedite from './Compenent/patient/ProfilePa/Patientedite';
 import TopDoctor from './Compenent/Doctor/topbarD/TopDoctor';
 import ProtectedRoutesMedecin from './Compenent/Home/ProtectedRoutesMedecin';
-import Dossmed from './Compenent/Doctor/Pages/dossiers medicales/Dossmed';
+import Dossmed from './Compenent/Doctor/Pages/PatientList/Dossmed';
 
 import AjouterCons from './Compenent/Doctor/Pages/consultation/AjouterCons';
+import RendezVous from './Compenent/patient/RendezVous/RendezVous';
+import { Disponibilité } from './Compenent/Doctor/Pages/RendezVous/Disponibilité';
+import { AjouterDispo } from './Compenent/Doctor/Pages/RendezVous/AjouterDispo';
+import Ajouterdv from './Compenent/Doctor/Pages/RendezVous/Ajouterdv';
+import Ajoutercontrol from './Compenent/Doctor/Pages/RendezVous/Ajoutercontrol';
+import Editrdv from './Compenent/Doctor/Pages/RendezVous/Editrdv';
+import CodePa from './Compenent/patient/ourDossiers/CodePa';
+// import Pdfimp from './Compenent/Doctor/Pages/imprissionpdf/Pdfimp';
 function App() {
   // const { isLoggedIn } = useSelector((state) => state.auth);
 
@@ -97,33 +103,38 @@ function App() {
           {/* Doctor  */}
           <Route path="/Patient/edit/:id" element={<EditePatient />} />
           <Route path="/Patient/medecin/:id/insert" element={<Insertpatient />} />
-
           <Route path="/Patient/cons/:id" element={<Consultation />} />
           <Route path="/Patient/cons/:id/insert" element={<AjouterCons />} />
-
-
           <Route path="/Modifiercompte" element={<Modifiercompte />} />
           <Route path="/MenuDoctor" element={<MenuDoctor />} />
           <Route path="/Consultation" element={<Consultation />} />
-          <Route path="/ListRend_vous" element={<ListRend_vous />} />
+          <Route path="/ListRendVous/medecin/:id" element={<ListRendVous />} />
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />
-
           <Route path="/request/medecin/:id" element={<Demdeur />} />
-          <Route path="/Fiche" element={<Fiche />} />
-         
-          <Route path="/Patient/Dossmed/:id" element={<Dossmed/>} />
+          <Route path="/RendezVous" element={<RendezVous />} />
+          {/* <Route path="/Pdfimp" element={<Pdfimp />} /> */}
+          <Route path="/Patient/fiche/:id" element={<Dossmed />} />
+        
+          <Route path="/Disponibilite" element={<Disponibilité />} />
+          <Route path="/entrecode" element={<CodePa />} />
+          
+          <Route path="/AjouterDispo" element={<AjouterDispo />} />
 
-   
+          <Route path="/ListRendVous/medecin/:id/Ajoute" element={<Ajouterdv />} />
+       
+          <Route path="/request/medecin/:id/Ajouter" element={<Ajoutercontrol />} />
+        
           <Route path="/Patient/cons/:id/:consid" element={<DetailsCons />} />
-          {/* <Route path="/cons/:consid" element={<DetailsCons />} /> */}
+
           <Route path="/Patient/:patientid/cons/edit/:consid" element={<EditeCons />} />
-          {/* <Route path="ord/cons/:id/:ordid" element ={<Ordonnance/>} /> */}
+
           <Route path="/Patient/:patientid/cons/ord/:id" element={<Ordonnance />} />
-          {/* <Route path="/PrincipaleDo" element ={<PrincipaleDo />} /> */}
+          
+
           <Route path="/PrincipaleDo" element={<PrincipaleDo />} />
-          <Route path="/NotifactionDR" element={<NotifactionDR />} />
           <Route path="/ListeSpecard" element={<ListeSpecard />} />
-     
+
+          <Route path="/Patient/:id" element={<Editrdv />} />
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />
 
           <Route path="/SidebarD" element={<SidebarD />} />
@@ -134,10 +145,12 @@ function App() {
           <Route path="/Patientedite" element={<Patientedite />} />
           <Route path="/MenuPa" element={<MenuPa />} />
           <Route path="/MesRend/user/:userId" element={<MesRend />} />
-          <Route path="/DossiersPa" element={<DossiersPa />} />
+          <Route path="/DossiersPa/:code" element={<DossiersPa />} />
           <Route path="/ConsPa" element={<ConsPa />} />
-          <Route path="/OrdPa" element={<OrdPa />} />
-          <Route path="/SonDossier" element={<SonDossier />} />
+          <Route path="/DetailsDossier/:code" element={<SonDossier />} />
+          <Route path="/OrdPa/:consid" element={<OrdPa />} />
+
+       
           <Route path="/OurDoctor" element={<OurDoctor />} />
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />
           <Route path="/Prendrerend_vous/medecin/:id" element={<Prendrerend_vous />} />

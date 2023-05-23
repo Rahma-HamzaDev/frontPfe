@@ -16,4 +16,3 @@ export const addSpecialite = async (specialite) => {
 export const editSpecialite = (specialite) => {
     return Api.put(SPECIALITE_API + '/' + specialite.id, specialite);
 }
-

@@ -3,7 +3,7 @@ import'../../../Home/Style.css';
 import { Link } from 'react-router-dom';
 import {  GrNotification} from "react-icons/gr";
 import logo from '../../../Home/Images/Dr.png';
- import SidebarD from '../../SidebarD';
+ import SidebarD from '../../sidebar/SidebarD';
 function MenuDoctor() {
   return (
     <div>

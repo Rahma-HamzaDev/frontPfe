@@ -6,6 +6,11 @@ export const fetchOrd = async (consId) => {
     return await Api.get(ORD_API+/cons/+consId);
 }
 
+export const fetchdossier = async (ordId) => {
+    console.log(ordId);
+    return await Api.get(ORD_API +'/dossier/'+ ordId);
+}
+
 
 export const fetchOrdById = async (ordId) => {
     return await Api.get(ORD_API + '/' + ordId);

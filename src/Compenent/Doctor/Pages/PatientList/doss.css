@@ -9,12 +9,15 @@
 
   }
   .allfich{
-    padding-left:500px ;
     padding-top:50px ;
     padding-bottom:200px ;
+    padding-left:500px ;
     padding-right: 300px;
   }
   .H11 {
+    padding-left:8px ;
+    padding-top:10px ;
+    /* padding-right: 300px; */
     font-size: 24px;
     margin: 0 0 10px 0;
     text-align: center;
@@ -24,13 +27,15 @@
   
   .H22 {
     font-size: 20px;
+    padding-left:8px ;
+    /* padding-right: 300px; */
     margin: 20px 0 10px 0;
   }
-/*   
+  
   .H33 {
-    font-weight: bold;
-    margin: 10px 0 5px 0;
-  } */
+    padding-left:10px ;
+    /* padding-right: 5px; */
+  }
   
   /* p {
     margin: 5px 0;

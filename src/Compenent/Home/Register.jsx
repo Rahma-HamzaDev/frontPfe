@@ -68,7 +68,7 @@ function Register() {
       const formData = new FormData();
       buildFormData(formData, userData);
       dispatch(register(formData))
-      //  navigate('/login')
+       navigate('/login')
     }
   };
   return (

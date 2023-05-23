@@ -20,8 +20,28 @@ function CalendrieMed() {
         },
         // Ajoutez ici d'autres événements
       ];
-    
       const localizer = momentLocalizer(moment);
+//la disponibilite : event , localizer:rend
+//       const [myEventsList, setMyEventsList] = useState([]);
+
+// const addEvent = (newEvent) => {
+//   setMyEventsList([...myEventsList, newEvent]);
+// }
+
+// // Utilisez cette méthode pour ajouter un événement à la liste
+// addEvent({
+//   title: 'Nouvel événement',
+//   start: new Date(),
+//   end: new Date(),
+// });
+
+// // Utilisez cette méthode pour supprimer un événement de la liste
+// const removeEvent = (eventIndex) => {
+//   const newEventsList = [...myEventsList];
+//   newEventsList.splice(eventIndex, 1);
+//   setMyEventsList(newEventsList);
+// };
+
   return (
     <>
           <TopDoctor/>

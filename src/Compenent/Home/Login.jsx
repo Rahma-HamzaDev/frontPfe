@@ -7,7 +7,7 @@ import {  Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import img from './Images/img-4.png';
-import {ADMIN, USER, DOCTOR} from '../../utils/roles'
+import {ADMIN, USER, DOCTOR} from '../../utils/roles' 
 import './Login.css';
 import Menu from "./Menu";
 const Login = () => {

@@ -24,11 +24,14 @@ function AjouterCons() {
   const [ExemansComplementaires, setExemansComplementaires] = useState("");
   const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
   const [DescriptionExamen, setDescriptionExamen] = useState("");
-  const [DateCons, setDateCons] = useState("");
+  const [DateCons, setDateCons] = useState(new Date().toISOString().split('T')[0]);
+  // const [Daterd, setDaterd] = useState(new Date().toISOString().split('T')[0]);
   const [TaillePatient, setTaillePatient] = useState("");
   const [PoisPatient, setPoisPatient] = useState("");
   const [tension, setTension] = useState("");
   const [Température, setTempérature] = useState("");
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -67,15 +70,16 @@ function AjouterCons() {
     }  
     return (  
 
-    <div>
+    <>
                  <TopDoctor/>
 
 <div className="tiltle">   
 <h1>Gestion de consultation </h1>
 </div>
  <br/>
-  <div className='cons' style={{border:"2px solid black"} }>
-    <div className="row" style={{display: "flex"}}>
+ 
+  <div className='cons'>
+    <div className="row"  >
 
       <fieldset className="col-md-6">
         <legend>Antécedents :</legend>
@@ -88,6 +92,7 @@ function AjouterCons() {
                className="form-control"
                value={DateCons}
                onChange={(e)=>setDateCons(e.target.value)}
+               required
                />
             </div>
             <div className="col-10">
@@ -97,6 +102,7 @@ function AjouterCons() {
                 className="form-control" 
                 value={MotifCons}
                 onChange={(e)=>setMotifCons(e.target.value)}
+                required
                 />
             </div>
             <div className="col-10">
@@ -106,6 +112,7 @@ function AjouterCons() {
                className="form-control" 
                value={AntécedentsMédecaux}
                onChange={(e)=>setAntécedentsMédecaux(e.target.value)}
+               required
                />
             </div>
             <div className="col-10">
@@ -115,6 +122,7 @@ function AjouterCons() {
                className="form-control" 
                value={HistoriqueFamilial}
                onChange={(e)=>setHistoriqueFamilial(e.target.value)}
+           required
                />
             </div>
             <div className="col-10">
@@ -124,6 +132,7 @@ function AjouterCons() {
               className="form-control"
               value={ExemansComplementaires}
               onChange={(e)=>setExemansComplementaires(e.target.value)}
+              required
               />
             </div>
             <div className="col-10">
@@ -133,6 +142,7 @@ function AjouterCons() {
               className="form-control"
               value={HistoriqueSocial}
               onChange={(e)=>setHistoriqueSocial(e.target.value)}
+              required
               />
             </div>
            
@@ -194,12 +204,13 @@ function AjouterCons() {
       </fieldset>
     </div>
 
-    <fieldset >
+    <div >
+      
       <form validated={validated} onSubmit={handleSubmit}>
         <legend>Description d'Examen  :</legend>
         <div>
           <textarea rows="9" cols="80" className="form-control"
-         
+         required
           value={ DescriptionExamen}
           onChange={(e)=>setDescriptionExamen(e.target.value)}
           ></textarea>
@@ -208,9 +219,11 @@ function AjouterCons() {
               <button className="btn btn-primary" type="submit">Enregistrer</button>
             </div>
       </form>
-    </fieldset>
-  </div>
     </div>
+
+
+  </div>
+    </>
   )
 }
 
