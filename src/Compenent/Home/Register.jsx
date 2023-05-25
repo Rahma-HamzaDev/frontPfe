@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { USER, DOCTOR } from '../../utils/roles'
 import { buildFormData } from "../../utils/ConvertFormData";
 import Menu from "./Menu";
+import { Alert } from "react-bootstrap";
+import { TextField } from "@mui/material";
 
 function Register() {
   const navigate = useNavigate()
@@ -40,7 +42,19 @@ function Register() {
       })
   }, [])
 
+  //
+  const [error, setError] = useState(false);
 
+  
+  const handlePhoneChange = (event) => {
+    const value = event.target.value;
+    if (value.length !== 8) {
+      setError(true);
+    } else {
+      setError(false);
+    }
+    setPhone(value);
+  };
 
   const { user, isSuccess, isError } = useSelector((state) => state.auth);
 
@@ -120,7 +134,7 @@ function Register() {
                     </div>
 
                     <div className="col-12 col-sm-6">
-                      <input
+                      {/* <input
                         type="text"
                         className="form-control bg-light border-0"
                         placeholder="Numéro mobile"
@@ -130,7 +144,23 @@ function Register() {
                         required
                         id="phone"
                         label="phone"
-                        onChange={(event) => setPhone(event.target.value)} />
+                        onChange={handlePhoneChange} /> */}
+                        {/* <Grid item xs={12} sm={6}> */}
+                <input
+                  required
+                  fullWidth
+                  className="form-control bg-light border-0"
+                  id="telephone"
+                  label="Télephone "
+                  name="telephone"
+                  autoComplete="Telephone"
+                  placeholder="+(216)" 
+                  style={{ height: '55px' }}
+                  error={error}
+                  onChange={handlePhoneChange}
+                />
+                 {error && <Alert severity="error">Le numéro se compose de 8 chiffres</Alert>} 
+              {/* </Grid> */}
                     </div>
 
                     <div className="col-12 col-sm-6">
@@ -171,7 +201,7 @@ function Register() {
                             label="Certification"
                             name="certification"
                             onChange={(event) => setCertification(event.target.value)}
-                            placeholder="Certification"
+                            placeholder="Diplôme"
                             style={{ height: '55px' }} />
                         </div>
                       )
@@ -179,7 +209,7 @@ function Register() {
 
                     {/* // photo personnelle*/}
                     <div className="col-12 col-sm-6">
-                      <h5>Mettre votre photo personnelle </h5>
+                      <h6>Mettre Photo Personnelle</h6>
                       <input
                         type="file"
                         name="photo"

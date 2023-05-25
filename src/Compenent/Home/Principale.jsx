@@ -70,9 +70,9 @@ function Principale() {
             <div className="col-lg-7">
               <div className="mb-4">
                 <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Presentation</h5>
-                <h1 className="display-4">Meilleure solution pour une relation médecins-patients </h1>
+                <h1 className="highest_text">Meilleure solution pour une relation médecins-patients </h1>
               </div>
-              <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+              <p className="lorem_text">Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
               <div className="row g-3 pt-3">
                 <div className="col-sm-3 col-6">
                   <div className="bg-light text-center rounded-circle py-4">

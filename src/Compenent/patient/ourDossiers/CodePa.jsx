@@ -58,7 +58,7 @@ function CodePa() {
                     </div> <br />
                     {/* {`/request/medecin/${id}/ajouter`} */}
                     
-                    {<Link to={`/DossiersPa/${code}`} >
+                    {<Link to={`/Monfiche/${code}`} >
                         <Button type="submit" variant="contained" className="submit-btn">
                             Soumettre
                         </Button>

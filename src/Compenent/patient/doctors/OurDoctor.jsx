@@ -49,9 +49,9 @@ function OurDoctor() {
                 <div className="container">
                     <div className="text-center mx-auto mb-5" style={{ maxWidth: '500px' }}>
                         <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Les Médecins</h5>
-                        <h1 className="display-4">Les Médecins "{specialite}"</h1>
+                        <h3 className="display-6">Les Médecins "{specialite}"</h3>
                     </div>
-                    <div className='serach1'>
+                    {/* <div className='serach1'>
                         <Form className="d-flex" style={{ paddingRight: "400px", paddingLeft: "400px" }}>
                             <Form.Control
                                 type="search"
@@ -63,7 +63,7 @@ function OurDoctor() {
 
                             <Button variant="outline-success"><BsSearch /></Button>
                         </Form>
-                    </div>
+                    </div> */}
                     <div className="owl-carousel team-carousel position-relative">
                         {users.map((user, index) =>
                             <div className="team-item" key={index}>
@@ -74,20 +74,18 @@ function OurDoctor() {
 
                                         {/* <img  alt="med" src={urlimage + medecin.photo} /> */}
                                     </div>
-                                    <div className="col-12 col-sm-7 h-100 d-flex flex-column">
-                                        <div className="mt-auto p-4">
+                                    <div className="col-12 col-sm-7 h-50 d-flex flex-column">
+                                        <div className="mt-auto p-3">
                                             <h3>{user.firstName}</h3>
-                                            <h6 className="fw-normal fst-italic text-primary mb-4">{user.email}</h6>
+                                            <h6 className="fw-normal fst-italic text-primary mb-3">{user.email}</h6>
                                             <p className="m-0">{user.adresse}</p>
                                             <p className="m-0">{user.phone}</p>
-                                            <p>{user.specialiteID?.nomsep}</p>
+                                            <p className="m-0">{user.specialiteID?.nomsep}</p>
                                             {/* <p>{user._id}</p> */}
-
-
                                         </div>
                                         <div className="d-flex mt-auto border-top p-4">
                                             <Link to={`/Prendrerend_vous/medecin/${id}`}> 
-                                            <button className="btn btn-primary w-100 py-3" type="submit" style={{ fontSize: "20px" }}>
+                                            <button className="btn btn-primary w-100 py-3" type="submit" style={{ fontSize: "15px" }}>
                                                 Rendez-Vous</button> 
                                             </Link>
                                         </div>

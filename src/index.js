@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,8 +20,10 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
+    <ToastContainer />
     <App />
     </PersistGate>
+
  </Provider>
    </React.StrictMode>
 );

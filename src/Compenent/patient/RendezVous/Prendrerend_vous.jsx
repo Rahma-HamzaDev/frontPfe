@@ -9,7 +9,7 @@ import Calendar from 'react-calendar';
 import "./rdvP.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { toast } from 'react-toastify';
 function Prendrerend_vous() {
   const { id } = useParams();
   console.log(id)
@@ -35,12 +35,17 @@ function Prendrerend_vous() {
     event.preventDefault();
     setSubmitted(true);
 
+
     const form = event.currentTarget;
 
     // Vérification de la date
     const selectedDate = new Date(Daterd);
     if (selectedDate.getDay() === 0 || selectedDate.getDay() === 6) {
-      alert("Vous ne pouvez pas prendre rendez-vous le samedi ou le dimanche.");
+      toast.warning("Vous ne pouvez pas prendre rendez-vous le samedi ou le dimanche!!", {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+      // alert("Vous ne pouvez pas prendre rendez-vous le samedi ou le dimanche!!");
       return;
     }
 
@@ -53,13 +58,20 @@ function Prendrerend_vous() {
 //verifier time
     const selectedTime = new Date(`1970-01-01T${timerd}`);
     if (selectedTime < startTime || selectedTime >= endTime) {
-      alert("Les rendez-vous ne sont disponibles que de 08h00 à 14h00.");
+       toast.warning("Les rendez-vous ne sont disponibles que de 08h00 à 14h00!!", {
+      position: toast.POSITION.LEFT,
+      autoClose: 3000,
+    });
       return;
     }
     
     const minutes = selectedTime.getMinutes();
     if (minutes % 30 !== 0) {
-      alert("Les rendez-vous ne sont disponibles que toutes les 30 minutes.");
+      toast.warning("Les rendez-vous ne sont disponibles que toutes les 30 minutes!", {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+    
       return;
     }
 
@@ -75,6 +87,7 @@ function Prendrerend_vous() {
       }
 
       if (form.checkValidity() === true) {
+       
         console.log("valeurs valides")
       };
       setValidated(true);
@@ -102,7 +115,11 @@ function Prendrerend_vous() {
  
     addRend(rend).then(res => {
         console.log("Insertion OK", res);
-         alert("votre rendezvous est enregistrer")
+        toast.success("RendezVous enregistrer avec succès , Attendez la confirmation de medecin", {
+          position: toast.POSITION.LEFT,
+          autoClose: 3000,
+        });
+        //  alert("votre rendezvous est enregistrer")
         navigate("/HomePatient");
       }).catch(error => {
           console.log(error)
@@ -117,7 +134,6 @@ function Prendrerend_vous() {
       <div className='tourdv'>
         <h3 style={{ textAlign: "center" }}>Prendre rendez-vous : </h3>
         <div className="prendrdv">
-        {!submitted ? (
           <Form validated={validated} onSubmit={handleSubmit} className='rdvpa'>
             <Form.Group>
               <Form.Label>Choisir Date :</Form.Label>
@@ -147,11 +163,8 @@ function Prendrerend_vous() {
             &nbsp;&nbsp;&nbsp;
 
           </Form>
-           ) : (
-            <div className="submitted-message">
-              <p>Votre code a été soumis avec succès !</p>
-            </div>
-          )}
+       
+           
         </div>
       </div>
     </div>

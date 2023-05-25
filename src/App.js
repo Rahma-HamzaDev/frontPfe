@@ -76,6 +76,8 @@ import Ajouterdv from './Compenent/Doctor/Pages/RendezVous/Ajouterdv';
 import Ajoutercontrol from './Compenent/Doctor/Pages/RendezVous/Ajoutercontrol';
 import Editrdv from './Compenent/Doctor/Pages/RendezVous/Editrdv';
 import CodePa from './Compenent/patient/ourDossiers/CodePa';
+import Monfiche from './Compenent/patient/ourDossiers/Monfiche';
+import ConsultationPa from './Compenent/patient/ourDossiers/consultationPa';
 // import Pdfimp from './Compenent/Doctor/Pages/imprissionpdf/Pdfimp';
 function App() {
   // const { isLoggedIn } = useSelector((state) => state.auth);
@@ -146,10 +148,14 @@ function App() {
           <Route path="/MenuPa" element={<MenuPa />} />
           <Route path="/MesRend/user/:userId" element={<MesRend />} />
           <Route path="/DossiersPa/:code" element={<DossiersPa />} />
+          
+          <Route path="/Monfiche/:code" element={<Monfiche />} />
+
           <Route path="/ConsPa" element={<ConsPa />} />
           <Route path="/DetailsDossier/:code" element={<SonDossier />} />
           <Route path="/OrdPa/:consid" element={<OrdPa />} />
-
+       
+          <Route path="/ConsultationPa/:consid" element={<ConsultationPa />} />
        
           <Route path="/OurDoctor" element={<OurDoctor />} />
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />

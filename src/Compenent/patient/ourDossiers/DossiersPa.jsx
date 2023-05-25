@@ -51,6 +51,7 @@ function DossiersPa() {
             <th>Exemans HistoriqueSocial</th>
             <th>Taille & Poid</th>
             <th>tension & Température</th>
+            <th>Details Consultation</th>
             <th>Ordonnances</th>
           </tr>
 
@@ -59,7 +60,8 @@ function DossiersPa() {
           {cons.map((cons, index) => (
             <tr key={cons._id}>
               <td>{cons?.patientID?.numfiche}</td>
-              <td>{cons?.patientID?.nompatient}</td>
+              <td>{cons?.patientID?.nompatient} {cons?.patientID?.prenompatient}</td>
+              {/* <td>{cons?.userID?.firstName}</td> */}
               <td>{cons?.DateCons}</td>
               <td>{cons?.MotifCons}</td>
               <td>{cons?.AntécedentsMédecaux}</td>
@@ -68,6 +70,12 @@ function DossiersPa() {
               <td>{cons?.HistoriqueSocial}</td>
               <td> {cons?.TaillePatient} & {cons?.PoisPatient}</td>
               <td>{cons?.tension} & {cons?.Température}</td>
+              <td>
+                {<Link to={`/ConsultationPa/${cons._id}`} >
+                  <AssignmentTurnedInIcon />
+                </Link>
+                }
+              </td>
               <td>
                 {<Link to={`/OrdPa/${cons._id}`} >
                   <AssignmentTurnedInIcon />

@@ -99,13 +99,13 @@ function Ordonnance() {
       <TopDoctor />
 
       <div className="tiltle">
-        <h1>Gestion de Ordonnance </h1>
+        <h1 className='H1'>Gestion de Ordonnance </h1>
       </div>
       <br />
       <div className='ord' style={{ border: "2px solid black" }}>
         <div className="row" style={{ display: "flex" }}>
           <fieldset className="col-md-6">
-            <legend>Médicaments : </legend>
+            {/* <legend>Médicaments : </legend> */}
             <div>
               <div className="row g-3" style={{ alignItems: 'center' }}>
                 <div className="col-10">
@@ -123,7 +123,7 @@ function Ordonnance() {
                   />
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'> Nom Médicaments:</label>
+                  <label htmlFor='social'> Nom Médicaments :</label>
                   <textarea
                     placeholder=" Nom Médicaments"
                     required
@@ -199,19 +199,25 @@ function Ordonnance() {
 
         <div className="ordonnance" >
           <div className="ordonnance1" >
-            <PictureAsPdfIcon fontSize='large' onClick={printToPDF} /> <br/>
+            <PictureAsPdfIcon fontSize='large' onClick={printToPDF} /> <br />
 
             <div id='pdf-content'>
               <div className='haut'>
                 <div className="entete">
-                  <p> {user.firstName} {user.lastName} </p>
-                  <p>{user.adresse}</p>
-                  <p>{user.phone}</p>
+                  <br />
+
+                  <p className='po'> {user.firstName} {user.lastName} </p>
+                  <p className='po'>{user.adresse}</p>
+                  <p className='po'>{user.phone}</p>
                   {/* <hr/> */}
                 </div>
                 <div className='tot'>
-                  <p>Médecin {user?.specialiteID.nomsep}</p>
-                  <p>{user.certification}</p>
+                  <br />
+
+                  <p className='po'>Médecin {user?.specialiteID.nomsep}</p>
+                  {/* <br/>               <br/> */}
+
+                  <p className='po'>{user.certification}</p>
                 </div>
               </div>
               <hr />
@@ -221,7 +227,7 @@ function Ordonnance() {
               <div className="ordonnance-details" >
 
                 <div className='haut'  >
-
+                  <br />
                   <p></p>
                   <p>Sfax le {ord?.DateOrd}</p>
 
@@ -237,19 +243,20 @@ function Ordonnance() {
                   {ord?.NomMedicaments}&nbsp;
                   &nbsp;
                   <br />
-      
+
                   {ord?.DosageMedicaments}&nbsp;
                   &nbsp;
                   <br />
-                
+
                   {ord?.FréquanceMedicaments}&nbsp;
                   &nbsp;
                   &nbsp;
-              
+
                   <br />
                   {ord?.observation}   &nbsp;
                   &nbsp;
-             
+
+                  <br />   <br />
                   <br />
                   {/* <div className="signature-tampon">
                     <p> Signature et tampon </p>

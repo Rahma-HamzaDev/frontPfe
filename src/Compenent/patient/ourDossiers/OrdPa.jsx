@@ -9,7 +9,8 @@ import { useEffect } from 'react';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import "../../Doctor/Pages/ordonnance/ord.css"
+import "./ordpa.css"
+
 function OrdPa() {
   const [ord, setOrds] = useState([]);
   // const [ord, setOrd] = useState(null);
@@ -45,12 +46,26 @@ function OrdPa() {
     <div style={{ textAlign: 'center' }}>
       <h1> Ordonnance </h1> <br /><br />
     </div >
-    <div className="ordonnance" >
+    <div className='ordP1'>
+    <Card style={{ width: '18rem' , display: "flex" }}>
+      <Card.Header> Ordonnance </Card.Header>
+      <ListGroup variant="flush">
+        <ListGroup.Item>  {ord?.DateOrd}</ListGroup.Item>
+        <ListGroup.Item>  {ord?.NomMedicaments}</ListGroup.Item>
+        <ListGroup.Item> {ord?.DosageMedicaments}</ListGroup.Item>
+        <ListGroup.Item>{ord?.FréquanceMedicaments}</ListGroup.Item>
+        <ListGroup.Item> {ord?.observation} </ListGroup.Item>
+
+      </ListGroup>
+
+    </Card>
+    </div>
+    {/* <div className="ordonnance" >
           <div className="ordonnance1" >
             <PictureAsPdfIcon fontSize='large' onClick={printToPDF} /> <br/>
 
             <div id='pdf-content'>
-              {/* <div className='haut'>
+              <div className='haut'>
                 <div className="entete">
                   <p> {user.firstName} {user.lastName} </p>
                   <p>{user.adresse}</p>
@@ -60,7 +75,7 @@ function OrdPa() {
                   <p>Médecin {user?.specialiteID.nomsep}</p>
                   <p>{user.certification}</p>
                 </div>
-              </div> */}
+              </div>
               <hr />
               <br />
               <h3 className='H3'>Ordonnance Medicale</h3>
@@ -85,7 +100,8 @@ function OrdPa() {
                   &nbsp;
                   <br />
       
-                  {ord?.DosageMedicaments}&nbsp;
+                  {ord?.DosageMedicaments}
+                  &nbsp;
                   &nbsp;
                   <br />
                 
@@ -107,7 +123,7 @@ function OrdPa() {
 
             </div>
           </div>
-        </div>
+        </div> */}
   </div>
 
 

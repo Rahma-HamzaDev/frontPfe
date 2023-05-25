@@ -27,7 +27,7 @@ function Modifiercompte() {
         <div className="userShowTop">
           <img
            src={user.avatar ? urlimage + user.avatar : "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"} 
-            alt=""
+            alt="avatar"
             className="userShowImg"
           />
           <div className="userShowTopTitle">
@@ -37,6 +37,13 @@ function Modifiercompte() {
         </div>
         <div className="userShowBottom">
           <span className="userShowTitle">Détails du compte</span>
+          <div className="userShowInfo">
+            <div className="userShowIcon">
+          <img src={urlimage +user?.specialiteID?.Icon} alt={user?.specialiteID?.Icon}  style={{ Width: '50px', height: '50px' }} /> 
+          </div>
+            <span className="userShowInfoTitle">{user?.specialiteID?.nomsep}</span>
+
+          </div>
           <div className="userShowInfo">
             <PermIdentity className="userShowIcon" />
             <span className="userShowInfoTitle">{user.firstName} {user.lastName}</span>

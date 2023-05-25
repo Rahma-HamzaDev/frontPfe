@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Calendar from 'react-calendar';
 import { Button } from '@mui/material';
 import "./rdv.css"
+import TopDoctor from '../../topbarD/TopDoctor';
 function Editrdv() {
     const { id } = useParams();
     const { user } = useSelector((state) => state.auth);
@@ -55,6 +56,8 @@ function Editrdv() {
         setValidated(true);
     };
     return (
+        <>
+        <TopDoctor/>
         <div className='centered-container'>
             <h1 > Modifier Rendez_Vous</h1>
          <br />
@@ -89,7 +92,7 @@ function Editrdv() {
                 </Form>
             </div>
         </div>
-
+        </>
     )
 }
 

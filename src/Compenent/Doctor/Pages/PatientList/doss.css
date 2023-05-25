@@ -14,14 +14,14 @@
     padding-left:500px ;
     padding-right: 300px;
   }
-  .H11 {
-    padding-left:8px ;
+  .H111 {
+    /* padding-left:4px ; */
     padding-top:10px ;
     /* padding-right: 300px; */
-    font-size: 24px;
+    font-size: 25px;
     margin: 0 0 10px 0;
     text-align: center;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin: 10px 0 5px 0;
   }
   
@@ -34,6 +34,8 @@
   
   .H33 {
     padding-left:10px ;
+    font-size: 20px;
+
     /* padding-right: 5px; */
   }
   

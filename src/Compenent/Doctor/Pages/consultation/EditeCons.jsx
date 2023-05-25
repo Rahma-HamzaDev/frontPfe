@@ -14,9 +14,9 @@ function EditeCons() {
   const [validated, setValidated] = useState(false);
   const [MotifCons, setMotifCons] = useState("");
   const [AntécedentsMédecaux, setAntécedentsMédecaux] = useState("");
-  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
-  const [ExemansComplementaires, setExemansComplementaires] = useState("");
-  const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
+  // const [HistoriqueSocial, setHistoriqueSocial] = useState("");
+  // const [ExemansComplementaires, setExemansComplementaires] = useState("");
+  // const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
   const [DescriptionExamen, setDescriptionExamen] = useState("");
 
   useEffect(() => {
@@ -29,9 +29,9 @@ function EditeCons() {
       .then(res => {
         setMotifCons(res.data.MotifCons)
         setAntécedentsMédecaux(res.data.AntécedentsMédecaux)
-        setHistoriqueSocial(res.data.HistoriqueSocial)
-        setExemansComplementaires(res.data.ExemansComplementaires)
-        setHistoriqueFamilial(res.data.HistoriqueFamilial)
+        // setHistoriqueSocial(res.data.HistoriqueSocial)
+        // setExemansComplementaires(res.data.ExemansComplementaires)
+        // setHistoriqueFamilial(res.data.HistoriqueFamilial)
         setDescriptionExamen(res.data.DescriptionExamen)
 
       })
@@ -48,9 +48,9 @@ function EditeCons() {
         _id:consid,
         MotifCons: MotifCons,
         AntécedentsMédecaux: AntécedentsMédecaux,
-        HistoriqueSocial: HistoriqueSocial,
-        ExemansComplementaires: ExemansComplementaires,
-        HistoriqueFamilial: HistoriqueFamilial,
+        // HistoriqueSocial: HistoriqueSocial,
+        // ExemansComplementaires: ExemansComplementaires,
+        // HistoriqueFamilial: HistoriqueFamilial,
         DescriptionExamen:DescriptionExamen,
       }
       editCons(cons)
@@ -97,7 +97,7 @@ function EditeCons() {
                    onChange={(e)=>setAntécedentsMédecaux(e.target.value)} 
                     />
                 </div>
-                <div className="col-10">
+                {/* <div className="col-10">
                   Historique familial :
                    <input type="text"
                     placeholder="Historique familial" 
@@ -125,7 +125,7 @@ function EditeCons() {
                   onChange={(e)=>setHistoriqueSocial(e.target.value)} 
                   
                   />
-                </div>
+                </div> */}
 
               </div>
             </div>

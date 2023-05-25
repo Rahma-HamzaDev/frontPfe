@@ -1,11 +1,6 @@
 import Api from "../Axios/Api";
 const DOSS_API = "/doss";
-// 645560bbfc88491ef874dc4f
-// export const fetchOrds = async (patientId) => {
-//     console.log(patientId);
-//     return await Api.get(DOSS_API+'/ords'+'/patients/'+patientId);
-// }
-// cons/patients/645560bbfc88491ef874dc4f
+
 
 export const fetchconss = async (patientId) => {
     console.log(patientId);
@@ -14,5 +9,14 @@ export const fetchconss = async (patientId) => {
 
 export const fetchords = async (consId) => {
     console.log(consId);
-    return await Api.get(DOSS_API+'/cons/'+consId);
+    return await Api.get(DOSS_API+'/ord/'+consId);
 }
+
+export const fetchpaById  = async (patientId) => {
+  console.log(patientId);
+  return await Api.get(DOSS_API+'/'+patientId);
+}
+
+export const fetchconById  = async (consId) => {
+  console.log(consId);
+  return await Api.get(DOSS_API+'/cons/'+consId);}

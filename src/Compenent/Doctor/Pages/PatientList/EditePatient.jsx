@@ -26,6 +26,8 @@ export default function EditePatient() {
   const [sexepatient, setSexepatient] = useState("");
   const [numtelPa, setNumPa] = useState("");
   const [dateNais, setDateNais] = useState("");
+  const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
+  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
   useEffect(() => {
   GetUnPatient();
   // GetListMedecin();
@@ -40,6 +42,10 @@ export default function EditePatient() {
   setDateNais(res.data.dateNais)
   setSexepatient(res.data.sexepatient)
   setAdressepatient(res.data.adressepatient)
+  setHistoriqueFamilial(res.data.HistoriqueFamilial)
+  setHistoriqueSocial(res.data.HistoriqueSocial)
+
+
   })
   .catch(error=>{
   console.log(error)
@@ -68,6 +74,8 @@ export default function EditePatient() {
     emailpatient: emailpatient,
     numtelPa: numtelPa,
     adressepatient:adressepatient,
+    HistoriqueFamilial:HistoriqueFamilial,
+    HistoriqueSocial:HistoriqueSocial
     }
     editPatient (patient)
     .then(res=>{
@@ -92,7 +100,7 @@ export default function EditePatient() {
 <Form className="border p-3" noValidate validated={validated} onSubmit={handleSubmit}>
 <Row className="mb-2">
 <Form.Group as={Col} md="6" >
-<Form.Label >Nom *</Form.Label>
+<Form.Label >Nom </Form.Label>
 <Form.Control
 required
 type="text"
@@ -105,7 +113,7 @@ Saisir Nom Patient
 </Form.Control.Feedback>
 </Form.Group>
 <Form.Group as={Col} md="6">
-<Form.Label>Prenom *</Form.Label>
+<Form.Label>Prenom </Form.Label>
 <Form.Control
 required
 type="text"
@@ -120,7 +128,7 @@ Saisir prénom Patient
 </Row>
 <Row className="mb-2">
 <Form.Group className="col-md-6">
-<Form.Label>Email *</Form.Label>
+<Form.Label>Email </Form.Label>
 <InputGroup hasValidation>
 <Form.Control
 type="text"
@@ -145,24 +153,10 @@ onChange={(e)=>setNumPa(e.target.value)}
 </Form.Group>
 </Row>
 <Row className="mb-3">
-{/* <Form.Group className="col-md-6">
-<Form.Label>sexe *</Form.Label>
-<InputGroup hasValidation>
-<Form.Control
-type="text"
-required
-placeholder="sexe patient"
-value={sexepatient}
-onChange={(e)=>setSexepatient(e.target.value)}
-/>
-<Form.Control.Feedback type="invalid">
-Sexe Incorrecte
-</Form.Control.Feedback>
-</InputGroup>
-</Form.Group> */}
+
 
 <Form.Group className="col-md-6">
-<Form.Label>Adresse *</Form.Label>
+<Form.Label>Adresse </Form.Label>
 <InputGroup hasValidation>
 <Form.Control
 type="text"
@@ -178,7 +172,7 @@ adresse Incorrecte
 </Form.Group>
 
 <Form.Group className="col-md-6">
-<Form.Label>Date Naissance *</Form.Label>
+<Form.Label>Date Naissance </Form.Label>
 <InputGroup hasValidation>
 <Form.Control
 type="date"
@@ -192,6 +186,40 @@ onChange={(e)=>setDateNais(e.target.value)}
 </Form.Group>
 
 </Row>
+
+<Row className="mb-3">
+
+<Form.Group as={Col} md="6">
+<Form.Label>Historique Familial </Form.Label>
+<Form.Control
+required
+type="text"
+placeholder="HistoriqueFamilial"
+value={HistoriqueFamilial}
+onChange={(e)=>setHistoriqueFamilial(e.target.value)}
+/>
+<Form.Control.Feedback type="invalid">
+Saisir Historique Familial
+</Form.Control.Feedback>
+</Form.Group>
+
+<Form.Group as={Col} md="6">
+<Form.Label>Historique Social </Form.Label>
+<Form.Control
+required
+type="text"
+placeholder="Historique Social"
+value={HistoriqueSocial}
+onChange={(e)=>setHistoriqueSocial(e.target.value)}
+/>
+<Form.Control.Feedback type="invalid">
+Saisir Historique Social
+</Form.Control.Feedback>
+</Form.Group>
+
+
+</Row>
+
 <center><Button type="submit">Enregistrer</Button></center>
 </Form>
 </div>

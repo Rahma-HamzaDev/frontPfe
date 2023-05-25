@@ -1,41 +1,35 @@
-import React, { useEffect, useState } from 'react'
-//
+import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { fetchpaById } from '../../../Services/dossierService';
+import TopPA from '../principale/top/TopPA';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import { pink } from '@mui/material/colors';
-
-//
-import TopDoctor from '../../topbarD/TopDoctor'
-import "./doss.css"
-import { fetchPatientById } from '../../../../Services/patientServices';
-import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
+import Button from "@mui/material/Button";
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-function Dossmed() {
-    const { user } = useSelector((state) => state.auth);
-    const { id } = useParams();
-    console.log(id);
+
+// import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+// import { pink } from '@mui/material/colors';
+function Monfiche() {
 
     const [patients, setPatient] = useState([]);
+   const { user } = useSelector((state) => state.auth);
+    const { code } = useParams();
+  
+  
     useEffect(() => {
-        GetListPatient();
+      GetListpatient();
     }, []);
-    const GetListPatient = async () => {
-
-        //affiche les patients 
-
-        // await fetchPatient()
-        //   .then((res) => {
-        //     setPatient(res.data);
-        //   });
-        await
-            fetchPatientById(id)
-                .then((res) => {
-                    setPatient(res.data);
-                    console.log(res.data);
-                });
+    const GetListpatient = async () => {
+  
+        await fetchpaById(code)
+        .then((res) => {
+          console.log(res)
+          setPatient(res.data);
+        }).catch(er => console.log(er))
+        ;
     }
     const printToPDF = () => {
         const input = document.getElementById('pdf-content');
@@ -50,27 +44,33 @@ function Dossmed() {
         });
     };
 
-//
+  
+  return (
+    <div>
+    <TopPA/>
 
-const [showCode, setShowCode] = useState(false);
+{/* <div>
+    <br/>
+    <h3>Bienvenue {user?.firstName} <br/>
+    C'est votre fiche de medecin :
+    <br/>
+<p> 
+    </p> 
+  {patients?.medecinID?.email}
+  {patients?.medecinID?.phone} 
+   </h3>
+</div> */}
 
-
-const handleToggleCode = () => {
-  setShowCode(!showCode);
-};
-//
-    return (
-        <>
-            <TopDoctor />
-            <div className='allfich'>
+    <div className='allfich'>
                 <div className='fiche'>
 
                     <PictureAsPdfIcon fontSize='large' onClick={printToPDF} />
 
                     <div id='pdf-content'>
                         <h1 className='H111'>Fiche Patient</h1>
-                        <br />
-                        <h3 className='H33'>  Num Fiche : <span>  {patients?.numfiche} </span>  </h3>
+                        <br /> 
+                      
+                        <h3 className='H33'>  Num Fiche : <span> {patients?.numfiche} </span>  </h3>
                         <br />
                         <h3 className='H33'> Identifient Patient : <span>  {patients?.cinPa} </span> </h3>
                         <br />
@@ -90,28 +90,25 @@ const handleToggleCode = () => {
                         <br />
                         <h3 className='H33'> Historique Social:  <span>  {patients?.HistoriqueSocial} </span></h3>
                         <br />
+                        <h3 className='H33'> Medecin : <span> {patients?.medecinID?.firstName}    {patients?.medecinID?.lastName}</span></h3>
+                        <br />
+                        <h3 className='H33'> Email Medecin : <span>{patients?.medecinID?.email}</span></h3>
+                        <br />
+                        <h3 className='H33'> Phone Medecin : <span> {patients?.medecinID?.phone} </span></h3>
+                        <br />
 
-
-
-                        {/* <h2 className='H22'> Consultation : </h2> */}
-
-                        {/* <div className='impr1'>
-        <LocalPrintshopIcon fontSize='large' />
-    </div> */}
-                    </div>
+                    </div>   
+  
                 </div>
-    <h3 className='H33'>
-        <input
-            type={showCode ? "text" : "password"}
-            value={patients?._id}
-            readOnly
-            size="200px"
-        />
-        <RemoveRedEyeIcon fontSize='large' sx={{ color: pink[500] }} onClick={handleToggleCode} />
-        </h3>
+                {<Link to={`/DossiersPa/${code}`} >
+                        <Button type="submit" variant="contained" className="submit-btn">
+                            Voir Les consultations
+                        </Button>
+                    </Link>
+                    }
             </div>
-        </>
-    )
+    </div>
+  )
 }
 
-export default Dossmed
+export default Monfiche

@@ -20,55 +20,6 @@ function Consultation() {
   const [cons, setCons] = useState([]);
 
    const navigate = useNavigate();
-//   const [validated, setValidated] = useState(false);
-//   const [MotifCons, setMotifCons] = useState("");
-//   const [AntécedentsMédecaux, setAntécedentsMédecaux] = useState("");
-//   const [HistoriqueSocial, setHistoriqueSocial] = useState("");
-//   const [ExemansComplementaires, setExemansComplementaires] = useState("");
-//   const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
-//   const [DescriptionExamen, setDescriptionExamen] = useState("");
-//   const [DateCons, setDateCons] = useState("");
-//   const [TaillePatient, setTaillePatient] = useState("");
-//   const [PoisPatient, setPoisPatient] = useState("");
-//   const [tension, setTension] = useState("");
-//   const [Température, setTempérature] = useState("");
-// //insert
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     const form = event.currentTarget;
-//     if (form.checkValidity() === true) {
-//       const cons1 = {
-//         patientID:id,
-//         MotifCons: MotifCons,
-//         AntécedentsMédecaux: AntécedentsMédecaux,
-//         HistoriqueSocial: HistoriqueSocial,
-//         ExemansComplementaires: ExemansComplementaires,
-//         HistoriqueFamilial: HistoriqueFamilial,
-//         DescriptionExamen:DescriptionExamen,
-//         DateCons :DateCons,
-//         TaillePatient:TaillePatient,
-//         PoisPatient:PoisPatient,
-//         tension:tension,
-//         Température:Température,
-
-//       }
-//       addCons (cons1)
-//       .then(res=>{
-//         console.log("Insert OK",res);
-//          navigate("/Consultation");
-//         })
-//         .catch(error=>{
-//         console.log(error)
-//         alert("Erreur ! Insertion non effectuée")
-//         })
-//         }
-        
-//    if (form.checkValidity() === true) {
-//   console.log("valeurs valides")
-
-// };
-//       setValidated(true);
-//     }                
 //delete consultation 
     const delcons = async (_id) => {
       await deleteCons(_id)
@@ -138,25 +89,33 @@ function Consultation() {
         sort: false,
        }
     },
-    {
-      name: "HistoriqueFamilial" ,
-      label: "Historique familial",
+     {
+      name: "PoisPatient" ,
+      label: "Pois",
       options: {
         filter: true,
         sort: false,
        }
     },
     {
-      name: "ExemansComplementaires",
-      label: "Exemans complementaires",
+      name: "TaillePatient",
+      label: "Taille",
       options: {
         filter: true,
         sort: false,
        }
     },
     {
-      name: "HistoriqueSocial",
-      label: "Historique Social",
+      name: "tension",
+      label: "tension",
+      options: {
+        filter: true,
+        sort: false,
+       }   
+    },
+    {
+      name: "Température",
+      label: "Température",
       options: {
         filter: true,
         sort: false,
@@ -194,13 +153,13 @@ function Consultation() {
             {/* /Patient/:patientid/cons/edit/:consid */}
               {<Link to = {`/patient/${id}/cons/edit/${value}`}  > 
            
-                <EditIcon color='secondary'  fontSize='large'/>
+                <EditIcon color='secondary'   />
               </Link>
               }
               </IconButton>
             
               <IconButton onClick={() => { delcons(value) }}>
-              <DeleteIcon fontSize='large' sx={{ color: pink[500] }} />
+              <DeleteIcon   sx={{ color: pink[500] }} />
             </IconButton>
 
           </div>
@@ -219,7 +178,7 @@ function Consultation() {
             <IconButton >
             {<Link to={`/patient/${id}/cons/ord/${value}`} >
            
-                <MedicationIcon fontSize='large' />
+                <MedicationIcon fontSize='large'  />
               </Link>
               }
               </IconButton>
@@ -247,7 +206,7 @@ function Consultation() {
           color="error"
           // startIcon={<AddCircleIcon />}
           size="large"
-          startIcon={<PersonAddIcon fontSize='large'  />}
+          startIcon={<PersonAddIcon    />}
           variant="outlined"
         > {<Link to={`/Patient/cons/${id}/insert`} 
           style={{
@@ -260,134 +219,11 @@ function Consultation() {
         </Button>
       </div>
     <div className="tiltle">   
-    <h1>Gestion de consultation </h1>
+    <h1 className='H1'>Gestion de consultation </h1>
     </div>
      <br/>
      <br/>
-      {/* <div className='cons' style={{border:"2px solid black"} }>
-        <div className="row" style={{display: "flex"}}>
-
-          <fieldset className="col-md-6">
-            <legend>Antécedents :</legend>
-            <div>
-              <div className="row g-3" style={{ alignItems: 'center' }}>
-              <div className="col-10">
-                  Date Consultation : 
-                  <input type="date"
-                   placeholder="Raison de visite" 
-                   className="form-control"
-                   value={DateCons}
-                   onChange={(e)=>setDateCons(e.target.value)}
-                   />
-                </div>
-                <div className="col-10">
-                  Motif de consultation :
-                   <input type="text"
-                    placeholder="Raison de visite" 
-                    className="form-control" 
-                    value={MotifCons}
-                    onChange={(e)=>setMotifCons(e.target.value)}
-                    />
-                </div>
-                <div className="col-10">
-                  Antécedents Médecaux : 
-                  <input type="text"
-                   placeholder="Antécedents Médecaux" 
-                   className="form-control" 
-                   value={AntécedentsMédecaux}
-                   onChange={(e)=>setAntécedentsMédecaux(e.target.value)}
-                   />
-                </div>
-                <div className="col-10">
-                  Historique familial : 
-                  <input type="text" 
-                  placeholder="Historique familial"
-                   className="form-control" 
-                   value={HistoriqueFamilial}
-                   onChange={(e)=>setHistoriqueFamilial(e.target.value)}
-                   />
-                </div>
-                <div className="col-10">
-                  Exemans complementaires : 
-                  <input type="text" 
-                  placeholder="Historique familial" 
-                  className="form-control"
-                  value={ExemansComplementaires}
-                  onChange={(e)=>setExemansComplementaires(e.target.value)}
-                  />
-                </div>
-                <div className="col-10">
-                  Historique Social : 
-                  <input type="text"
-                   placeholder="Historique Social" 
-                  className="form-control"
-                  value={HistoriqueSocial}
-                  onChange={(e)=>setHistoriqueSocial(e.target.value)}
-                  />
-                </div>
-               
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset className="col-md-6">
-            <legend>Examen :</legend>
-            <div>
-              <div className="row g-3">
-                <div className="col-10">
-                  Taille de patient : 
-                <input type="text" className="form-control" 
-                 onChange={(e)=>setTaillePatient(e.target.value)}
-                value={TaillePatient}
-                          />
-                </div>
-                <div className="col-10">
-                  Poid de patient :
-                   <input type="text"
-                    className="form-control" 
-                    onChange={(e)=>setPoisPatient(e.target.value)}
-                value={PoisPatient}
-                   />
-                </div>
-                <div className="col-10">
-                  tension artérielle:
-                   <input type="number" 
-                   className="form-control" 
-                   onChange={(e)=>setTension(e.target.value)}
-                   value={tension}
-                   />
-                </div>
-                <div className="col-10">
-                  Température: 
-                  <input type="text"
-                   className="form-control"
-                   onChange={(e)=>setTempérature(e.target.value)}
-                   value={Température}
-                   />
-                </div>
-              </div>
-            </div>
-          </fieldset>
-        </div>
-
-        <fieldset >
-          <form validated={validated} onSubmit={handleSubmit}>
-            <legend>Description d'Examen  :</legend>
-            <div>
-              <textarea rows="9" cols="80" className="form-control"
-             
-              value={ DescriptionExamen}
-              onChange={(e)=>setDescriptionExamen(e.target.value)}
-              ></textarea>
-            </div><br/>
-            <div className="col-10">
-                  <button className="btn btn-primary" type="submit">Enregistrer</button>
-                </div>
-          </form>
-        </fieldset>
-      </div> */}
-
-      
+  
       <div>
   
 

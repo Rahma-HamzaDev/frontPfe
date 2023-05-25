@@ -128,7 +128,24 @@ function ListPatient() {
     {
       name: "numtelPa",
       label: "N°Teléphone",
-      fontSize: 'large',
+   
+      options: {
+        filter: true,
+        sort: false,
+      }
+    },
+    {
+      name: "HistoriqueFamilial",
+      label: "Historique Familial",
+      options: {
+        filter: true,
+        sort: false,
+      }
+    },
+    {
+      name: "HistoriqueSocial",
+      label: "Historique Social",
+   
       options: {
         filter: true,
         sort: false,
@@ -144,7 +161,7 @@ function ListPatient() {
           <div>
             <IconButton >
               {<Link to={"/patient/cons/" + value} >
-                <LocalHospitalIcon fontSize='large' />
+                <LocalHospitalIcon fontSize='medium' />
                 {/* <HiFolderAdd sx={{ fontSize: 100 }} /> */}
               </Link>
               }
@@ -165,13 +182,13 @@ function ListPatient() {
           <div>
             <IconButton >
               {<Link to={"/patient/edit/" + value} >
-                <EditIcon color='secondary' fontSize='large' />
+                <EditIcon color='secondary'  />
               </Link>
               }
             </IconButton>
 
 
-            <IconButton onClick={() => { delPatient(value) }}><DeleteIcon fontSize='large' sx={{ color: pink[500] }} /></IconButton>
+            <IconButton onClick={() => { delPatient(value) }}><DeleteIcon sx={{ color: pink[500] }} /></IconButton>
 
 
           </div>
@@ -215,7 +232,7 @@ function ListPatient() {
           color="success"
           // startIcon={<AddCircleIcon />}
           size="large"
-          startIcon={<PersonAddIcon fontSize='large' />}
+          startIcon={<PersonAddIcon  />}
           variant="outlined"
         > {<Link to={`/Patient/medecin/${id}/insert`}
           style={{

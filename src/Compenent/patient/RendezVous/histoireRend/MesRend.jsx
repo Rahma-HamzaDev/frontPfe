@@ -55,10 +55,11 @@ function MesRend() {
   else  if (etat === 'accepter') {
         return <span style={{ color: 'green' }}>{etat}</span>;
       } else if (etat === 'A rapporter') {
-        return <span style={{ color: 'red' }}>{etat}</span>;
-    } else if (etat === 'cancel') {
-    return <span style={{ color: 'gray' }}>{etat}</span>;
-  }
+        return <span style={{ color: 'blue' }}>{etat}</span>;
+    } 
+  //   else if (etat === 'cancel') {
+  //   return <span style={{ color: 'gray' }}>{etat}</span>;
+  // }
   }
  //cancel
   const accredC= async (redID) => {

@@ -8,7 +8,8 @@ import { fetchRendMA } from '../../../../Services/RendServices';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import Button from '@mui/material/Button';
 import TopDoctor from '../../topbarD/TopDoctor';
-
+import { toast } from 'react-toastify';
+import "./rdv.css"
 export default function Ajouterdv() {
     const { id } = useParams();
     console.log(id);
@@ -59,9 +60,11 @@ export default function Ajouterdv() {
         event.preventDefault();
         const existant = todayAppointments.find((rend) => rend.timerd === timerd);
         if (existant) {
+
             alert("Un rendez-vous existe déjà à cette heure !");
             console.log(existant)
-        } else {
+        } else 
+        {
             /* créer le rendez-vous */
 
             const form = event.currentTarget;
@@ -97,12 +100,20 @@ export default function Ajouterdv() {
                   })
                 addRend(rend).then(res => {
                     console.log("Insertion OK", res);
-                    alert("Le rendezvous est enregistrer")
+                    // alert("")
+                    toast.success("Le rendezvous est enregistrer", 
+                    {
+                        position: toast.POSITION.LEFT,
+                        autoClose: 3000,
+                      });
                     navigate(`/ListRendVous/medecin/${id}`)
                 }).catch(error => {
                     console.log(error)
-                    alert("Erreur ! Insertion non effectuée")
-
+                    // alert("Erreur !Ce rendez-vous est déjà réservé. Veuillez choisir une autre date ou heure.")
+                    toast.warning("Ce rendez-vous est déjà réservé. Veuillez choisir une autre date ou heure", {
+                        position: toast.POSITION.LEFT,
+                        autoClose: 3000,
+                      });
                 })
             }
         }
@@ -115,6 +126,7 @@ export default function Ajouterdv() {
         <div >
  <TopDoctor />
             <br/>
+            <div className='entetrdv1'>
             <Form validated={validated} onSubmit={handleSubmit}>
                 <Form.Group>
                < Form.Label> Nom  :</Form.Label>
@@ -194,11 +206,11 @@ export default function Ajouterdv() {
                 />
                 </Form.Group>
                 <br />
-                <Button variant="contained" >Réserver</Button>
+                <Button variant="contained" type='submit'>Réserver</Button>
             </Form>
         </div>
 
-
+        </div>
 
     )
 }

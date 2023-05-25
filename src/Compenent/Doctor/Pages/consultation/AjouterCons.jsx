@@ -20,9 +20,9 @@ function AjouterCons() {
   const [cons, setCons] = useState([]);
   const [MotifCons, setMotifCons] = useState("");
   const [AntécedentsMédecaux, setAntécedentsMédecaux] = useState("");
-  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
-  const [ExemansComplementaires, setExemansComplementaires] = useState("");
-  const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
+  // const [HistoriqueSocial, setHistoriqueSocial] = useState("");
+  // const [ExemansComplementaires, setExemansComplementaires] = useState("");
+  // const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
   const [DescriptionExamen, setDescriptionExamen] = useState("");
   const [DateCons, setDateCons] = useState(new Date().toISOString().split('T')[0]);
   // const [Daterd, setDaterd] = useState(new Date().toISOString().split('T')[0]);
@@ -40,9 +40,9 @@ function AjouterCons() {
         patientID:id,
         MotifCons: MotifCons,
         AntécedentsMédecaux: AntécedentsMédecaux,
-        HistoriqueSocial: HistoriqueSocial,
-        ExemansComplementaires: ExemansComplementaires,
-        HistoriqueFamilial: HistoriqueFamilial,
+        // HistoriqueSocial: HistoriqueSocial,
+        // ExemansComplementaires: ExemansComplementaires,
+        // HistoriqueFamilial: HistoriqueFamilial,
         DescriptionExamen:DescriptionExamen,
         DateCons :DateCons,
         TaillePatient:TaillePatient,
@@ -115,7 +115,7 @@ function AjouterCons() {
                required
                />
             </div>
-            <div className="col-10">
+            {/* <div className="col-10">
               Historique familial : 
               <input type="text" 
               placeholder="Historique familial"
@@ -144,7 +144,7 @@ function AjouterCons() {
               onChange={(e)=>setHistoriqueSocial(e.target.value)}
               required
               />
-            </div>
+            </div> */}
            
           </div>
         </div>

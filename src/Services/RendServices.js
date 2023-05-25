@@ -5,6 +5,8 @@ export const fetchRend = async () => {
     return await Api.get(REND_API);
 }
 
+
+
 // export const addRend = async (rend) => {
 //     return await Api.post(REND_API, rend);
 
@@ -84,6 +86,10 @@ export const fetchRendMA = async (medecinId) => {
 
 
 
+// export const fetchRendPA = async (userId) => {
+//     console.log(userId);
+//     return await Api.get(REND_API+"/accepted/"+"users/"+ userId);
+// }
 
 //
 export const fetchRendtById = async (rendId) => {

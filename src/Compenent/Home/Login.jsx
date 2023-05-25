@@ -32,6 +32,10 @@ const Login = () => {
   //else navigate("/HomeA");
   }
  
+
+ 
+
+const [error, setError] = useState(false);
   
 
   return (
@@ -72,9 +76,9 @@ const Login = () => {
        />
     </Form.Group>
     <br/>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="Remember me" />
-    </Form.Group>
+    </Form.Group> */}
 
     <Button variant="primary" type="submit" 
     onClick={(event)=>handleSubmit(event)}> 

@@ -30,6 +30,10 @@ export default function Insertpatient() {
   const [adressepatient, setAdressepatient] = useState("");
   const [sexepatient, setSexepatient] = useState("");
   const [numtelPa, setNumtelPa] = useState("");
+  const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
+  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
+
+
   const navigate = useNavigate();
 
 
@@ -61,7 +65,9 @@ export default function Insertpatient() {
         adressepatient: adressepatient,
         sexepatient: sexepatient,
         numtelPa: numtelPa,
-        dateNais: dateNais
+        dateNais: dateNais,
+        HistoriqueSocial: HistoriqueSocial,
+        HistoriqueFamilial: HistoriqueFamilial,
       }
 
 
@@ -122,7 +128,8 @@ export default function Insertpatient() {
                   </Form.Control.Feedback>
                 </Form.Group>
 
-
+                </Row>
+                <Row className="mb-2">
                 <Form.Group as={Col} className="col-md-6 " >
                   <Form.Label >Nom *</Form.Label>
                   <Form.Control
@@ -136,8 +143,7 @@ export default function Insertpatient() {
                     Saisir nom Patient
                   </Form.Control.Feedback>
                 </Form.Group>
-              </Row>
-              <Row className="mb-2">
+             
                 <Form.Group as={Col} className="col-md-6 ">
                   <Form.Label>Prénom *</Form.Label>
                   <Form.Control
@@ -147,16 +153,15 @@ export default function Insertpatient() {
                     value={prenompatient}
                     onChange={(e) => setPrenompatient(e.target.value)}
                   />
-
                   <Form.Control.Feedback type="invalid">
                     Saisir Prénom
                   </Form.Control.Feedback>
                 </Form.Group>
+                </Row>
 
+                 <Row className="mb-2">
                 <Form.Group as={Col} className="col-md-6 ">
-                  <Form.Label>
-                    Email *
-                  </Form.Label>
+                  <Form.Label> Email * </Form.Label>
                   <Form.Control
                     required
                     type="text"
@@ -168,8 +173,24 @@ export default function Insertpatient() {
                     Email incorrect
                   </Form.Control.Feedback>
                 </Form.Group>
-              </Row>
-              <Row className="mb-2">
+           
+                <Form.Group as={Col} md="col-md-6 ">
+                  <Form.Label> Adresse * </Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Adresse"
+                    value={adressepatient}
+                    onChange={(e) => setAdressepatient(e.target.value)}
+                  />
+                   <Form.Control.Feedback type="invalid">
+                    Saisir Adresse
+                  </Form.Control.Feedback>
+                </Form.Group>
+</Row>
+
+
+                <Row className="mb-2">
+               
                 <Form.Group as={Col} md="col-md-6 ">
                   <Form.Label>NumPhone</Form.Label>
                   <Form.Control
@@ -179,52 +200,7 @@ export default function Insertpatient() {
                     onChange={(e) => setNumtelPa(e.target.value)}
                   />
                 </Form.Group>
-
-                <Form.Group as={Col} md="6">
-  <Form.Label>Sexe</Form.Label>
-  <div>
-    <Form.Check 
-      inline 
-      label="Masculin" 
-      type="radio" 
-      id="radio-masculin"
-      checked={sexepatient === 'masculin'}
-      onChange={(e) => setSexepatient('masculin')}
-    />
-    <Form.Check 
-      inline 
-      label="Féminin" 
-      type="radio" 
-      id="radio-feminin"
-      checked={sexepatient === 'feminin'}
-      onChange={(e) => setSexepatient('feminin')}
-    />
-  </div>
-</Form.Group>
-
-
-                {/* <Form.Group as={Col} md="col-md-6 "> */}
-                  {/* <Form.Label>Sexe</Form.Label>
-                  Femme :<input type="radio" id="id-de-votre-radio" name="nom-du-groupe-de-radios" value="valeur-de-votre-radio" />
-                  Homme :<input type="radio" id="id-de-votre-radio" name="nom-du-groupe-de-radios" value="valeur-de-votre-radio" /> */}
-                  {/* <Form.Control
-    type="radio"
-    placeholder="sexe"
-    value={sexepatient}
-    onChange={(e)=>setSexepatient(e.target.value)}
-    /> */}
-                {/* </Form.Group> */}
-              </Row>
-              <Row className="mb-2">
-                <Form.Group as={Col} md="col-md-6 ">
-                  <Form.Label>Adresse</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Adresse"
-                    value={adressepatient}
-                    onChange={(e) => setAdressepatient(e.target.value)}
-                  />
-                </Form.Group>
+               
 
                 <Form.Group as={Col} md="col-md-6 ">
                   <Form.Label>date de Naissance</Form.Label>
@@ -235,7 +211,58 @@ export default function Insertpatient() {
                     onChange={(e) => setdateNais(e.target.value)}
                   />
                 </Form.Group>
+                </Row>
+               
+            
+            
+              
+         
+              <Form.Group as={Col} md="6">
+                  <Form.Label>Sexe</Form.Label>
+                <br/>
+                    <Form.Check
+                      inline
+                      label="Masculin"
+                      type="radio"
+                      id="radio-masculin"
+                      checked={sexepatient === 'masculin'}
+                      onChange={(e) => setSexepatient('masculin')}
+                    />
+                    <Form.Check
+                      inline
+                      label="Féminin"
+                      type="radio"
+                      id="radio-feminin"
+                      checked={sexepatient === 'feminin'}
+                      onChange={(e) => setSexepatient('feminin')}
+                    />
+                </Form.Group>
+               
+            
 
+              <Row className="mb-2">
+
+                <Form.Group as={Col} className="col-md-6 " >
+                  <Form.Label >Historique Social</Form.Label>
+                  <Form.Control
+                    required
+                    type="text"
+                    placeholder="Historique Social "
+                    value={HistoriqueSocial}
+                    onChange={(e) => setHistoriqueSocial(e.target.value)}
+                  />
+                </Form.Group>
+
+                <Form.Group as={Col} className="col-md-6 " >
+                  <Form.Label>HistoriqueFamilial</Form.Label>
+                  <Form.Control
+                    required
+                    type="text"
+                    placeholder="Historique Familial "
+                    value={HistoriqueFamilial}
+                    onChange={(e) => setHistoriqueFamilial(e.target.value)}
+                  />
+                </Form.Group>
               </Row>
 
               <center><Button className="btn-primary " type="submit">Enregistrer</Button></center>

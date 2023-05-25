@@ -5,6 +5,8 @@ import { addRend, fetchRendM } from '../../../../Services/RendServices';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import Button from '@mui/material/Button';
 import TopDoctor from '../../topbarD/TopDoctor';
+import { toast } from 'react-toastify';
+import "./rdv.css"
 function Ajoutercontrol() {
     const { id } = useParams();
     console.log(id);
@@ -45,13 +47,21 @@ function Ajoutercontrol() {
                     return Rend.Daterd === Daterd && Rend.timerd === timerd;
                   });
                   if (rendezVousExiste) {
-                    alert("Ce rendez-vous est déjà réservé. Veuillez choisir une autre date ou heure.");
+                    toast.warning("Ce rendez-vous est déjà réservé. Veuillez choisir une autre date ou heure", {
+                        position: toast.POSITION.LEFT,
+                        autoClose: 3000,
+                      });
+              
                   }
                 };
               })
             addRend(rend).then(res => {
                 console.log("Insertion OK", res);
-                alert("Le rendezvous est enregistrer")
+                toast.success("Le rendezvous est enregistrer", 
+                {
+                    position: toast.POSITION.LEFT,
+                    autoClose: 3000,
+                  });
                 navigate(`/request/medecin/${id}`)
             }).catch(error => {
                 console.log(error)
@@ -66,6 +76,7 @@ function Ajoutercontrol() {
         <div>
              <TopDoctor/>
              <br />
+             <div className='entetrdv1'>
         <Form validated={validated} onSubmit={handleSubmit}>
         <Form.Group>
                <Form.Label> Nom :</Form.Label>
@@ -148,6 +159,7 @@ function Ajoutercontrol() {
             <br />
             <Button type='submit' variant="contained" >Réserver</Button>
         </Form>
+        </div>
     </div>
     )
 }

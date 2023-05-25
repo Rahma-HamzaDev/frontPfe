@@ -1,36 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import "./datails.css";
+import "../../Doctor/Pages/consultation/datails.css";
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchConsById, deleteCons } from '../../../../Services/ConsService';
-import TopDoctor from '../../topbarD/TopDoctor';
+
 //
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import { fetchconById } from '../../../Services/dossierService';
+import TopPA from '../principale/top/TopPA';
 
 //
 
 
-function DetailsCons() {
+function ConsultationPa() {
+    const [cons, setCons] = useState(null);
+
+
   const { consid } = useParams();
-  console.log(consid)
-  const [cons, setCons] = useState(null);
-  console.log(consid)
   useEffect(() => {
-    GetListCons();
+    GetListcons();
   }, []);
-  const GetListCons = async () => {
-
-    //affiche les consultation 
-
-    await fetchConsById(consid)
+  const GetListcons = async () => {
+    await fetchconById(consid)
       .then((res) => {
-        console.log(res)
         setCons(res.data);
-      }).catch(er => console.log(er))
-      ;
+        console.log(res.data);
+      });
   }
-  console.log(cons)
 
   const printToPDF = () => {
     const input = document.getElementById('pdf-content');
@@ -46,7 +42,7 @@ function DetailsCons() {
   };
   return (
     <>
-      <TopDoctor />
+      <TopPA/>
 
       <div className='allD' >
 
@@ -82,4 +78,4 @@ function DetailsCons() {
   )
 }
 
-export default DetailsCons
+export default ConsultationPa
