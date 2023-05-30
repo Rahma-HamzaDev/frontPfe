@@ -32,8 +32,6 @@ import EditePatient from './Compenent/Doctor/Pages/PatientList/EditePatient';
 import ListPatient from "./Compenent/Doctor/Pages/PatientList/ListPatient";
 
 
-
-
 // patient interface
 import MenuPa from './Compenent/patient/principale/MenuPa';
 
@@ -50,8 +48,6 @@ import MediaCardPa from './Compenent/patient/MediaCardPa';
 // import MoncomptePa from './Compenent/patient/ProfilePa/MoncomptePa';
 
 import PrincipaleDo from './Compenent/Doctor/Pages/HomeDoctor/PrincipaleDo';
-
-
 import Patientedite from './Compenent/patient/ProfilePa/Patientedite';
 import HomePatient from './Compenent/patient/principale/HomePatient';
 import Modifiercompte from './Compenent/Doctor/Pages/modificationcompte/Modifiercompte';

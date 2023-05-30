@@ -33,6 +33,19 @@ function Prendrerend_vous() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    const currentDate = new Date();
+    const selectedDateTime = new Date(Daterd);
+
+    if (selectedDateTime < currentDate) {
+      // alert('La date sélectionnée est passée. Veuillez choisir une date future.');
+      toast.warning("La date sélectionnée est passée !!!", {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+      return;
+    }
+
     setSubmitted(true);
 
 
@@ -123,7 +136,11 @@ function Prendrerend_vous() {
         navigate("/HomePatient");
       }).catch(error => {
           console.log(error)
-          alert("Erreur ! Rendez_vous est reserver")
+             toast.warning("Ce Rendez_vous est reserver!!!", {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+          // alert("Erreur ! Rendez_vous est reserver")
      
         })
      }

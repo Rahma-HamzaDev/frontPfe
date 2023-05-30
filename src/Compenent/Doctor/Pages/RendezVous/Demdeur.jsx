@@ -77,11 +77,11 @@ export default function Demadeur() {
       setRend(newRdv);
       console.log(newRdv);
 
-      //   toast.success("Publication ajouté avec succès , Attendez la confirmation de l'admin",
-      //  {
-      //     position: toast.POSITION.LEFT,
-      //     autoClose: 3000,
-      //   });
+    //     toast.success("Rendez vous sera accepté",
+    //    {
+    //       position: toast.POSITION.LEFT,
+    //       autoClose: 3000,
+    //     });
     }
   }
 
@@ -98,7 +98,7 @@ export default function Demadeur() {
       setRend(newRdv);
       console.log(newRdv);
 
-      //   toast.success("Publication ajouté avec succès , Attendez la confirmation de l'admin",
+      //   toast.success("Rendez-vous a été rapporter",
       //  {
       //     position: toast.POSITION.LEFT,
       //     autoClose: 3000,
@@ -137,16 +137,16 @@ export default function Demadeur() {
 
       <br />
       <Button
-          color="success"
+          // color="success"
           // startIcon={<AddCircleIcon />}
           size="large"
          
-          variant="outlined"
+          variant="contained"
        
         > {<Link to={`/request/medecin/${id}/ajouter`}
           style={{
             textDecoration:
-              "none", color: "black"
+              "none", color: "white"
           }}>
           Ajouter Controlle 
         </Link>
@@ -193,8 +193,7 @@ export default function Demadeur() {
 
                   <IconButton onClick={
                     red.etatrend === 'en attente' ? () => accredA(red._id) :
-                      red.etatrend === 'A rapporter'
-                        ? () => accredA(red._id) : null}>
+                      null}>
                     <AddTaskIcon color='primary' fontSize='large' sx={{ color: green[500] }}/>
                   </IconButton>
              
@@ -202,14 +201,11 @@ export default function Demadeur() {
                 </TableCell>
 
                 <TableCell align="left">
+                  
                  {<Link to={`/Patient/${red._id}`}>
 
                   <IconButton onClick={
-                    red.etatrend === 'en attente' ? () => accredR(red._id) :
-                      red.etatrend === 'accepter'
-                        ? () => accredR(red._id)
-
-                        : null}>
+                    red.etatrend === 'en attente' ? () => accredR(red._id) : null}>
                     <PublishedWithChangesIcon color='primary' fontSize='large' />
                   </IconButton>
                   </Link>}

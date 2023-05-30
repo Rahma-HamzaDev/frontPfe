@@ -46,11 +46,11 @@ function Modifiercompte() {
           </div>
           <div className="userShowInfo">
             <PermIdentity className="userShowIcon" />
-            <span className="userShowInfoTitle">{user.firstName} {user.lastName}</span>
+            <span className="userShowInfoTitle">{user.firstName} </span>
           </div>
           <div className="userShowInfo">
-            <CalendarToday className="userShowIcon" />
-            <span className="userShowInfoTitle">10.12.1999</span>
+          <PermIdentity className="userShowIcon" />
+            <span className="userShowInfoTitle">{user.lastName}</span>
           </div>
           <span className="userShowTitle">Contact Details</span>
           <div className="userShowInfo">

@@ -7,7 +7,7 @@ import {  Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import img from './Images/img-4.png';
-import {ADMIN, USER, DOCTOR} from '../../utils/roles' 
+import {ADMIN, PATIENT, DOCTOR} from '../../utils/roles' 
 import './Login.css';
 import Menu from "./Menu";
 const Login = () => {
@@ -28,7 +28,7 @@ const Login = () => {
   if(isLoggedIn){
   console.log(user)
   if (user.role === DOCTOR) navigate("/PrincipaleDo");
-  else if (user.role === USER) navigate("/HomePatient");
+  else if (user.role === PATIENT) navigate("/HomePatient");
   //else navigate("/HomeA");
   }
  

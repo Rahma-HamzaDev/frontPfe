@@ -62,20 +62,20 @@ function MesRend() {
   // }
   }
  //cancel
-  const accredC= async (redID) => {
-    const confirmed = window.confirm('Voulez-vous vraiment cancel Votre rendez_Vous ?');
-    if (confirmed) {
-      await editRendC (redID)
-      var newRdv = Rend.filter((red) => {
-        return red._id !== redID
-      });
+  // const accredC= async (redID) => {
+  //   const confirmed = window.confirm('Voulez-vous vraiment cancel Votre rendez_Vous ?');
+  //   if (confirmed) {
+  //     await editRendC (redID)
+  //     var newRdv = Rend.filter((red) => {
+  //       return red._id !== redID
+  //     });
   
-      window.location.reload();
-      setRend(newRdv);
-      console.log(newRdv);
+  //     window.location.reload();
+  //     setRend(newRdv);
+  //     console.log(newRdv);
       
   
-    }}
+  //   }}
 
   useEffect(() => {
     GetListRend();
@@ -106,13 +106,13 @@ function MesRend() {
     
   }
   // delete rendez vous 
-  const delRend = async (_id) => {
-    await deleteRend(_id)
-    var newRend = Rend.filter((item) => {
-      return item._id !== _id
-    })
-    setRend(newRend);
-  }
+  // const delRend = async (_id) => {
+  //   await deleteRend(_id)
+  //   var newRend = Rend.filter((item) => {
+  //     return item._id !== _id
+  //   })
+  //   setRend(newRend);
+  // }
 
   return (
     <>
@@ -127,33 +127,33 @@ function MesRend() {
           <TableHead>
             <TableRow>
               <StyledTableCell align="left">Nom Médecin</StyledTableCell>
-              {/* <StyledTableCell align="left">	Adresse Medecin</StyledTableCell> */}
+              <StyledTableCell align="left">	Adresse Medecin</StyledTableCell>
               <StyledTableCell align="left"> Num telephone </StyledTableCell>
               <StyledTableCell align="left"> Date/Heure </StyledTableCell>
               {/* <StyledTableCell align="left">	Description </StyledTableCell> */}
               <StyledTableCell align="left">	Etat </StyledTableCell>
-              <StyledTableCell align="left">	Cancel  </StyledTableCell>
+              {/* <StyledTableCell align="left">	Cancel  </StyledTableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
             {Rend.map((red, index) => (
               <StyledTableRow key={index}>
                 <StyledTableCell component="th" scope="row">Dr {red?.medecinID.firstName} {red?.medecinID.lastName}</StyledTableCell>
+                <StyledTableCell align="left">{red?.medecinID.adresse}</StyledTableCell>
                 <StyledTableCell align="left">{red?.medecinID.phone}</StyledTableCell>
                 <StyledTableCell align="left">{red?.Daterd}/{red?.timerd}</StyledTableCell>
-                {/* <StyledTableCell align="left">{red?.Descrd}</StyledTableCell> */}
                 <StyledTableCell align="left">
                   {renderEtat(red?.etatrend)}
                 </StyledTableCell>
-                <TableCell align="left">
+                {/* <TableCell align="left">
                 <IconButton onClick={
                   red.etatrend === 'en attente' ? () => accredC(red._id) : null}>
                     <DoDisturbAltIcon  sx={{ color: pink[500] }}  fontSize='large'/>
                   </IconButton>
-{/* //delete */}
+//delete
 <IconButton onClick={() => {delRend(red._id) }}><DeleteIcon   fontSize='large' sx={{ color: pink[500] }} /></IconButton>
 
-</TableCell>
+</TableCell> */}
               </StyledTableRow>
             ))}
           </TableBody>

@@ -102,7 +102,7 @@ function ListRendVous() {
    <TopDoctor />
    <br />
    <Button
-          color="success"
+          // color="success"
           // startIcon={<AddCircleIcon />}
           size="large"
           variant="contained"> {<Link to={`/ListRendVous/medecin/${id}/Ajoute`}
@@ -111,7 +111,7 @@ function ListRendVous() {
               "none", color: "white"
           }}
           >
-          Ajouter RendezVous 
+          Ajouter Rendez-Vous 
         </Link>
           }
         </Button>
@@ -144,9 +144,8 @@ function ListRendVous() {
         <StyledTableCell align="left"style={{fontSize:"15px"}}>{Rend?.Daterd}</StyledTableCell>
         <StyledTableCell align="left"style={{fontSize:"15px"}}>{Rend?.timerd}</StyledTableCell>
         {/* <StyledTableCell align="left"style={{fontSize:"15px"}}> {Rend?.optionrend} </StyledTableCell> */}
-        <StyledTableCell align="left"style={{fontSize:"15px"}}>  <IconButton onClick={() => { delRend(Rend._id) }}> </IconButton><HighlightOffIcon/></StyledTableCell>
+        <StyledTableCell align="left"style={{fontSize:"15px"}}>  <IconButton onClick={() => { delRend(Rend._id) }}> <HighlightOffIcon/> </IconButton></StyledTableCell>
 
-        {/* {renderEtat(red?.etatrend)} */}
       </StyledTableRow>
     ))}
   </>

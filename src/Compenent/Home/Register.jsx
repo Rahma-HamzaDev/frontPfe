@@ -5,7 +5,7 @@ import { register } from "../../feautures/AuthSlice";
 import { fetchSpecialite } from "../../Services/SpecialiteServices";
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
-import { USER, DOCTOR } from '../../utils/roles'
+import { PATIENT, DOCTOR } from '../../utils/roles'
 import { buildFormData } from "../../utils/ConvertFormData";
 import Menu from "./Menu";
 import { Alert } from "react-bootstrap";
@@ -14,7 +14,7 @@ import { TextField } from "@mui/material";
 function Register() {
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
-  const role = searchParams.get('role') || USER
+  const role = searchParams.get('role') || PATIENT
   const dispatch = useDispatch();
 
   const [firstName, setFirstName] = useState("")

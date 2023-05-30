@@ -198,9 +198,9 @@ export default function Ajouterdv() {
                     id="heure"
                     value={timerd}
                     name="heure"
-                    min="08:00"
-                    max="15:00"
-                    step="1800"
+                    // min="08:00"
+                    // max="15:00"
+                    // step="1800"
                     required
                     onChange={handleHeureChange}
                 />

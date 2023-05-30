@@ -1,5 +1,7 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
 import Stack from '@mui/material/Stack';
 import {useSelector} from "react-redux";
 import {urlimage} from "../../../Axios/Api"
@@ -40,7 +42,9 @@ const TopDoctor=()=>{
     </Container>
     <Nav className="me-auto">
     <Nav.Link as={Link} to="/Modifiercompte" > <h6 style={mystyle}>Bienvenu {user.firstName} {user.lastName} </h6></Nav.Link>
-    <Nav.Link as={Link} to="/Logout" >Deconnecter</Nav.Link>
+    {/* <Nav.Link as={Link} to="/Logout" >Deconnecter</Nav.Link> */}
+    <Nav.Link as={Link} to="/Logout" style={{color:'red'}}><ExitToAppIcon Size='300px'/></Nav.Link>
+
     </Nav>
 
   </Navbar>

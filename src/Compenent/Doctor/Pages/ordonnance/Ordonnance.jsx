@@ -123,7 +123,7 @@ function Ordonnance() {
                   />
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'> Nom Médicaments :</label>
+                  <label htmlFor='social'>Nom Médicaments 1 avec Dosage :</label>
                   <textarea
                     placeholder=" Nom Médicaments"
                     required
@@ -133,7 +133,7 @@ function Ordonnance() {
                   ></textarea>
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'> Dosage Médicaments : </label>
+                  <label htmlFor='social'>  Médicaments 2  : </label>
                   <textarea
                     placeholder="Dosage Médicaments "
                     required
@@ -144,8 +144,8 @@ function Ordonnance() {
 
                   />
                 </div>
-                <div className="col-10">
-                  <label htmlFor='social'> Fréquance Médicaments :</label>
+                <div className="col-8">
+                  <label htmlFor='social'> Médicaments3   :</label>
                   <textarea
                     placeholder="Fréquance Médicaments"
                     className="form-control"
@@ -155,7 +155,7 @@ function Ordonnance() {
                   />
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'>Forme Médicaments :</label>
+                  <label htmlFor='social'> Médicaments 4 :</label>
                   <textarea
                     placeholder="Antécedents Médecaux"
                     className="form-control"
@@ -251,7 +251,12 @@ function Ordonnance() {
                   {ord?.FréquanceMedicaments}&nbsp;
                   &nbsp;
                   &nbsp;
-
+                  <br />
+                  {ord?.FormeMedicaments}&nbsp;
+                  &nbsp;
+                  &nbsp;
+                
+               
                   <br />
                   {ord?.observation}   &nbsp;
                   &nbsp;

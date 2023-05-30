@@ -239,7 +239,7 @@ function ListPatient() {
             textDecoration:
               "none", color: "black"
           }}>
-          Ajouter Patient
+          Ajouter Fiche Patient
         </Link>
           }
         </Button>
