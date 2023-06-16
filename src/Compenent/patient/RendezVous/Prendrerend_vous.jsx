@@ -10,9 +10,28 @@ import "./rdvP.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from 'react-toastify';
+ import { fetchUserById } from '../../../Services/UserServices';
 function Prendrerend_vous() {
   const { id } = useParams();
   console.log(id)
+  //
+   const[medecin, setMedecin]=useState([])
+   useEffect(() => {
+    GetListmedecin();
+  }, []);
+  const GetListmedecin = async () => {
+
+    
+    await fetchUserById(id)
+      .then((res) => {
+        setMedecin(res.data);
+        console.log(res.data);
+      });
+  }
+
+
+ 
+
   const [Daterd, setDaterd] = useState('');
   const [timerd, setTimerd] = useState('');
   // const [rend, setRend] = useState('');
@@ -31,21 +50,29 @@ function Prendrerend_vous() {
   const startTime = new Date(`1970-01-01T08:00:00`);
   const endTime = new Date(`1970-01-01T15:00:00`);
 
+
+  const currentDate = new Date().toISOString().split("T")[0];
+
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const currentDate = new Date();
-    const selectedDateTime = new Date(Daterd);
+    // const currentDate = new Date();
+    // const selectedDateTime = new Date(Daterd);
 
-    if (selectedDateTime < currentDate) {
-      // alert('La date sélectionnée est passée. Veuillez choisir une date future.');
-      toast.warning("La date sélectionnée est passée !!!", {
-        position: toast.POSITION.LEFT,
-        autoClose: 3000,
-      });
-      return;
-    }
+    // if (selectedDateTime < currentDate) {
+    //   // alert('La date sélectionnée est passée. Veuillez choisir une date future.');
+    //   toast.warning("La date sélectionnée est passée !!!", {
+    //     position: toast.POSITION.LEFT,
+    //     autoClose: 3000,
+    //   });
+    //   return;
+    // }
 
+
+
+  // Obtenir la date actuelle au format ISO (AAAA-MM-JJ)
     setSubmitted(true);
 
 
@@ -68,6 +95,13 @@ function Prendrerend_vous() {
     //   alert("Les rendez-vous ne sont disponibles que de 09h00 à 14h00.");
     //   return;
     // }
+
+
+
+
+
+
+    
 //verifier time
     const selectedTime = new Date(`1970-01-01T${timerd}`);
     if (selectedTime < startTime || selectedTime >= endTime) {
@@ -145,11 +179,29 @@ function Prendrerend_vous() {
         })
      }
   }
+
+//
+// function getTomorrowDate() {
+//   const tomorrow = new Date();
+//   tomorrow.setDate(tomorrow.getDate() + 1);
+
+//   const year = tomorrow.getFullYear();
+//   const month = String(tomorrow.getMonth() + 1).padStart(2, '0');
+//   const day = String(tomorrow.getDate()).padStart(2, '0');
+
+//   return ${year}-${month}-${day};
+// }
+
+//
+
+
   return (
     <div>
       <TopPA />
       <div className='tourdv'>
-        <h3 style={{ textAlign: "center" }}>Prendre rendez-vous : </h3>
+        <br/>
+        <br/>
+        <h3 style={{ textAlign: "center" }}>Prendre rendez-vous : {medecin.firstName} {medecin.lastName} </h3>
         <div className="prendrdv">
           <Form validated={validated} onSubmit={handleSubmit} className='rdvpa'>
             <Form.Group>
@@ -157,6 +209,7 @@ function Prendrerend_vous() {
               <Form.Control type="date"
                 required
                 value={Daterd}
+                min={currentDate}
                 onChange={(e) => setDaterd(e.target.value)}
               />
             </Form.Group>
@@ -165,6 +218,9 @@ function Prendrerend_vous() {
               <Form.Label>Choisir Temps :</Form.Label>
               <Form.Control type="time"
                 required
+                  // min={startTime}
+                  // max={endTime}
+                  // step="30min"
                 value={timerd}
                 onChange={(e) => setTimerd(e.target.value)}
 

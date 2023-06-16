@@ -33,18 +33,16 @@ import ListPatient from "./Compenent/Doctor/Pages/PatientList/ListPatient";
 
 
 // patient interface
-import MenuPa from './Compenent/patient/principale/MenuPa';
+// import MenuPa from './Compenent/patient/principale/MenuPa';
 
 import DossiersPa from './Compenent/patient/ourDossiers/DossiersPa';
-import ListeSpecard from './Compenent/patient/ListeSpecard';
+
 import MesRend from './Compenent/patient/RendezVous/histoireRend/MesRend';
 
 import SidebarD from './Compenent/Doctor/sidebar/SidebarD';
 
 import Prendrerend_vous from './Compenent/patient/RendezVous/Prendrerend_vous';
 import SonDossier from './Compenent/patient/ourDossiers/SonDossier';
-import ListMedPa from './Compenent/patient/ListMedPa';
-import MediaCardPa from './Compenent/patient/MediaCardPa';
 // import MoncomptePa from './Compenent/patient/ProfilePa/MoncomptePa';
 
 import PrincipaleDo from './Compenent/Doctor/Pages/HomeDoctor/PrincipaleDo';
@@ -52,7 +50,7 @@ import Patientedite from './Compenent/patient/ProfilePa/Patientedite';
 import HomePatient from './Compenent/patient/principale/HomePatient';
 import Modifiercompte from './Compenent/Doctor/Pages/modificationcompte/Modifiercompte';
 import CalendrieMed from './Compenent/Doctor/Pages/RendezVous/CalendrieMed';
-import ConsPa from './Compenent/patient/ourDossiers/ConsPa';
+// import ConsPa from './Compenent/patient/ourDossiers/ConsPa';
 import OrdPa from './Compenent/patient/ourDossiers/OrdPa';
 import ListsepPa from './Compenent/patient/principale/ListsepPa';
 import Logout from './Compenent/patient/principale/Logout';
@@ -74,6 +72,7 @@ import Editrdv from './Compenent/Doctor/Pages/RendezVous/Editrdv';
 import CodePa from './Compenent/patient/ourDossiers/CodePa';
 import Monfiche from './Compenent/patient/ourDossiers/Monfiche';
 import ConsultationPa from './Compenent/patient/ourDossiers/consultationPa';
+import { Dispomed } from './Compenent/Doctor/Pages/dispo/Dispomed';
 // import Pdfimp from './Compenent/Doctor/Pages/imprissionpdf/Pdfimp';
 function App() {
   // const { isLoggedIn } = useSelector((state) => state.auth);
@@ -83,8 +82,8 @@ function App() {
       <Router>
         {/* {isLoggedIn? <HomePatient /> :<Login/> } */}
         {/* {isLoggedIn2? <PrincipaleDo /> :<LoginDoctor/> } */}
-
-        {/* <TopBar/>  */}
+{/* 
+        <TopBar/>  */}
         {/* <Menu/> */}
         <Routes>
           <Route path="/" element={<Principale />} />
@@ -94,6 +93,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/Dispomed" element={<Dispomed />} />
           {/* <Route path="/AppA" element ={<AppA/>} /> */}
 
 
@@ -130,7 +130,6 @@ function App() {
           
 
           <Route path="/PrincipaleDo" element={<PrincipaleDo />} />
-          <Route path="/ListeSpecard" element={<ListeSpecard />} />
 
           <Route path="/Patient/:id" element={<Editrdv />} />
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />
@@ -141,13 +140,13 @@ function App() {
           {/* /patient/ */}
           <Route path="/HomePatient" element={<HomePatient />} />
           <Route path="/Patientedite" element={<Patientedite />} />
-          <Route path="/MenuPa" element={<MenuPa />} />
+          {/* <Route path="/MenuPa" element={<MenuPa />} /> */}
           <Route path="/MesRend/user/:userId" element={<MesRend />} />
           <Route path="/DossiersPa/:code" element={<DossiersPa />} />
           
           <Route path="/Monfiche/:code" element={<Monfiche />} />
 
-          <Route path="/ConsPa" element={<ConsPa />} />
+          {/* <Route path="/ConsPa" element={<ConsPa />} /> */}
           <Route path="/DetailsDossier/:code" element={<SonDossier />} />
           <Route path="/OrdPa/:consid" element={<OrdPa />} />
        
@@ -156,8 +155,7 @@ function App() {
           <Route path="/OurDoctor" element={<OurDoctor />} />
           <Route path="/Patient/medecin/:id" element={<ListPatient />} />
           <Route path="/Prendrerend_vous/medecin/:id" element={<Prendrerend_vous />} />
-          <Route path='/ListMedPa' element={<ListMedPa />} />
-          <Route path='/MediaCardPa' element={<MediaCardPa />} />
+       
           {/* <Route path='/MoncomptePa'element={<MoncomptePa/>}/> */}
           <Route path="/ListsepPa" element={<ListsepPa />} />
           <Route path="/Logout" element={<Logout />} />

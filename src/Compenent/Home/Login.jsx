@@ -10,6 +10,7 @@ import img from './Images/img-4.png';
 import {ADMIN, PATIENT, DOCTOR} from '../../utils/roles' 
 import './Login.css';
 import Menu from "./Menu";
+import Footer from './Footer';
 const Login = () => {
  
   const navigate = useNavigate();
@@ -23,7 +24,9 @@ const Login = () => {
   email: email,
   password :password
   };
+  
   dispatch(login(objetuser)) ;
+  
   }
   if(isLoggedIn){
   console.log(user)
@@ -51,7 +54,7 @@ const [error, setError] = useState(false);
       type="email" 
       onChange={(event)=>setEmail(event.target.value)}
            placeholder="Enter email" 
-           required
+           required 
            fullWidth
            id="email"
            label="Email Address"
@@ -65,10 +68,10 @@ const [error, setError] = useState(false);
     <Form.Group className="mb-3" >
       <Form.Label>Password</Form.Label>
       <Form.Control type="password"
-    
        placeholder="Password"
        onChange={(event)=>setPassword(event.target.value)}
        name="password"
+       required
        label="Password"
        id="password"
        autoComplete="current-password"
@@ -80,8 +83,8 @@ const [error, setError] = useState(false);
       <Form.Check type="checkbox" label="Remember me" />
     </Form.Group> */}
 
-    <Button variant="primary" type="submit" 
-    onClick={(event)=>handleSubmit(event)}> 
+    <Button variant="primary" type="submit" > 
+    {/* onClick={(event)=>handleSubmit(event)} */}
     Se Connecter
     </Button>
     <br/>     <br/>
@@ -93,7 +96,7 @@ const [error, setError] = useState(false);
     <img src= {img} width="250" height="250"/>
   </div>
   </div>
-
+  <Footer/>
   </>
   );
 }

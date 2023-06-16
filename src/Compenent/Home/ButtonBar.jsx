@@ -8,7 +8,7 @@ function ButtonBar() {
         <div className="container">
             <div className="row g-5">
                 <div className="col-md-6 text-center text-md-start">
-                    <p className="mb-md-0">&copy; <a className="text-primary" href="#">Dr Medicale</a>. All Rights Reserved.</p>
+                    <p className="mb-md-0">&copy; <a className="text-primary" href="#">Dr Medicale</a>. </p>
                 </div>
                 
             </div>

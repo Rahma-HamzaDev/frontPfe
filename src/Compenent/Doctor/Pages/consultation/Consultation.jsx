@@ -203,18 +203,18 @@ function Consultation() {
             <TopDoctor/>
             <div style={{ padding: 2, margin: 2 }}>
         <Button
-          color="error"
+      color="success"
           // startIcon={<AddCircleIcon />}
           size="large"
           startIcon={<PersonAddIcon    />}
-          variant="outlined"
+          variant="contained"
         > {<Link to={`/Patient/cons/${id}/insert`} 
           style={{
             textDecoration:
-              "none", color: "black" 
+              "none", color: "white" 
           }}>
             Ajouter Consultation
-          </Link>
+          </Link> 
           }
         </Button>
       </div>

@@ -109,9 +109,7 @@ function Ordonnance() {
             <div>
               <div className="row g-3" style={{ alignItems: 'center' }}>
                 <div className="col-10">
-                  <label htmlFor='social'
-
-                  >Date Consultation :</label>
+                  <label htmlFor='social'>Date Consultation :</label>
                   <input type='date'
                     className='form-control'
                     id='social'
@@ -123,7 +121,7 @@ function Ordonnance() {
                   />
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'>Nom Médicaments 1 avec Dosage :</label>
+                  <label htmlFor='social'>Nom Médicaments:</label>
                   <textarea
                     placeholder=" Nom Médicaments"
                     required
@@ -133,7 +131,7 @@ function Ordonnance() {
                   ></textarea>
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'>  Médicaments 2  : </label>
+                  <label htmlFor='social'>  Dosage Medicaments: </label>
                   <textarea
                     placeholder="Dosage Médicaments "
                     required
@@ -145,7 +143,7 @@ function Ordonnance() {
                   />
                 </div>
                 <div className="col-8">
-                  <label htmlFor='social'> Médicaments3   :</label>
+                  <label htmlFor='social'> Fréquance Medicaments :</label>
                   <textarea
                     placeholder="Fréquance Médicaments"
                     className="form-control"
@@ -155,7 +153,7 @@ function Ordonnance() {
                   />
                 </div>
                 <div className="col-10">
-                  <label htmlFor='social'> Médicaments 4 :</label>
+                  <label htmlFor='social'> Forme Medicaments:</label>
                   <textarea
                     placeholder="Antécedents Médecaux"
                     className="form-control"
@@ -240,25 +238,27 @@ function Ordonnance() {
                 </div>
 
                 <div className='contenue'>
-                  {ord?.NomMedicaments}&nbsp;
+                 <h4 className='H4'>{ord?.NomMedicaments}</h4>
+                  &nbsp;
                   &nbsp;
                   <br />
 
-                  {ord?.DosageMedicaments}&nbsp;
+                  <h4 className='H4'>{ord?.DosageMedicaments}</h4>
+                  &nbsp;
                   &nbsp;
                   <br />
 
-                  {ord?.FréquanceMedicaments}&nbsp;
+                  <h4 className='H4'>{ord?.FréquanceMedicaments}</h4> &nbsp;
                   &nbsp;
                   &nbsp;
                   <br />
-                  {ord?.FormeMedicaments}&nbsp;
+                  <h4 className='H4'>{ord?.FormeMedicaments} </h4>&nbsp;
                   &nbsp;
                   &nbsp;
                 
                
                   <br />
-                  {ord?.observation}   &nbsp;
+                  <h4 className='H4'>{ord?.observation} </h4>  &nbsp;
                   &nbsp;
 
                   <br />   <br />

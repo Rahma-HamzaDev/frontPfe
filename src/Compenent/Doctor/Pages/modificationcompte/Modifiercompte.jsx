@@ -46,11 +46,15 @@ function Modifiercompte() {
           </div>
           <div className="userShowInfo">
             <PermIdentity className="userShowIcon" />
-            <span className="userShowInfoTitle">{user.firstName} </span>
+            <span className="userShowInfoTitle">{user.firstName} {user.lastName}</span>
           </div>
-          <div className="userShowInfo">
+          {/* <div className="userShowInfo">
           <PermIdentity className="userShowIcon" />
-            <span className="userShowInfoTitle">{user.lastName}</span>
+            <span className="userShowInfoTitle">span>
+          </div> */}
+          <div className="userShowInfo">
+            <LocationSearching className="userShowIcon" />
+            <span className="userShowInfoTitle">{user.adresse}</span>
           </div>
           <span className="userShowTitle">Contact Details</span>
           <div className="userShowInfo">
@@ -61,13 +65,10 @@ function Modifiercompte() {
             <MailOutline className="userShowIcon" />
             <span className="userShowInfoTitle">{user.email}</span>
           </div>
-          <div className="userShowInfo">
-            <LocationSearching className="userShowIcon" />
-            <span className="userShowInfoTitle">{user.adresse}</span>
-          </div>
+         
         </div>
       </div>
-      <div className="userUpdate">
+      {/* <div className="userUpdate">
         <span className="userUpdateTitle">Modifier</span>
         <form className="userUpdateForm">
           <div className="userUpdateLeft">
@@ -127,7 +128,7 @@ function Modifiercompte() {
             <button className="userUpdateButton">Update</button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   </div>
   </div>

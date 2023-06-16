@@ -11,6 +11,20 @@ import { addPatient } from '../../../../Services/patientServices';
 import TopDoctor from '../../topbarD/TopDoctor';
 import { useSelector } from 'react-redux';
 
+const generateCode = () => {
+  const length = 6; // Longueur du numfiche généré
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // Caractères possibles pour le numfiche
+  let numfiche = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    numfiche += characters.charAt(randomIndex);
+  }
+  console.log(numfiche);
+  return numfiche;
+
+};
+
 export default function Insertpatient() {
 
   // const {medecinId} = useParams();
@@ -19,10 +33,10 @@ export default function Insertpatient() {
   console.log(user);
   const medecinId = user._id
   console.log(medecinId);
-
+  const numfiche = generateCode();
   const [validated, setValidated] = useState(false);
   const [cinPa, setCinPa] = useState("");
-  const [numfiche, SetNumfiche] = useState("");
+  // const [numfiche, SetNumfiche] = useState("");
   const [dateNais, setdateNais] = useState("");
   const [nompatient, setNompatient] = useState("");
   const [prenompatient, setPrenompatient] = useState("");
@@ -31,7 +45,7 @@ export default function Insertpatient() {
   const [sexepatient, setSexepatient] = useState("");
   const [numtelPa, setNumtelPa] = useState("");
   const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
-  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
+  const [profession, setProfession] = useState("");
 
 
   const navigate = useNavigate();
@@ -66,7 +80,7 @@ export default function Insertpatient() {
         sexepatient: sexepatient,
         numtelPa: numtelPa,
         dateNais: dateNais,
-        HistoriqueSocial: HistoriqueSocial,
+        profession: profession,
         HistoriqueFamilial: HistoriqueFamilial,
       }
 
@@ -94,7 +108,7 @@ export default function Insertpatient() {
       <TopDoctor />
       <div className="container w-100 d-flex justify-content-center">
         <div className=' mt-5 w-50'>
-          <h1 align="center">Ajout patient</h1>
+          <h1 align="center">Ajouter fiche patient</h1>
           <div className='form mt-3'>
             <Form className="border p-3" noValidate validated={validated}
               onSubmit={handleSubmit}>
@@ -103,12 +117,15 @@ export default function Insertpatient() {
                 <Form.Group as={Col} className="col-md-6 ">
                   <Form.Label>Num Fiche *</Form.Label>
                   <Form.Control
-                    required
-                    type="number"
-                    placeholder="Num fiche patient"
-                    value={numfiche}
-                    onChange={(e) => SetNumfiche(e.target.value)}
-                  />
+  // required
+  
+   readOnly
+  type="text"
+  placeholder="Num fiche"
+  value={numfiche}
+  // onChange={(e) => SetNumfiche(e.target.value)}
+/>
+
                   <Form.Control.Feedback type="invalid">
                     Saisir Numéro de fiche
                   </Form.Control.Feedback>
@@ -206,6 +223,7 @@ export default function Insertpatient() {
                   <Form.Label>date de Naissance</Form.Label>
                   <Form.Control
                     type="date"
+                    required
                     placeholder="date naissance"
                     value={dateNais}
                     onChange={(e) => setdateNais(e.target.value)}
@@ -243,13 +261,13 @@ export default function Insertpatient() {
               <Row className="mb-2">
 
                 <Form.Group as={Col} className="col-md-6 " >
-                  <Form.Label >Historique Social</Form.Label>
+                  <Form.Label >La profession</Form.Label>
                   <Form.Control
                     required
                     type="text"
-                    placeholder="Historique Social "
-                    value={HistoriqueSocial}
-                    onChange={(e) => setHistoriqueSocial(e.target.value)}
+                    placeholder="profession"
+                    value={profession}
+                    onChange={(e) => setProfession(e.target.value)}
                   />
                 </Form.Group>
 
@@ -265,7 +283,7 @@ export default function Insertpatient() {
                 </Form.Group>
               </Row>
 
-              <center><Button className="btn-primary " type="submit">Enregistrer</Button></center>
+              <center><Button className="btn-primary" type="submit" onClick={generateCode} >Enregistrer</Button></center>
             </Form>
           </div>
         </div>

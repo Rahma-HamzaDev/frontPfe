@@ -10,6 +10,8 @@ import { buildFormData } from "../../utils/ConvertFormData";
 import Menu from "./Menu";
 import { Alert } from "react-bootstrap";
 import { TextField } from "@mui/material";
+import { toast } from 'react-toastify';
+import Footer from "./Footer";
 
 function Register() {
   const navigate = useNavigate()
@@ -27,8 +29,13 @@ function Register() {
   const [avatar, setAvatar] = useState("");
   const [matricule, setMatricule] = useState("");
   const [certification, setCertification] = useState("");
-
-
+  //
+  const [validated, setValidated] = useState(false);
+  // const [startTime, setStartTime] = useState('');
+  // const [endTime, setEndTime] = useState('');
+  // const [consultationTime, setConsultationTime] = useState('');
+  // const [joursdeTravail, setjoursdeTravail] = useState([]);
+  //
   const [specialiteID, setSpecialiteID] = useState("")
   const [specialite, setSpecialite] = useState([])
 
@@ -45,7 +52,7 @@ function Register() {
   //
   const [error, setError] = useState(false);
 
-  
+
   const handlePhoneChange = (event) => {
     const value = event.target.value;
     if (value.length !== 8) {
@@ -60,13 +67,52 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (password.length < 6) {
+      // alert('');
+      toast.warning("Le mot de passe doit comporter au moins 6 caractères!!", {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      // alert('');
+      toast.warning("Le mot de passe doit contenir au moins une lettre majuscule!!", {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+      return;
+    }
+
+    if (!/\d/.test(password)) {
+      // alert('');
+      toast.warning("Le mot de passe doit contenir au moins un chiffre!!",
+       {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
+      return;
+    }
+  
+
     if (password !== password2) {
-      alert('Passwords do not match')
+      // alert('')
+      toast.error("Les mots de passe ne correspondent pas!!",
+       {
+        position: toast.POSITION.LEFT,
+        autoClose: 3000,
+      });
     } else {
       const doctorData = role === DOCTOR ? {
         specialiteID,
         matricule,
-        certification
+        certification,
+        // startTime,
+        // endTime , 
+        // consultationTime , 
+        // joursdeTravail
+
       } : {}
       const userData = {
         firstName: firstName,
@@ -82,13 +128,13 @@ function Register() {
       const formData = new FormData();
       buildFormData(formData, userData);
       dispatch(register(formData))
-       navigate('/login')
+      navigate('/login')
     }
   };
   return (
     <div>
       <Menu />
- 
+
       <div className="container-fluid bg-primary my-5 py-5" >
         <div className="container py-5">
           <div className="row gx-5">
@@ -145,22 +191,25 @@ function Register() {
                         id="phone"
                         label="phone"
                         onChange={handlePhoneChange} /> */}
-                        {/* <Grid item xs={12} sm={6}> */}
-                <input
-                  required
-                  fullWidth
-                  className="form-control bg-light border-0"
-                  id="telephone"
-                  label="Télephone "
-                  name="telephone"
-                  autoComplete="Telephone"
-                  placeholder="+(216)" 
-                  style={{ height: '55px' }}
-                  error={error}
-                  onChange={handlePhoneChange}
-                />
-                 {error && <Alert severity="error">Le numéro se compose de 8 chiffres</Alert>} 
-              {/* </Grid> */}
+                      {/* <Grid item xs={12} sm={6}> */}
+                      <input
+                        type="text"
+                        required
+                        fullWidth
+                        className="form-control bg-light border-0"
+                        id="telephone"
+                        label="Télephone "
+                        name="telephone"
+                        autoComplete="Telephone"
+                        placeholder="+(216)"
+                        style={{ height: '55px' }}
+                        error={error}
+                        // onChange={(event) => setPhone(event.target.value)}
+
+                      onChange={handlePhoneChange}
+                      />
+                      {error && <Alert severity="error">Le numéro se compose de 8 chiffres</Alert>}
+                      {/* </Grid> */}
                     </div>
 
                     <div className="col-12 col-sm-6">
@@ -219,8 +268,22 @@ function Register() {
                         className="form-control bg-light border-0" style={{ height: '55px' }}
                       />
                     </div>
-
                     {
+                      role === DOCTOR && (
+                        <div className="col-12 col-sm-6">
+                          <input type="text"
+                            className="form-control bg-light border-0"
+                            id="matricule"
+                            required
+                            label="matricule"
+                            name="matricule"
+                            onChange={(event) => setMatricule(event.target.value)}
+                            placeholder="MatriculeFiscale"
+                            style={{ height: '55px' }} />
+                        </div>
+                      )
+                    }
+                    {/* {
                       role === DOCTOR && (
                         <div className="col-12 col-sm-6">
                           <h5>Mettre votre vérification </h5>
@@ -234,15 +297,15 @@ function Register() {
                           />
                         </div>
                       )
-                    }
+                    } */}
 
                     {/* liste specilites */}
                     {
                       role === DOCTOR && (
-                        <div className="col-12">
+                        <div className="col-12 col-sm-6">
                           <select className="form-control bg-light border-0"
                             style={{ height: '55px' }}
-
+                            required
                             as="select"
                             type="select"
                             value={specialiteID}
@@ -255,6 +318,56 @@ function Register() {
                         </div>
                       )
                     }
+                    <br />
+
+                    {/* {
+                      role === DOCTOR && (
+                        <div className="col-12 col-sm-6">
+start time :
+                          <input
+                            placeholder="Heure de début"
+                            className="form-control bg-light border-0" style={{ height: '55px' }}
+                            type="time"
+                            value={startTime}
+                            onChange={(e) => setStartTime(e.target.value)}
+                          />
+                        </div>
+                      )
+                    }
+end time:
+                    {
+                      role === DOCTOR && (
+                        <div className="col-12 col-sm-6">
+
+                          <input
+                            type="time"
+                            placeholder="Heure de Fin"
+
+                            value={endTime}
+                            onChange={(e) => setEndTime(e.target.value)}
+                            className="form-control bg-light border-0" style={{ height: '55px' }}
+                          />
+
+                        </div>
+                      )
+                    } */}
+
+                    {/* {
+                      role === DOCTOR && (
+                        <div className="col-12 col-sm-6">
+
+                          <input
+                            placeholder="Temps de consultation (en minutes)"
+
+                            className="form-control bg-light border-0" style={{ height: '55px' }}
+                            type="text"
+                            value={consultationTime}
+                            onChange={(e) => setConsultationTime(e.target.value)}
+                          />
+
+                        </div>
+                      )
+                    } */}
 
                     <div className="col-12 col-sm-6">
                       <input type="password"
@@ -295,6 +408,7 @@ function Register() {
       </div >
       <br /> <br />
       {/* Appointment End */}
+      <Footer/>
     </div >
   )
 }

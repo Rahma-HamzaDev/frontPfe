@@ -26,7 +26,7 @@ function Menu() {
         </button>
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <div className="navbar-nav ms-auto py-0">
-          <Link to="/" className="nav-item nav-link">Acceuil</Link>
+          <Link to="/" className="nav-item nav-link"> Accueil </Link>
          <Link to="/About" className="nav-item nav-link">A Propos </Link> 
             <Link to="/service" className="nav-item nav-link">Service</Link>
               <Link to="/Register2" className="nav-item nav-link">Inscription</Link>

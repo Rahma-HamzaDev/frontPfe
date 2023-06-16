@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
-import {  Button } from '@mui/material';
+import { Button } from '@mui/material';
 import { toast } from 'react-toastify';
 import CancelIcon from '@mui/icons-material/Cancel';
 import Table from '@mui/material/Table';
@@ -18,7 +18,7 @@ import TopDoctor from '../../topbarD/TopDoctor';
 import { useSelector } from 'react-redux';
 import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import { pink,green } from '@mui/material/colors';
+import { pink, green } from '@mui/material/colors';
 import moment from 'moment';
 
 
@@ -37,10 +37,10 @@ export default function Demadeur() {
       const sortedRend = res.data.sort((a, b) => {
         const dateA = moment(a.Daterd + " " + a.timerd, 'YYYY-MM-DD HH:mm').valueOf();
         const dateB = moment(b.Daterd + " " + b.timerd, 'YYYY-MM-DD HH:mm').valueOf();
-        
+
         if (dateA === dateB) {
           return moment(a.timerd, 'HH:mm').valueOf() - moment(b.timerd, 'HH:mm').valueOf();
-                } else {
+        } else {
           return dateA - dateB;
         }
       });
@@ -55,7 +55,7 @@ export default function Demadeur() {
       setRend(filteredRend);
     });
   };
-  
+
 
   //   editRendA(Rend).then(res=>{
   //    console.log("Update OK",res);
@@ -77,33 +77,34 @@ export default function Demadeur() {
       setRend(newRdv);
       console.log(newRdv);
 
-    //     toast.success("Rendez vous sera accepté",
-    //    {
-    //       position: toast.POSITION.LEFT,
-    //       autoClose: 3000,
-    //     });
+      //     toast.success("Rendez vous sera accepté",
+      //    {
+      //       position: toast.POSITION.LEFT,
+      //       autoClose: 3000,
+      //     });
     }
   }
 
   //raporter
   const accredR = async (redID) => {
-    const confirmed = window.confirm('Voulez-vous vraiment raporter cette rendez_Vous ?');
-    if (confirmed) {
-      await editRendR(redID)
-      var newRdv = Rend.filter((red) => {
-        return red._id !== redID
-      });
-
-      window.location.reload();
-      setRend(newRdv);
-      console.log(newRdv);
-
-      //   toast.success("Rendez-vous a été rapporter",
-      //  {
-      //     position: toast.POSITION.LEFT,
-      //     autoClose: 3000,
-      //   });
+    // const confirmed = window.confirm('Voulez-vous vraiment raporter cette rendez_Vous ?');
+    // if (confirmed) {
+    editRendR(redID)
+    var newRdv = Rend.filter((red) => {
+      return red._id !== redID
     }
+    );
+
+    // window.location.reload();
+    // setRend(newRdv);
+    // console.log(newRdv);
+
+    //   toast.success("Rendez-vous a été Retardé",
+    //  {
+    //     position: toast.POSITION.LEFT,
+    //     autoClose: 3000,
+    //   });
+    // }
   }
 
   function renderEtat(etat) {
@@ -112,9 +113,9 @@ export default function Demadeur() {
     }
     else if (etat === 'accepter') {
       return <span style={{ color: 'green' }}>{etat}</span>;
-    } else if (etat === 'A rapporter') {
+    } else if (etat === 'reporter') {
       return <span style={{ color: 'blue' }}>{etat}</span>;
-    } 
+    }
     // else if (etat === 'cancel') {
     //   return <span style={{ color: 'gray' }}>{etat}</span>;
     // }
@@ -132,43 +133,43 @@ export default function Demadeur() {
   // }
   return (
     <>
-    
+
       <TopDoctor />
 
       <br />
       <Button
-          // color="success"
-          // startIcon={<AddCircleIcon />}
-          size="large"
-         
-          variant="contained"
-       
-        > {<Link to={`/request/medecin/${id}/ajouter`}
-          style={{
-            textDecoration:
-              "none", color: "white"
-          }}>
-          Ajouter Controlle 
-        </Link>
-          }
-        </Button>
-      <div style={{ textAlign: 'center'  }}>
+        // color="success"
+        // startIcon={<AddCircleIcon />}
+        size="large"
+
+        variant="contained"
+
+      > {<Link to={`/request/medecin/${id}/ajouter`}
+        style={{
+          textDecoration:
+            "none", color: "white"
+        }}>
+        Ajouter Controlle
+      </Link>
+        }
+      </Button>
+      <div style={{ textAlign: 'center' }}>
         <br />
-        <h1 style={{fontSize:"30px"}} >  Liste Des demandeurs </h1>   <br />  <br />
+        <h1 style={{ fontSize: "30px" }} >  Liste Des demandeurs </h1>   <br />  <br />
       </div>
       <TableContainer component={Paper} sx={{ overflow: 'auto' }}>
         <Table sx={{ maxWidth: " 100%" }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <TableCell align="left" style={{fontSize:"20px"}} >Patient</TableCell>
-              <TableCell align="left" style={{fontSize:"20px"}}>Phone </TableCell>
-              <TableCell align="left" style={{fontSize:"20px"}}>Email </TableCell>
-              <TableCell align="left" style={{fontSize:"20px"}}>Date</TableCell>
-              <TableCell align="left" style={{fontSize:"20px"}} >Time</TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }} >Patient</TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }}>Phone </TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }}>Email </TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }}>Date</TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }} >Time</TableCell>
               {/* <TableCell align="left"  style={{fontSize:"20px"}} >Description</TableCell> */}
-              <TableCell align="left"  style={{fontSize:"20px"}}  >Etat </TableCell>
-              <TableCell align="left"  style={{fontSize:"20px"}} >Accepter </TableCell>
-              <TableCell align="left" style={{fontSize:"20px"}} >Rapporter </TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }}  >Etat </TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }} >Accepter </TableCell>
+              <TableCell align="left" style={{ fontSize: "20px" }} >Reporter </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -177,42 +178,44 @@ export default function Demadeur() {
                 key={red.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell component="th" scope="row"  style={{fontSize:"15px"}}>
+                <TableCell component="th" scope="row" style={{ fontSize: "15px" }}>
                   {red?.userID?.firstName} {red?.userID?.lastName} {red?.firstName} {red?.lastName}
                 </TableCell>
                 {/* <TableCell align="left"></TableCell> */}
-                <TableCell align="left"  style={{fontSize:"15px"}}>{red?.userID?.phone} {red?.phone}</TableCell>
-                <TableCell align="left"  style={{fontSize:"15px"}}>{red?.userID?.email} {red?.email}</TableCell>
+                <TableCell align="left" style={{ fontSize: "15px" }}>{red?.userID?.phone} {red?.phone}</TableCell>
+                <TableCell align="left" style={{ fontSize: "15px" }}>{red?.userID?.email} {red?.email}</TableCell>
 
-                <TableCell align="left" style={{fontSize:"15px"}}>{red?.Daterd}</TableCell>
-                <TableCell align="left"  style={{fontSize:"15px"}}>{red?.timerd}</TableCell>
+                <TableCell align="left" style={{ fontSize: "15px" }}>{red?.Daterd}</TableCell>
+                <TableCell align="left" style={{ fontSize: "15px" }}>{red?.timerd}</TableCell>
                 {/* <TableCell align="left"  style={{fontSize:"15px"}}>{red?.Descrd}</TableCell> */}
-                <TableCell align="left"  style={{fontSize:"15px"}}> {renderEtat(red?.etatrend)}</TableCell>
-                <TableCell align="left" style={{fontSize:"15px"}}>
-              
+                <TableCell align="left" style={{ fontSize: "15px" }}> {renderEtat(red?.etatrend)}</TableCell>
+                <TableCell align="left" style={{ fontSize: "15px" }}>
+
 
                   <IconButton onClick={
                     red.etatrend === 'en attente' ? () => accredA(red._id) :
                       null}>
-                    <AddTaskIcon color='primary' fontSize='large' sx={{ color: green[500] }}/>
+                    <AddTaskIcon color='primary' fontSize='large' sx={{ color: green[500] }} />
                   </IconButton>
-             
+
 
                 </TableCell>
 
                 <TableCell align="left">
-                  
-                 {<Link to={`/Patient/${red._id}`}>
 
-                  <IconButton onClick={
-                    red.etatrend === 'en attente' ? () => accredR(red._id) : null}>
-                    <PublishedWithChangesIcon color='primary' fontSize='large' />
-                  </IconButton>
+                  {<Link to={`/Patient/${red._id}`}>
+
+                    <IconButton onClick={
+                      red.etatrend === 'en attente' ? () => accredR(red._id)
+                        : red.etatrend === 'accepter' ? () => accredR(red._id)
+                          : null}>
+                      <PublishedWithChangesIcon color='primary' fontSize='large' />
+                    </IconButton>
                   </Link>}
 
-                 
+
                 </TableCell>
-          
+
               </TableRow>
             ))}
 

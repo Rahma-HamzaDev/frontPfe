@@ -32,7 +32,7 @@ const TopDoctor=()=>{
       <Nav.Link as={Link} to={`/request/medecin/${user._id}`}>Demande Rendez-Vous</Nav.Link>
       {/* <Nav.Link as={Link} to="/CalendrieMed">calendrier</Nav.Link>
       <Nav.Link as={Link} to="/AjouterDispo">AjouterDispo</Nav.Link> */}
-      {/* <Nav.Link as={Link} to="/Disponibilite">Disponibilite</Nav.Link> */}
+      {/* <Nav.Link as={Link} to="/Dispomed">Disponibilite</Nav.Link> */}
    
 
     </Nav>

@@ -13,7 +13,34 @@ export const signup = async (user) => {
 
 
 
+
 export const signin = async (user) => {
     return await Api.post(USER_API + "/login", user);
 }
 
+
+// export const signin = async (user) => {
+//     try {
+//       const response = await Api.post(USER_API + "/login", user);
+
+//       return response.data;
+//     } catch (error) {
+//       throw new Error(error.response.data.message);
+//     }
+//   }
+
+
+
+
+
+
+
+// export const signin = async (user) => {
+//     try {
+//       const response = await Api.post(USER_API + "/login", user);
+
+//       return response.data;
+//     } catch (error) {
+//       throw new Error(error.response.data.message);
+//     }
+//   }

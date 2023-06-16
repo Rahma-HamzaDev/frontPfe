@@ -143,8 +143,8 @@ function ListPatient() {
       }
     },
     {
-      name: "HistoriqueSocial",
-      label: "Historique Social",
+      name: "profession",
+      label: "la profession",
    
       options: {
         filter: true,
@@ -233,16 +233,19 @@ function ListPatient() {
           // startIcon={<AddCircleIcon />}
           size="large"
           startIcon={<PersonAddIcon  />}
-          variant="outlined"
+          variant="contained"
         > {<Link to={`/Patient/medecin/${id}/insert`}
           style={{
             textDecoration:
-              "none", color: "black"
+              "none", color: "white"
           }}>
           Ajouter Fiche Patient
         </Link>
           }
         </Button>
+        <br/>
+        <br/>
+
       </div>
       <MUIDataTable
         title={"Liste des Patients"}

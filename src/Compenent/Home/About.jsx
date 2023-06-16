@@ -50,7 +50,9 @@ function About() {
                                 <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">A propos</h5>
                                 <h1 className="display-4">Nous sommes</h1>
                             </div>
-                            <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                            <p>
+                            DrMedicale est une plateforme en ligne qui simplifie la prise de rendez-vous pour les patients, facilite la gestion des activités des médecins et offre un suivi des dossiers médicaux.
+                              </p>
 
                         </div>
                     </div>

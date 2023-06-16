@@ -1,5 +1,4 @@
 import React from 'react';
-import MenuPa from '../principale/MenuPa';
 import AssignmentTurnedInIcon from '@mui/icons-material/AssignmentTurnedIn';
 import Table from 'react-bootstrap/Table';
 import { useState, useEffect } from 'react'
@@ -34,7 +33,7 @@ function DossiersPa() {
     <div>
       <TopPA />
       <div style={{ textAlign: 'center' }}>
-        <h1> Mes Dossiers </h1> <br /><br />
+        <h1> Mes Consultations  </h1> <br /><br />
       </div>
       <Table striped bordered hover>
 

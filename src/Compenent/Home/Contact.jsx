@@ -12,8 +12,12 @@ function Contact() {
     <div className="container-fluid pt-5">
     <div className="container">
       <div className="text-center mx-auto mb-5" style={{maxWidth: '500px'}}>
-        <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5">Any Questions?</h5>
-        <h1 className="display-4">Please Feel Free To Contact Us</h1>
+        <h5 className="d-inline-block text-primary text-uppercase border-bottom border-5"> QUESTIONS </h5>
+        <br/>
+        <br/>
+        <h3 className="display-4">N'hésitez pas à nous contacter</h3>
+        <br/>
+        <br/>
       </div>
       <div className="row g-5 mb-5">
           <div className="col-lg-4">
@@ -29,7 +33,7 @@ function Contact() {
               <div className="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style={{width: '100px', height: '70px', transform: 'rotate(-15deg)'}}>
                 <AiFillPhone style={{transform: 'rotate(15deg)',fontSize:40 ,color:'white'}}/>
               </div>
-              <h6 className="mb-0">+216 225 369 147</h6>
+              <h6 className="mb-0">+216 98 831 726</h6>
             </div>
           </div>
           <div className="col-lg-4">
@@ -37,7 +41,7 @@ function Contact() {
               <div className="d-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style={{width: '100px', height: '70px', transform: 'rotate(-15deg)'}}>
                 <BsFillEnvelopeCheckFill style={{transform: 'rotate(15deg)' ,fontSize:40 ,color:'white'}}/>
               </div>
-              <h6 className="mb-0">Admin@example.com</h6>
+              <h6 className="mb-0">admin.admin@gmail.com</h6>
             </div>
           </div>
         </div>
@@ -47,7 +51,7 @@ function Contact() {
         style={{ marginTop: "30px", zIndex: "1" }} >
         <div className="col-lg-8">
           <div className="bg-white rounded p-5 m-5 mb-0" >
-            <form >
+            {/* <form >
               <div className="row g-3" >
                 <div className="col-12 col-sm-6">
                   <input
@@ -87,7 +91,7 @@ function Contact() {
                   </button>
                 </div>
               </div>
-            </form>
+            </form> */}
             </div>
                 </div>
             </div>

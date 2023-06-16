@@ -56,12 +56,14 @@ function ConsultationPa() {
               <div className="tiltle11">
                 <h1>Details du consultation </h1>
               </div>
-              <br />
+              <br /> 
               <h3 className='H33'>Date consulataion: <span className='span1'> {cons?.DateCons}</span></h3> <br />
               {/* <h3 className='H33' >NumCons:  {cons?._id}</h3> <br/> */}
               <h3 className='H33' >numFich :  <span className='span1'>{cons?.patientID.numfiche}  </span></h3> <br />
-              <h3 className='H33' >Identication du patient:  {cons?.patientID.cinPa}</h3> <br />
+              <h3 className='H33' >Identifiant patient:  {cons?.patientID.cinPa}</h3> <br />
               <h3 className='H33' >Nom & Prénom patient : <span className='span1'>{cons?.patientID.nompatient} </span> <span className='span1'>{cons?.patientID.prenompatient} </span></h3>  <br />
+              <h3 className='H33' >Motif du Consultation: <span className='span1'>{cons?.MotifCons} </span> <span className='span1'>{cons?.patientID.prenompatient} </span></h3>  <br />
+
               <h3 className='H33' > Taille de patient : <span className='span1'>{cons?.TaillePatient}</span></h3>  <br />
               <h3 className='H33' >Poid de patient :  <span className='span1'>{cons?.PoisPatient}</span> </h3>  <br />
               <h3 className='H33' > tension artérielle:  <span className='span1'>{cons?.tension} </span></h3>  <br />

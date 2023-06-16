@@ -72,7 +72,7 @@ function Monfiche() {
                       
                         <h3 className='H33'>  Num Fiche : <span> {patients?.numfiche} </span>  </h3>
                         <br />
-                        <h3 className='H33'> Identifient Patient : <span>  {patients?.cinPa} </span> </h3>
+                        <h3 className='H33'> Identifiant Patient : <span>  {patients?.cinPa} </span> </h3>
                         <br />
                         <h3 className='H33'>  Nom & Prénom Patient : <span>  {patients?.nompatient} {patients?.prenompatient} </span>  </h3>
                         <br />
@@ -88,7 +88,7 @@ function Monfiche() {
                         <br />
                         <h3 className='H33'> Historique Familial:  <span>  {patients?.HistoriqueFamilial} </span></h3>
                         <br />
-                        <h3 className='H33'> Historique Social:  <span>  {patients?.HistoriqueSocial} </span></h3>
+                        <h3 className='H33'> Profession:  <span>  {patients?.profession} </span></h3>
                         <br />
                         <h3 className='H33'> Medecin : <span> {patients?.medecinID?.firstName}    {patients?.medecinID?.lastName}</span></h3>
                         <br />

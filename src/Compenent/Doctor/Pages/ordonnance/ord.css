@@ -34,8 +34,8 @@
 }
 
 .contenue {
-  justify-content: space-between;
-  margin-left: 30px;
+  /* justify-content: space-between; */
+  margin-left: 100px;
   margin-right: 15px;
   padding-bottom: 30px;
   /* text-align: center; */
@@ -130,9 +130,9 @@ text-align: center;
   margin-bottom: 5px;
 }
 
-.H2 {
-  font-size: 18px;
-  font-weight: bold;
+.H4 {
+  font-size: 20px;
+ font-weight: 0px;
   margin-bottom: 5px;
 
 }

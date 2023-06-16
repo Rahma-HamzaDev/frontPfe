@@ -1,9 +1,9 @@
 import Api from "../Axios/Api";
 const PATIENT_API = "/patients"
 
-// export const fetchPatient = async () => {
-//     return await Api.get(PATIENT_API);
-// }
+export const fetchPatient = async () => {
+    return await Api.get(PATIENT_API);
+}
 
 export const fetchPatient1 = async (medecinId) => {
     console.log(medecinId);

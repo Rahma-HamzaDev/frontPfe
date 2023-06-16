@@ -27,7 +27,7 @@ export default function EditePatient() {
   const [numtelPa, setNumPa] = useState("");
   const [dateNais, setDateNais] = useState("");
   const [HistoriqueFamilial, setHistoriqueFamilial] = useState("");
-  const [HistoriqueSocial, setHistoriqueSocial] = useState("");
+  const [profession, setProfession] = useState("");
   useEffect(() => {
   GetUnPatient();
   // GetListMedecin();
@@ -43,7 +43,7 @@ export default function EditePatient() {
   setSexepatient(res.data.sexepatient)
   setAdressepatient(res.data.adressepatient)
   setHistoriqueFamilial(res.data.HistoriqueFamilial)
-  setHistoriqueSocial(res.data.HistoriqueSocial)
+  setProfession(res.data.profession)
 
 
   })
@@ -75,7 +75,7 @@ export default function EditePatient() {
     numtelPa: numtelPa,
     adressepatient:adressepatient,
     HistoriqueFamilial:HistoriqueFamilial,
-    HistoriqueSocial:HistoriqueSocial
+    profession:profession
     }
     editPatient (patient)
     .then(res=>{
@@ -95,7 +95,7 @@ export default function EditePatient() {
 
 <div className="container w-100 d-flex justify-content-center">
 <div className=' mt-5 w-50'>
-<h1 align="center"> Modification Patient </h1>
+<h1 align="center"> Modifier fiche Patient </h1>
 <div className='form mt-3'>
 <Form className="border p-3" noValidate validated={validated} onSubmit={handleSubmit}>
 <Row className="mb-2">
@@ -131,7 +131,7 @@ Saisir prénom Patient
 <Form.Label>Email </Form.Label>
 <InputGroup hasValidation>
 <Form.Control
-type="text"
+type="email"
 required
 placeholder="email"
 value={emailpatient}
@@ -204,16 +204,16 @@ Saisir Historique Familial
 </Form.Group>
 
 <Form.Group as={Col} md="6">
-<Form.Label>Historique Social </Form.Label>
+<Form.Label>Profession</Form.Label>
 <Form.Control
 required
 type="text"
-placeholder="Historique Social"
-value={HistoriqueSocial}
-onChange={(e)=>setHistoriqueSocial(e.target.value)}
+placeholder="profession"
+value={profession}
+onChange={(e)=>setProfession(e.target.value)}
 />
 <Form.Control.Feedback type="invalid">
-Saisir Historique Social
+Saisir profession
 </Form.Control.Feedback>
 </Form.Group>
 

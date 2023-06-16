@@ -8,13 +8,19 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { IconButton } from "@mui/material";
 import TopPA from '../principale/top/TopPA';
-
+import { useEffect } from "react";
+import {fetchPatient} from "../../../Services/patientServices"
 function CodePa() {
     const [code, setCode] = useState("");
     const [submitted, setSubmitted] = useState(false);
     const [showCode, setShowCode] = useState(false);
     const navigate = useNavigate();
-
+    const [patients, setPatient] = useState([]);
+     useEffect(() => { GetListPatient(); }, []); 
+     const GetListPatient = async () => { 
+        await fetchPatient() .then((res) => { 
+            setPatient(res.data); console.log(res.data); }); 
+        }
     const handleChange = (e) => {
         setCode(e.target.value);
     };

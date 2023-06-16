@@ -155,7 +155,7 @@ export default function Ajouterdv() {
                 <Form.Group>
                < Form.Label> Phone :</ Form.Label>
                 <Form.Control
-                    type="text"
+                  type="number"
                     id="phone"
                     name="phone"
                     value={phone}

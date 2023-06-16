@@ -25,9 +25,9 @@ import { fetchMedecinBySpeciality } from '../../../Services/UserServices';
 function OurDoctor() {
     const [users, setUsers] = useState([])
 
-    console.log(users.length > 0 ? users[0]._id : null);
-  const id = users.length > 0 ? users[0]._id : null;
-    console.log(id)
+//     console.log(users.length > 0 ? users[0]._id : null);
+//   const id = users.length > 0 ? users[0]._id : null;
+//     console.log(id)
     const [searchParams, setSearchParams] = useSearchParams()
     const specialite = searchParams.get('specialite')
     useEffect(() => {
@@ -76,15 +76,15 @@ function OurDoctor() {
                                     </div>
                                     <div className="col-12 col-sm-7 h-50 d-flex flex-column">
                                         <div className="mt-auto p-3">
-                                            <h3>{user.firstName}</h3>
+                                            <h3>{user.firstName}  {user.lastName}</h3>
                                             <h6 className="fw-normal fst-italic text-primary mb-3">{user.email}</h6>
                                             <p className="m-0">{user.adresse}</p>
-                                            <p className="m-0">{user.phone}</p>
+                                            <p className="m-0"> +216 {user.phone}</p>
                                             <p className="m-0">{user.specialiteID?.nomsep}</p>
                                             {/* <p>{user._id}</p> */}
                                         </div>
                                         <div className="d-flex mt-auto border-top p-4">
-                                            <Link to={`/Prendrerend_vous/medecin/${id}`}> 
+                                            <Link to={`/Prendrerend_vous/medecin/${user._id}`}> 
                                             <button className="btn btn-primary w-100 py-3" type="submit" style={{ fontSize: "15px" }}>
                                                 Rendez-Vous</button> 
                                             </Link>

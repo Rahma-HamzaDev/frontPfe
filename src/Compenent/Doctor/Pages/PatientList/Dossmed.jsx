@@ -88,7 +88,7 @@ const handleToggleCode = () => {
                         <br />
                         <h3 className='H33'> Historique Familial:  <span>  {patients?.HistoriqueFamilial} </span></h3>
                         <br />
-                        <h3 className='H33'> Historique Social:  <span>  {patients?.HistoriqueSocial} </span></h3>
+                        <h3 className='H33'> Profession:  <span>  {patients?.profession} </span></h3>
                         <br />
 
 

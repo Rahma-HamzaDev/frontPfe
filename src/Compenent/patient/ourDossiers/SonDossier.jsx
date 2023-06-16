@@ -2,7 +2,6 @@ import React from 'react'
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "../../Home/Style.css";
-import MenuPa from '../principale/MenuPa';
 import TopPA from '../principale/top/TopPA';
 
 const SonDossier = () => {

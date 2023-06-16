@@ -54,7 +54,7 @@ function MesRend() {
   }
   else  if (etat === 'accepter') {
         return <span style={{ color: 'green' }}>{etat}</span>;
-      } else if (etat === 'A rapporter') {
+      } else if (etat === 'reporter') {
         return <span style={{ color: 'blue' }}>{etat}</span>;
     } 
   //   else if (etat === 'cancel') {
@@ -127,24 +127,26 @@ function MesRend() {
           <TableHead>
             <TableRow>
               <StyledTableCell align="left">Nom Médecin</StyledTableCell>
-              <StyledTableCell align="left">	Adresse Medecin</StyledTableCell>
               <StyledTableCell align="left"> Num telephone </StyledTableCell>
+              <StyledTableCell align="left">	Adresse Medecin</StyledTableCell>
               <StyledTableCell align="left"> Date/Heure </StyledTableCell>
-              {/* <StyledTableCell align="left">	Description </StyledTableCell> */}
               <StyledTableCell align="left">	Etat </StyledTableCell>
-              {/* <StyledTableCell align="left">	Cancel  </StyledTableCell> */}
+             
             </TableRow>
           </TableHead>
           <TableBody>
             {Rend.map((red, index) => (
               <StyledTableRow key={index}>
                 <StyledTableCell component="th" scope="row">Dr {red?.medecinID.firstName} {red?.medecinID.lastName}</StyledTableCell>
-                <StyledTableCell align="left">{red?.medecinID.adresse}</StyledTableCell>
                 <StyledTableCell align="left">{red?.medecinID.phone}</StyledTableCell>
+                <StyledTableCell align="left">{red?.medecinID.adresse}</StyledTableCell>
                 <StyledTableCell align="left">{red?.Daterd}/{red?.timerd}</StyledTableCell>
                 <StyledTableCell align="left">
                   {renderEtat(red?.etatrend)}
                 </StyledTableCell>
+                {/* <StyledTableCell align="left">
+               
+                </StyledTableCell> */}
                 {/* <TableCell align="left">
                 <IconButton onClick={
                   red.etatrend === 'en attente' ? () => accredC(red._id) : null}>
