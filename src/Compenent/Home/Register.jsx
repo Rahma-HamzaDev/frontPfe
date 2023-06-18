@@ -52,7 +52,6 @@ function Register() {
   //
   const [error, setError] = useState(false);
 
-
   const handlePhoneChange = (event) => {
     const value = event.target.value;
     if (value.length !== 8) {
@@ -63,11 +62,16 @@ function Register() {
     setPhone(value);
   };
 
-  const { user, isSuccess, isError } = useSelector((state) => state.auth);
+  const { user, isSuccess, isError, errorMessage } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isSuccess && !error) {
+
+    }
+  }, [isSuccess]);
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     if (password.length < 6) {
       // alert('');
       toast.warning("Le mot de passe doit comporter au moins 6 caractères!!", {
@@ -88,21 +92,21 @@ function Register() {
     if (!/\d/.test(password)) {
       // alert('');
       toast.warning("Le mot de passe doit contenir au moins un chiffre!!",
-       {
-        position: toast.POSITION.LEFT,
-        autoClose: 3000,
-      });
+        {
+          position: toast.POSITION.LEFT,
+          autoClose: 3000,
+        });
       return;
     }
-  
+
 
     if (password !== password2) {
       // alert('')
       toast.error("Les mots de passe ne correspondent pas!!",
-       {
-        position: toast.POSITION.LEFT,
-        autoClose: 3000,
-      });
+        {
+          position: toast.POSITION.LEFT,
+          autoClose: 3000,
+        });
     } else {
       const doctorData = role === DOCTOR ? {
         specialiteID,
@@ -120,15 +124,16 @@ function Register() {
         adresse: adresse,
         phone: phone,
         email: email,
-        password: password,
         avatar: avatar,
+        password: password,
         role: role,
         ...doctorData
       }
       const formData = new FormData();
       buildFormData(formData, userData);
-      dispatch(register(formData))
-      navigate('/login')
+      dispatch(register(formData));
+      navigate("/login");
+
     }
   };
   return (
@@ -206,7 +211,7 @@ function Register() {
                         error={error}
                         // onChange={(event) => setPhone(event.target.value)}
 
-                      onChange={handlePhoneChange}
+                        onChange={handlePhoneChange}
                       />
                       {error && <Alert severity="error">Le numéro se compose de 8 chiffres</Alert>}
                       {/* </Grid> */}
@@ -265,7 +270,8 @@ function Register() {
                         label="photo"
                         id="photo"
                         onChange={(event) => setAvatar(event.target.files[0])}
-                        className="form-control bg-light border-0" style={{ height: '55px' }}
+                      // onChange={(event) => setAvatar(event.target.files[0])}
+                      // className="form-control bg-light border-0" style={{ height: '55px' }}
                       />
                     </div>
                     {
@@ -399,6 +405,7 @@ end time:
                     <div className="col-12">
                       <button className="btn btn-primary w-100 py-3" type="submit" style={{ width: "30px", fontSize: "30px" }}>S'inscrire</button>
                     </div>
+                    {isError ? <p>{errorMessage}</p> : ""}
                   </div>
                 </form>
               </div>
@@ -408,7 +415,7 @@ end time:
       </div >
       <br /> <br />
       {/* Appointment End */}
-      <Footer/>
+      <Footer />
     </div >
   )
 }

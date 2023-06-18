@@ -45,9 +45,9 @@ function DossiersPa() {
             <th>Date consultation</th>
             <th>Motif Cons</th>
             <th>Antécedents Médecaux</th>
-            <th>Historique Familial</th>
+            {/* <th>Historique Familial</th>
             <th>Exemans Complementaires</th>
-            <th>Exemans HistoriqueSocial</th>
+            <th>Exemans HistoriqueSocial</th> */}
             <th>Taille & Poid</th>
             <th>tension & Température</th>
             <th>Details Consultation</th>
@@ -64,9 +64,9 @@ function DossiersPa() {
               <td>{cons?.DateCons}</td>
               <td>{cons?.MotifCons}</td>
               <td>{cons?.AntécedentsMédecaux}</td>
-              <td>{cons?.HistoriqueFamilial}</td>
+              {/* <td>{cons?.HistoriqueFamilial}</td>
               <td>{cons?.ExemansComplementaires}</td>
-              <td>{cons?.HistoriqueSocial}</td>
+              <td>{cons?.HistoriqueSocial}</td> */}
               <td> {cons?.TaillePatient} & {cons?.PoisPatient}</td>
               <td>{cons?.tension} & {cons?.Température}</td>
               <td>

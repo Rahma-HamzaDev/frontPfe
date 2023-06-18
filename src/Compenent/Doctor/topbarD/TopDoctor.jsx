@@ -27,7 +27,7 @@ const TopDoctor=()=>{
     <Container> 
     <Navbar.Brand >DrMedicale </Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link as={Link} to={`/Patient/medecin/${user._id}`}>Liste des patients</Nav.Link>
+      <Nav.Link as={Link} to={`/Patient/medecin/${user._id}`}>Liste des fiches patients</Nav.Link>
       <Nav.Link as={Link} to={`/ListRendVous/medecin/${user._id}`}>Liste Rendez-vous</Nav.Link>
       <Nav.Link as={Link} to={`/request/medecin/${user._id}`}>Demande Rendez-Vous</Nav.Link>
       {/* <Nav.Link as={Link} to="/CalendrieMed">calendrier</Nav.Link>

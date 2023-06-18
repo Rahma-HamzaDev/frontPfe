@@ -6,7 +6,6 @@ export const signup = async (user) => {
     for (var pair of user.entries()) {
         u[pair[0]] = pair[1]
     }
-    console.log(u)
     return await Api.post(USER_API + '/register', u);
 }
 

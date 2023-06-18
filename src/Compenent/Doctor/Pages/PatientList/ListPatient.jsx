@@ -248,7 +248,7 @@ function ListPatient() {
 
       </div>
       <MUIDataTable
-        title={"Liste des Patients"}
+        title={"Liste des fiches Patients"}
 
         data={patients}
         columns={columns}

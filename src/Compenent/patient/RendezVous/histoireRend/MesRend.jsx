@@ -137,9 +137,9 @@ function MesRend() {
           <TableBody>
             {Rend.map((red, index) => (
               <StyledTableRow key={index}>
-                <StyledTableCell component="th" scope="row">Dr {red?.medecinID.firstName} {red?.medecinID.lastName}</StyledTableCell>
-                <StyledTableCell align="left">{red?.medecinID.phone}</StyledTableCell>
-                <StyledTableCell align="left">{red?.medecinID.adresse}</StyledTableCell>
+                <StyledTableCell component="th" scope="row">Dr {red?.medecinID?.firstName} {red?.medecinID?.lastName}</StyledTableCell>
+                <StyledTableCell align="left">{red?.medecinID?.phone}</StyledTableCell>
+                <StyledTableCell align="left">{red?.medecinID?.adresse}</StyledTableCell>
                 <StyledTableCell align="left">{red?.Daterd}/{red?.timerd}</StyledTableCell>
                 <StyledTableCell align="left">
                   {renderEtat(red?.etatrend)}

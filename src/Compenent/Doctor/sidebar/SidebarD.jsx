@@ -16,7 +16,7 @@ function SidebarD() {
         <div className="links-container">
 
           <div className="link-container">
-              <Link to="/ListPatient">Liste Patients</Link>
+              <Link to="/ListPatient">Liste fiches Patients</Link>
             </div>
             
             <div className="link-container">
